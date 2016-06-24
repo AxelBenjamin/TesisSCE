@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('create','CicloEscolares2');
+/*Route::get('view/cicloEscolar', function () {
+    return view('create');
+});*/
