@@ -15,7 +15,9 @@ class CicloEscolares2 extends Controller
      */
     public function index()
     {
-        
+        //return view ('CicloEscolares2.index');
+        $CiclosEscolares = \App\CicloEscolar2::all(); //trae todos los elementos de esa tabla
+        return view('CicloEscolares2.index',compact('CiclosEscolares')); //CiclosEscolares es la variable
     }
 
     /**
@@ -25,7 +27,8 @@ class CicloEscolares2 extends Controller
      */
     public function create()
     {
-        return view ('cicloEscolar.create');
+        return view ('CicloEscolares2.create');
+        
     }
 
     /**
@@ -41,7 +44,7 @@ class CicloEscolares2 extends Controller
             'fechaInicio' => $request['fechaInicio'],
             'fechaFinal' => $request['fechaFinal'],
             ]);
-        return "Ciclo Escolar OK";
+        return "Ciclo Escolar Agregado Correctamente";
     }
 
     /**
@@ -63,7 +66,7 @@ class CicloEscolares2 extends Controller
      */
     public function edit($id)
     {
-        //
+    
     }
 
     /**

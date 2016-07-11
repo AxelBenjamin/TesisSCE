@@ -10,8 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
 
-Route::resource('create','CicloEscolares2');
-/*Route::get('view/cicloEscolar', function () {
-    return view('create');
-});*/
+Route::resource('ce', 'CicloEscolares2');
