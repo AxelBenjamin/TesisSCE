@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Redirect;
 
 use App\Http\Requests;
 
@@ -66,6 +67,8 @@ class CicloEscolares2 extends Controller
      */
     public function edit($id)
     {
+        $CicloEscolar = \App\CicloEscolar2::find($id);
+        return view('CicloEscolares2.edit',['CicloEscolar'=>$CicloEscolar]);
     
     }
 
@@ -78,7 +81,11 @@ class CicloEscolares2 extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $CicloEscolar = \App\CicloEscolar2::find($id);
+        $CicloEscolar->fill($request->all());
+        $CicloEscolar->save();
+        //return "Ciclo Escolar Editado Correctamente";
+        return Redirect::to('/ce');
     }
 
     /**
@@ -89,6 +96,7 @@ class CicloEscolares2 extends Controller
      */
     public function destroy($id)
     {
-        //
+        \App\CicloEscolar2::destroy($id);
+        return Redirect::to('/ce');
     }
 }

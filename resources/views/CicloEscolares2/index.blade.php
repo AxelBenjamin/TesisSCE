@@ -17,6 +17,9 @@
 		<th> {{$CicloEscolar->nombre}} </th>
 		<th> {{$CicloEscolar->fechaInicio}} </th>
 		<th> {{$CicloEscolar->fechaFinal}} </th>
+		<th>
+			{!!link_to_route('ce.edit', $title = 'Editar', $parameters = $CicloEscolar->id, $attributes = ['class'=>'btn btn-primary'])!!}
+		</th>
 		
 		
 		</tbody>
