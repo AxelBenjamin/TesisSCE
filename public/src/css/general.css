@@ -1,0 +1,22 @@
+header{
+	padding-top: 0.5em;
+	padding-bottom: 0.5em; 
+}
+
+.row2 {
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.menuizquierdo {
+	/*border-right: 2px solid;
+	height: 100%; */
+}
+
+.rowderecho { /*border-left: 2px solid; */}
+
+.contenido { border-right: 2px solid; border-left: 2px solid; padding: 1em;}
+
+.fecha{ padding-left: 1em; }
+
+.cerrarsesion{ padding-right: 1em; }
