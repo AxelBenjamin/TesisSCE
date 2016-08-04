@@ -45,7 +45,9 @@ class CicloEscolares2 extends Controller
             'fechaInicio' => $request['fechaInicio'],
             'fechaFinal' => $request['fechaFinal'],
             ]);
-        return "Ciclo Escolar Agregado Correctamente";
+        
+        //Al agregar los datos, se redirecciona a la carpeta ciclosescolares2 con un mensaje
+        return  redirect('/ce')->with('message','store');
     }
 
     /**
@@ -85,7 +87,10 @@ class CicloEscolares2 extends Controller
         $CicloEscolar->fill($request->all());
         $CicloEscolar->save();
         //return "Ciclo Escolar Editado Correctamente";
-        return Redirect::to('/ce');
+        //return Redirect::to('/ce');
+
+        //Al editar los datos, se redirecciona a la carpeta ciclosescolares2 con un mensaje
+        return  redirect('/ce')->with('message','store');
     }
 
     /**
@@ -97,6 +102,9 @@ class CicloEscolares2 extends Controller
     public function destroy($id)
     {
         \App\CicloEscolar2::destroy($id);
-        return Redirect::to('/ce');
+
+        //Al agregar los datos, se redirecciona a la carpeta ciclosescolares2 con un mensaje
+        return  redirect('/ce')->with('message','store');
+        //return Redirect::to('/ce');
     }
 }

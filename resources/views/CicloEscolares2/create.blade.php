@@ -1,3 +1,7 @@
+@extends('layouts.master')
+
+@section('content2')
+
 {!! Form::open(['route' => 'ce.store', 'method'=>'POST', 'class'=> 'form-horizontal']) !!}
 
  	<div class="form-group">
@@ -33,3 +37,5 @@
 	</div>
  
 {!! Form::close() !!}
+
+@endsection
