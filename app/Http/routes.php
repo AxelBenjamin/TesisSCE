@@ -15,3 +15,4 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('ce', 'CicloEscolares2');
+Route::resource('sem','Semestres');

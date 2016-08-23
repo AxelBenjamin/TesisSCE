@@ -5,7 +5,7 @@
 {!! Form::open(['route' => 'ce.store', 'method'=>'POST', 'class'=> 'form-horizontal']) !!}
 
  	<div class="form-group">
- 		<div class="col-lg-2">
+ 		<div class="col-lg-3">
  			{!! Form::label('nombre','Nombre:',['class' => 'control-label'])!!}
  		</div>
  		<div class="col-lg-5">
@@ -14,7 +14,7 @@
 	</div>
 
 	<div class="form-group">
-		<div class="col-lg-2">
+		<div class="col-lg-3">
 			{!! Form::label('fechaInicio', 'Fecha de Inicio:', ['class' => 'control-label']) !!}
 		</div>
 		<div class="col-lg-5">
@@ -23,7 +23,7 @@
 	</div>
 
 	<div class="form-group">
-		<div class="col-lg-2">
+		<div class="col-lg-3">
 			{!! Form::label('fechaFinal', 'Fecha de Termino:', ['class' => 'control-label']) !!}
 		</div>
 		<div class="col-lg-5">
@@ -34,6 +34,7 @@
 	<div>
 		<p></p>
 		{!! Form::submit('Enviar',['class' => 'btn btn-default']) !!}
+		{!! link_to_route('ce.index', 'Cancelar', null, array('class' => 'btn btn-default')); !!}
 	</div>
  
 {!! Form::close() !!}
