@@ -17,7 +17,7 @@ class CreateSemestresTable extends Migration
             $table->char("nombre");
             //Agrego el id de la trabla Ciclo escolars
             $table->integer('ciclo_escolars_id')->unsigned();
-            $table->foreign('ciclo_escolars_id')->references('id')->on('ciclo_escolars');
+            $table->foreign('ciclo_escolars_id')->references('id')->on('ciclo_escolars')->onDelete('cascade');
 
             $table->timestamps();
         });

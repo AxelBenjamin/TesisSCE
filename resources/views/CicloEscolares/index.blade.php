@@ -23,7 +23,7 @@
 		</div>
 	@endif
 
-	{!! link_to_route('ce.create', 'Nuevo Registro', null, array('class' => 'btn btn-default')); !!}
+	{!! link_to_route('ce.create', 'Agregar Ciclo Escolar', null, array('class' => 'btn btn-default')); !!}
 
 	<div class="table-responsive">
 	<table class="table table-hover">
@@ -31,7 +31,7 @@
 			<th>Nombre</th>
 			<th>Fecha de Inicio</th>
 			<th>Fecha de Termino</th>
-			<th>Acción</th>
+			<th>Opciones</th>
 		</thead>
 	
 	@foreach($CiclosEscolares as $CicloEscolar) 
