@@ -78,21 +78,22 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
         <!--Subdividimos este row en 3 columnas-->
         <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                 <div class="menuizquierdo">
-                    <p> Aquí va menú </p>
+                    
                  </div>
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <div class="contenido">
+                    @include('layouts.partials.menuAdmin')
 					@yield('content2')
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                 <div class="rowderecho">
-                    <p> Row o columna derecha</p>
+                    
                 </div>  
             </div>
         </div>
@@ -101,5 +102,6 @@
 	
     <script   src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
     <script src="src/js/bootstrap.min.js"></script>
+    <script src="src/js/bootstrap.js"></script>
 </body>
 </html>

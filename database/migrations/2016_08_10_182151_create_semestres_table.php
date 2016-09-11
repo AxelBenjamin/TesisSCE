@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCicloEscolarsTable extends Migration
+class CreateSemestresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,13 @@ class CreateCicloEscolarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ciclo_escolars', function (Blueprint $table) {
-            
+        Schema::create('semestres', function (Blueprint $table) {
             $table->increments('id');
             $table->char("nombre");
-            $table->date("fechaInicio");
-            $table->date("fechaFinal");
-            
+            //Agrego el id de la trabla Ciclo escolars
+            $table->integer('ciclo_escolars_id')->unsigned();
+            $table->foreign('ciclo_escolars_id')->references('id')->on('ciclo_escolars')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateCicloEscolarsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ciclo_escolars');
+        Schema::drop('semestres');
     }
 }
