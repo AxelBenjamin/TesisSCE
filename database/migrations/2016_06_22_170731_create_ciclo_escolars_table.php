@@ -13,10 +13,12 @@ class CreateCicloEscolarsTable extends Migration
     public function up()
     {
         Schema::create('ciclo_escolars', function (Blueprint $table) {
+            
             $table->increments('id');
             $table->char("nombre");
             $table->date("fechaInicio");
             $table->date("fechaFinal");
+            
             $table->timestamps();
         });
     }
