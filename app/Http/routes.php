@@ -14,4 +14,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::resource('ce', 'CicloEscolares2');
+Route::resource('ce', 'CicloEscolares');
+Route::resource('sem','Semestres');
+Route::resource('gru','Grupos');

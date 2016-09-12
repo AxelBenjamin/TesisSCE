@@ -10,4 +10,7 @@ class CicloEscolar extends Model
     protected $fillable = ['nombre','fechaInicio','fechaFinal'];
     protected $guarded = ['id'];
     
+    public function semestres(){
+   		return $this->hasMany('App\Semestre','ciclo_escolars_id');
+	}
 }
