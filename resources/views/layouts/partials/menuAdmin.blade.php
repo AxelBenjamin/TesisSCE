@@ -16,7 +16,7 @@
         <li class="active"><a href="{{ route('ce.index') }}">Ciclo Escolar <span class="sr-only">(current)</span></a></li>
         <li><a href="">Plan Estudios</a></li>
         <li><a href="{{ route('sem.index') }}">Semestres</a></li>
-        <li><a href="#">Grupos</a></li>
+        <li><a href="{{ route('gru.index') }}">Grupos</a></li>
       </ul>
 
       <form class="navbar-form navbar-right">

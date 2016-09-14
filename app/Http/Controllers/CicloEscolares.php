@@ -7,15 +7,9 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
-<<<<<<< HEAD
-//use App\Http\Requests;
-use App\CicloEscolar;
-=======
-
 //use App\Http\Requests;
 use App\CicloEscolar;
 
->>>>>>> f5cd582b1a36933a7742b0b00b8945b5accf28cf
 class CicloEscolares extends Controller
 {
     /**
@@ -32,10 +26,7 @@ class CicloEscolares extends Controller
         $CiclosEscolares = CicloEscolar::all();
         return View::make('CicloEscolares.index')->with("CiclosEscolares", $CiclosEscolares);
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> f5cd582b1a36933a7742b0b00b8945b5accf28cf
     /**
      * Show the form for creating a new resource.
      *
@@ -45,10 +36,7 @@ class CicloEscolares extends Controller
     {
         return View::make ('CicloEscolares.create');
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> f5cd582b1a36933a7742b0b00b8945b5accf28cf
     /**
      * Store a newly created resource in storage.
      *
@@ -64,17 +52,10 @@ class CicloEscolares extends Controller
          //   ]);
         
         CicloEscolar::create( $request -> all() );
-<<<<<<< HEAD
-        //Al agregar los datos, se redirecciona a la carpeta ciclosescolares2 con un mensaje
-        return  redirect('/ce')->with('message','store');
-    }
-=======
 
         //Al agregar los datos, se redirecciona a la carpeta ciclosescolares2 con un mensaje
         return  redirect('/ce')->with('message','store');
     }
-
->>>>>>> f5cd582b1a36933a7742b0b00b8945b5accf28cf
     /**
      * Display the specified resource.
      *
@@ -85,10 +66,7 @@ class CicloEscolares extends Controller
     {
         //
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> f5cd582b1a36933a7742b0b00b8945b5accf28cf
     /**
      * Show the form for editing the specified resource.
      *
@@ -102,10 +80,7 @@ class CicloEscolares extends Controller
         return View::make('CicloEscolares.edit')->with("CicloEscolar", $CicloEscolar);
     
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> f5cd582b1a36933a7742b0b00b8945b5accf28cf
     /**
      * Update the specified resource in storage.
      *
@@ -124,10 +99,7 @@ class CicloEscolares extends Controller
         //Al editar los datos, se redirecciona a la carpeta ciclosescolares2 con un mensaje
         return  redirect('/ce')->with('message','store');
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> f5cd582b1a36933a7742b0b00b8945b5accf28cf
     /**
      * Remove the specified resource from storage.
      *
@@ -137,16 +109,9 @@ class CicloEscolares extends Controller
     public function destroy($id)
     {
         CicloEscolar::destroy($id);
-<<<<<<< HEAD
-=======
 
->>>>>>> f5cd582b1a36933a7742b0b00b8945b5accf28cf
         //Al agregar los datos, se redirecciona a la carpeta ciclosescolares2 con un mensaje
         return  redirect('/ce')->with('message','store');
         //return Redirect::to('/ce');
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> f5cd582b1a36933a7742b0b00b8945b5accf28cf

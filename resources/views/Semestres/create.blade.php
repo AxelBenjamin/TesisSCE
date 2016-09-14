@@ -9,6 +9,7 @@
 	<div>
 		<p></p>
 		{!! Form::submit('Enviar',['class' => 'btn btn-default']) !!}
+		{!! link_to_route('sem.index', 'Cancelar', null, array('class' => 'btn btn-default')); !!}
 	</div>
  
 {!! Form::close() !!}

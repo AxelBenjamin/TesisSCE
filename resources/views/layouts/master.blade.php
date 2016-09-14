@@ -93,10 +93,7 @@
 
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                 <div class="rowderecho">
-<<<<<<< HEAD
-=======
-                    
->>>>>>> f5cd582b1a36933a7742b0b00b8945b5accf28cf
+
                 </div>  
             </div>
         </div>
