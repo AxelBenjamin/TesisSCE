@@ -16,8 +16,6 @@
 
 @section('content2')
 
-    
-
 	@if($mensaje == 'store')
 		<div class="alert alert-warning alert-dismissible" role="alert">
   			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -25,7 +23,7 @@
 		</div>
 	@endif
 
-	{!! link_to_route('alu.create', 'Agregar Alumno', null, array('class' => 'btn btn-default')); !!}
+	{!! link_to_route('mae.create', 'Agregar Maestro', null, array('class' => 'btn btn-default')); !!}
 
 	<div class="table-responsive">
 	
@@ -33,34 +31,30 @@
         <thead>
             <th>Matricula</th>
             <th>Nombre</th>
-            <th>Grupo</th>
             <th colspan="2">Opciones</th>
         </thead>
 
         <tbody>
-            @foreach($Alumnos as $Alumno)
+            @foreach($Maestros as $Maestro)
                 <tr>
-                    <td>{{ $Alumno->matricula }}</td>
-                    <td>{{ $Alumno->apa }}
-                    {{ $Alumno->ama }}
-                	{{ $Alumno->nombre }}</td>
-                    <td>{{ $Alumno->grupos->nombre }}</td>
+                    <td>{{ $Maestro->matricula }}</td>
+                    <td>{{ $Maestro->apa }}
+                    {{ $Maestro->ama }}
+                	{{ $Maestro->nombre }}</td>
                     
-                    <td>{!!link_to_route('alu.show', $title = 'Mostrar', $parameters = $Alumno->id, $attributes = ['class'=>'btn btn-primary'])!!}
+                    <td>{!!link_to_route('mae.show', $title = 'Mostrar', $parameters = $Maestro->id, $attributes = ['class'=>'btn btn-primary'])!!}
                     </td>
 
-                    <td>{!!link_to_route('alu.edit', $title = 'Editar', $parameters = $Alumno->id, $attributes = ['class'=>'btn btn-primary'])!!}
+                    <td>{!!link_to_route('mae.edit', $title = 'Editar', $parameters = $Maestro->id, $attributes = ['class'=>'btn btn-primary'])!!}
                     </td>
                     
-                    <td>{!! Form::open(['route' => ['alu.destroy', $Alumno->id], 'method'=>'DELETE'])!!}
+                    <td>{!! Form::open(['route' => ['mae.destroy', $Maestro->id], 'method'=>'DELETE'])!!}
 						{!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!} 
 					{!! Form::close() !!} </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
-
 	</div>
 @endsection
 	

@@ -18,3 +18,6 @@ Route::resource('ce', 'CicloEscolares');
 Route::resource('sem','Semestres');
 Route::resource('gru','Grupos');
 Route::resource('alu','Alumnos');
+Route::resource('plan','PlanesEstudios');
+Route::resource('mae','Maestros');
+Route::resource('mat','Materias');

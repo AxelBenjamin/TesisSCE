@@ -7,11 +7,15 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
-//use App\Http\Requests;
-use App\Alumno;
-use App\Grupo;
 
-class Alumnos extends Controller
+//use App\Http\Requests;
+
+use App\Semestre;
+use App\Maestro;
+use App\Materia;
+
+
+class Materias extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +24,9 @@ class Alumnos extends Controller
      */
     public function index()
     {
-        $Alumnos = Alumno::all()->sortBy("grupos_id");
-        return View::make('Alumnos.index')->with('Alumnos', $Alumnos);
+        $Materias = Materia::all()->sortBy("semestres_id");
+        $Materias = Materia::all()->sortBy("maestros_id");
+        return View::make('Materias.index')->with('Materias',$Materias);
     }
 
     /**
@@ -31,8 +36,9 @@ class Alumnos extends Controller
      */
     public function create()
     {
-        $Grupos = Grupo::pluck('nombre', 'id');
-        return view::make('Alumnos.create')->with('Grupos',$Grupos);
+        $Semestres = Semestre::pluck('nombre', 'id');
+        $Maestros = Maestro::pluck('apa','id');
+        return View::make('Materias.create')->with('Semestres',$Semestres)->with('Maestros',$Maestros);
     }
 
     /**
@@ -43,8 +49,8 @@ class Alumnos extends Controller
      */
     public function store(Request $request)
     {
-        Alumno::create( $request->all() );
-        return redirect('/alu')->with('message','store');
+        Materia::create( $request->all() );
+        return redirect('/mat')->with('message','store');
     }
 
     /**
@@ -55,8 +61,8 @@ class Alumnos extends Controller
      */
     public function show($id)
     {
-        $Alumno = Alumno::find($id);
-        return View::make('Alumnos.show')->with('Alumno', $Alumno);
+        $Materia = Materia::find($id);
+        return View::make('Materias.show')->with("Materia", $Materia);
     }
 
     /**
@@ -67,10 +73,11 @@ class Alumnos extends Controller
      */
     public function edit($id)
     {
-        $Alumno = Alumno::find($id);
-        $Grupos = Grupo::pluck('nombre','id');
+        $Materia = Materia::find($id);
+        $Semestres = Semestre::pluck('nombre', 'id');
+        $Maestros = Maestro::pluck('apa','id');
 
-        return View::make('Alumnos.edit')->with("Alumno", $Alumno)->with('Grupos', $Grupos);
+        return View::make('Materias.edit')->with("Materia", $Materia)->with('Semestres', $Semestres)->with("Maestros",$Maestros);
     }
 
     /**
@@ -80,12 +87,12 @@ class Alumnos extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        $Alumno = Alumno::find($id);
+        $Materia = Materia::find($id);
         $input = Input::all();
-        $Alumno->update($input);
-        return  redirect('/alu')->with('message','store');
+        $Materia->update($input);
+        return  redirect('/mat')->with('message','store');
     }
 
     /**
@@ -96,7 +103,7 @@ class Alumnos extends Controller
      */
     public function destroy($id)
     {
-        Alumno::destroy($id);
-        return  redirect('/alu')->with('message','store');
+        Materia::destroy($id);
+        return  redirect('/mat')->with('message','store');
     }
 }

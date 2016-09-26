@@ -20,4 +20,9 @@ class Semestre extends Model
 	
 	}
 
+	public function materias(){
+
+   		return $this->hasMany('App\Materia','semestres_id');
+	}
+
 }

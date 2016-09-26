@@ -1,17 +1,16 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-namespace App\Http\Controllers;
+use App\Http\Requests;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
 //use App\Http\Requests;
-use App\Alumno;
-use App\Grupo;
+use App\PlanEstudios;
 
-class Alumnos extends Controller
+class PlanesEstudios extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +19,8 @@ class Alumnos extends Controller
      */
     public function index()
     {
-        $Alumnos = Alumno::all()->sortBy("grupos_id");
-        return View::make('Alumnos.index')->with('Alumnos', $Alumnos);
+        $PlanesEstudios = PlanEstudios::all();
+        return View::make('PlanEstudios.index')->with("PlanesEstudios", $PlanesEstudios);
     }
 
     /**
@@ -31,8 +30,7 @@ class Alumnos extends Controller
      */
     public function create()
     {
-        $Grupos = Grupo::pluck('nombre', 'id');
-        return view::make('Alumnos.create')->with('Grupos',$Grupos);
+        return View::make ('PlanEstudios.create');
     }
 
     /**
@@ -43,8 +41,8 @@ class Alumnos extends Controller
      */
     public function store(Request $request)
     {
-        Alumno::create( $request->all() );
-        return redirect('/alu')->with('message','store');
+        PlanEstudios::create( $request -> all() );
+        return  redirect('/plan')->with('message','store');
     }
 
     /**
@@ -55,8 +53,7 @@ class Alumnos extends Controller
      */
     public function show($id)
     {
-        $Alumno = Alumno::find($id);
-        return View::make('Alumnos.show')->with('Alumno', $Alumno);
+        //
     }
 
     /**
@@ -67,10 +64,8 @@ class Alumnos extends Controller
      */
     public function edit($id)
     {
-        $Alumno = Alumno::find($id);
-        $Grupos = Grupo::pluck('nombre','id');
-
-        return View::make('Alumnos.edit')->with("Alumno", $Alumno)->with('Grupos', $Grupos);
+        $PlanEstudios = PlanEstudios::find($id);
+        return View::make('PlanEstudios.edit')->with("PlanEstudios",$PlanEstudios);
     }
 
     /**
@@ -80,12 +75,14 @@ class Alumnos extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        $Alumno = Alumno::find($id);
+        $PlanEstudios = PlanEstudios::find($id);
+        
         $input = Input::all();
-        $Alumno->update($input);
-        return  redirect('/alu')->with('message','store');
+        $PlanEstudios->update($input);
+
+        return redirect('/plan')->with('message','store');
     }
 
     /**
@@ -96,7 +93,10 @@ class Alumnos extends Controller
      */
     public function destroy($id)
     {
-        Alumno::destroy($id);
-        return  redirect('/alu')->with('message','store');
+        PlanEstudios::destroy($id);
+
+        //Al agregar los datos, se redirecciona a la carpeta ciclosescolares2 con un mensaje
+        return  redirect('/plan')->with('message','store');
+        //return Redirect::to('/ce');
     }
 }

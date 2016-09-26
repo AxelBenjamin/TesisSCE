@@ -159,11 +159,11 @@
 </div>
 
 <div class="form-group">
-	<div class="col-lg-3">
- 		{!! Form::label('nombre','Selecciona un Grupo:',['class' => 'control-label'])!!}
+<div class="col-lg-3">
+ 		{!! Form::label('rfc','RFC:',['class' => 'control-label'])!!}
  	</div>
-
-	<div class="col-lg-5">
-		{!! Form::select('grupos_id', $Grupos, null, array('class' => 'form-control')) !!}
+ 	
+ 	<div class="col-lg-5">
+		{!! Form::text('rfc',null,['class' => 'form-control']) !!}
 	</div>
 </div>

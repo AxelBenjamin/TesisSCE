@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
-//use App\Http\Requests;
-use App\Alumno;
-use App\Grupo;
 
-class Alumnos extends Controller
+//use App\Http\Requests;
+use App\Maestro;
+
+class Maestros extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +20,8 @@ class Alumnos extends Controller
      */
     public function index()
     {
-        $Alumnos = Alumno::all()->sortBy("grupos_id");
-        return View::make('Alumnos.index')->with('Alumnos', $Alumnos);
+        $Maestros = Maestro::all();
+        return View::make('Maestros.index')->with('Maestros', $Maestros);
     }
 
     /**
@@ -31,8 +31,7 @@ class Alumnos extends Controller
      */
     public function create()
     {
-        $Grupos = Grupo::pluck('nombre', 'id');
-        return view::make('Alumnos.create')->with('Grupos',$Grupos);
+        return View::make('Maestros.create');
     }
 
     /**
@@ -43,8 +42,8 @@ class Alumnos extends Controller
      */
     public function store(Request $request)
     {
-        Alumno::create( $request->all() );
-        return redirect('/alu')->with('message','store');
+        Maestro::create( $request->all() );
+        return redirect('/mae')->with('message','store');
     }
 
     /**
@@ -55,8 +54,8 @@ class Alumnos extends Controller
      */
     public function show($id)
     {
-        $Alumno = Alumno::find($id);
-        return View::make('Alumnos.show')->with('Alumno', $Alumno);
+        $Maestro = Maestro::find($id);
+        return View::make('Maestros.show')->with('Maestro', $Maestro);
     }
 
     /**
@@ -67,10 +66,8 @@ class Alumnos extends Controller
      */
     public function edit($id)
     {
-        $Alumno = Alumno::find($id);
-        $Grupos = Grupo::pluck('nombre','id');
-
-        return View::make('Alumnos.edit')->with("Alumno", $Alumno)->with('Grupos', $Grupos);
+        $Maestro = Maestro::find($id);
+        return View::make('Maestros.edit')->with("Maestro", $Maestro);
     }
 
     /**
@@ -80,12 +77,12 @@ class Alumnos extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        $Alumno = Alumno::find($id);
+        $Maestro = Maestro::find($id);
         $input = Input::all();
-        $Alumno->update($input);
-        return  redirect('/alu')->with('message','store');
+        $Maestro->update($input);
+        return  redirect('/mae')->with('message','store');
     }
 
     /**
@@ -96,7 +93,7 @@ class Alumnos extends Controller
      */
     public function destroy($id)
     {
-        Alumno::destroy($id);
-        return  redirect('/alu')->with('message','store');
+        Maestro::destroy($id);
+        return  redirect('/mae')->with('message','store');
     }
 }

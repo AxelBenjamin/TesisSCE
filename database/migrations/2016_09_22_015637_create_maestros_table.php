@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlumnosTable extends Migration
+class CreateMaestrosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateAlumnosTable extends Migration
      */
     public function up()
     {
-        Schema::create('alumnos', function (Blueprint $table) {
+        Schema::create('maestros', function (Blueprint $table) {
             $table->increments('id');
             $table->char('nombre');
             $table->char('apa');
@@ -30,9 +30,7 @@ class CreateAlumnosTable extends Migration
             $table->integer('telefono');
             $table->string('correo');
             $table->binary('foto');
-
-            $table->integer('grupos_id')->unsigned();
-            $table->foreign('grupos_id')->references('id')->on('grupos')->onDelete('cascade');
+            $table->string('rfc');
 
             $table->timestamps();
         });
@@ -45,6 +43,6 @@ class CreateAlumnosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('alumnos');
+        Schema::drop('maestros');
     }
 }
