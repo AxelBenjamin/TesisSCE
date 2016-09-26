@@ -16,7 +16,8 @@ Route::get('/', function () {
 
 Route::resource('ce', 'CicloEscolares');
 Route::resource('sem','Semestres');
-<<<<<<< HEAD
 Route::resource('gru','Grupos');
-=======
->>>>>>> f5cd582b1a36933a7742b0b00b8945b5accf28cf
+Route::resource('alu','Alumnos');
+Route::resource('plan','PlanesEstudios');
+Route::resource('mae','Maestros');
+Route::resource('mat','Materias');

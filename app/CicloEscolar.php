@@ -17,8 +17,4 @@ class CicloEscolar extends Model
 
    		return $this->hasMany('App\Semestre','ciclo_escolars_id');
 	}
-    
-    public function semestres(){
-   		return $this->hasMany('App\Semestre','ciclo_escolars_id');
-	}
 }

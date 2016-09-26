@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-//namespace App\Http\Controllers;
+use App\Http\Requests;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
 //use App\Http\Requests;
-use App\CicloEscolar;
+use App\PlanEstudios;
 
-class CicloEscolares extends Controller
+class PlanesEstudios extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,12 +19,8 @@ class CicloEscolares extends Controller
      */
     public function index()
     {
-        //return view ('CicloEscolares2.index');
-        //$CiclosEscolares = \App\CicloEscolar::all(); //trae todos los elementos de esa tabla
-        //return view('CicloEscolares.index',compact('CiclosEscolares')); //CiclosEscolares es la variable
-        
-        $CiclosEscolares = CicloEscolar::all();
-        return View::make('CicloEscolares.index')->with("CiclosEscolares", $CiclosEscolares);
+        $PlanesEstudios = PlanEstudios::all();
+        return View::make('PlanEstudios.index')->with("PlanesEstudios", $PlanesEstudios);
     }
 
     /**
@@ -34,7 +30,7 @@ class CicloEscolares extends Controller
      */
     public function create()
     {
-        return View::make ('CicloEscolares.create');
+        return View::make ('PlanEstudios.create');
     }
 
     /**
@@ -45,17 +41,10 @@ class CicloEscolares extends Controller
      */
     public function store(Request $request)
     {
-        //\App\CicloEscolar::create([
-        //    'nombre' => $request['nombre'],
-        //    'fechaInicio' => $request['fechaInicio'],
-        //    'fechaFinal' => $request['fechaFinal'],
-         //   ]);
-        
-        CicloEscolar::create( $request -> all() );
-
-        //Al agregar los datos, se redirecciona a la carpeta ciclosescolares2 con un mensaje
-        return  redirect('/ce')->with('message','store');
+        PlanEstudios::create( $request -> all() );
+        return  redirect('/plan')->with('message','store');
     }
+
     /**
      * Display the specified resource.
      *
@@ -75,10 +64,8 @@ class CicloEscolares extends Controller
      */
     public function edit($id)
     {
-        $CicloEscolar = CicloEscolar::find($id);
-        //return view('CicloEscolares.edit',['CicloEscolar'=>$CicloEscolar]);
-        return View::make('CicloEscolares.edit')->with("CicloEscolar", $CicloEscolar);
-    
+        $PlanEstudios = PlanEstudios::find($id);
+        return View::make('PlanEstudios.edit')->with("PlanEstudios",$PlanEstudios);
     }
 
     /**
@@ -90,14 +77,12 @@ class CicloEscolares extends Controller
      */
     public function update(Request $request, $id)
     {
-        $CicloEscolar = CicloEscolar::find($id);
-        //$CicloEscolar->fill($request->all());
-        //$CicloEscolar->save();
-        $input = Input::all();
-        $CicloEscolar->update( $input );
+        $PlanEstudios = PlanEstudios::find($id);
         
-        //Al editar los datos, se redirecciona a la carpeta ciclosescolares2 con un mensaje
-        return  redirect('/ce')->with('message','store');
+        $input = Input::all();
+        $PlanEstudios->update($input);
+
+        return redirect('/plan')->with('message','store');
     }
 
     /**
@@ -108,10 +93,10 @@ class CicloEscolares extends Controller
      */
     public function destroy($id)
     {
-        CicloEscolar::destroy($id);
+        PlanEstudios::destroy($id);
 
         //Al agregar los datos, se redirecciona a la carpeta ciclosescolares2 con un mensaje
-        return  redirect('/ce')->with('message','store');
+        return  redirect('/plan')->with('message','store');
         //return Redirect::to('/ce');
     }
 }
