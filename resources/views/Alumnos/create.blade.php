@@ -2,6 +2,8 @@
 
 @section('content2')
 
+@include('layouts.partials.menuGU')
+
 {!! Form::open(['route' => 'alu.store', 'method'=>'POST', 'class'=> 'form-horizontal']) !!}
 
  	@include('Alumnos.partials.campos')

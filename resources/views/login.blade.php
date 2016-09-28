@@ -64,7 +64,7 @@
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="cerrarsesion">
-                            <div align="right">Cerrar sesión</div>
+                        
                         </div>  
                     </div>    
                 </div>
@@ -80,15 +80,47 @@
         <div class="row">
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                 <div class="menuizquierdo">
-                @include('layouts.partials.menuAdmin')    
+                   
                 </div>
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                <div class="contenido">
-					@yield('content2')
-                </div>
-            </div>
+				<div class="login">	
+				<form class="form-horizontal">
+  				
+  				<div class="form-group">
+    				<label for="matricula" class="col-sm-2 control-label">Matricula</label>
+    				<div class="col-sm-10">
+      					<input type="text" class="form-control" id="matricula" placeholder="Matricula">
+    				</div>
+  				</div>
+  
+  				<div class="form-group">
+    				<label for="contraseña" class="col-sm-2 control-label">Contraseña</label>
+    				<div class="col-sm-10">
+      					<input type="password" class="form-control" id="contraseña" placeholder="Contraseña">
+    				</div>
+  				</div>
+  
+  				<div class="form-group">
+    			<div class="col-sm-offset-2 col-sm-10">
+      				<div class="checkbox">
+        			<label>
+          				<input type="checkbox"> Recordarme
+        			</label>
+      				</div>
+    			</div>
+  				</div>
+
+  				<div class="form-group">
+    			<div class="col-sm-offset-2 col-sm-10">
+      				<button type="submit" class="btn btn-default">Validar Sesión</button>
+    			</div>
+  				</div>
+
+				</form>
+			</div> <!-- Termina div de login -->
+            </div> <!--Termina diseño de login -->
 
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                 <div class="rowderecho">

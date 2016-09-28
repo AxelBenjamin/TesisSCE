@@ -16,7 +16,7 @@
 
 @section('content2')
 
-    
+@include('layouts.partials.menuGU')    
 
 	@if($mensaje == 'store')
 		<div class="alert alert-warning alert-dismissible" role="alert">

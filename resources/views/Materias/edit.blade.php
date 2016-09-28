@@ -2,6 +2,8 @@
 
 @section('content2')
 
+@include('layouts.partials.menuGM')
+
 {!! Form::model($Materia, ['route' => ['mat.update', $Materia->id], 'method'=>'PUT', 'class'=> 'form-horizontal']) !!}
 
  	@include('Materias.partials.campos')

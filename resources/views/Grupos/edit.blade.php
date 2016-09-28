@@ -2,6 +2,8 @@
 
 @section('content2')
 
+@include('layouts.partials.menuGCE')
+
 {!! Form::model($Grupo, ['route' => ['gru.update', $Grupo->id], 'method'=>'PUT', 'class'=> 'form-horizontal']) !!}
 
  	@include('Grupos.partials.campos')

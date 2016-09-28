@@ -16,7 +16,7 @@
 
 @section('content2')
 
-@include('layouts.partials.menuGCE')
+@include('layouts.partials.menuGM')
 
 	@if($mensaje == 'store')
 		<div class="alert alert-warning alert-dismissible" role="alert">
@@ -25,27 +25,30 @@
 		</div>
 	@endif
 
-	{!! link_to_route('sem.create', 'Agregar Semestre', null, array('class' => 'btn btn-default')); !!}
+	{!! link_to_route('uni.create', 'Agregar Unidad', null, array('class' => 'btn btn-default')); !!}
 
 	<div class="table-responsive">
 	
 	<table class="table table-stripped table-hover">
         <thead>
-            <th>Semestre</th>
-            <th>Ciclo Escolar</th>
+            <th>Unidad</th>
+            <th>Materia</th>
             <th colspan="2">Opciones</th>
         </thead>
 
         <tbody>
-            @foreach($Semestres as $Semestre)
+            @foreach($Unidades as $Unidad)
                 <tr>
-                	<td>{{ $Semestre->nombre }}</td>
-                    <td>{{ $Semestre->ciclo_escolars->nombre }}</td>
+                	<td>{{ $Unidad->nombre }}</td>
+                    <td>{{ $Unidad->materias->nombre }}</td>
 
-                    <td>{!!link_to_route('sem.edit', $title = 'Editar', $parameters = $Semestre->id, $attributes = ['class'=>'btn btn-primary'])!!}
+                    <td>{!!link_to_route('uni.show', $title = 'Mostrar', $parameters = $Unidad->id, $attributes = ['class'=>'btn btn-primary'])!!}
+                    </td>
+
+                    <td>{!!link_to_route('uni.edit', $title = 'Editar', $parameters = $Unidad->id, $attributes = ['class'=>'btn btn-primary'])!!}
                     </td>
                     
-                    <td>{!! Form::open(['route' => ['sem.destroy', $Semestre->id], 'method'=>'DELETE'])!!}
+                    <td>{!! Form::open(['route' => ['uni.destroy', $Unidad->id], 'method'=>'DELETE'])!!}
 						{!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!} 
 					{!! Form::close() !!} </td>
                 </tr>
