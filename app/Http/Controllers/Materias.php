@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 
+use Illuminate\Support\Facades\DB;
+
 //use App\Http\Requests;
 
 use App\Semestre;
@@ -37,7 +39,7 @@ class Materias extends Controller
     public function create()
     {
         $Semestres = Semestre::pluck('nombre', 'id');
-        $Maestros = Maestro::pluck('apa','id');
+        $Maestros = Maestro::all()->pluck("nombreCompleto","id");
         return View::make('Materias.create')->with('Semestres',$Semestres)->with('Maestros',$Maestros);
     }
 

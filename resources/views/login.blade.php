@@ -5,6 +5,7 @@
 	<title>Sistema de Control Escolar</title>
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/general.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/AdminLTE/css/AdminLTE.css')}}">
 </head>
 
 <header>
@@ -29,8 +30,8 @@
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="logounam"> <center>
-                            <a href="https://www.unam.mx/" target="_new">
-                            <img src="/src/imagenes/logo_unam5.png" class="img-responsive" alt="Responsive image"/> </center>
+                            <a href="http://www.dgire.unam.mx/" target="_new">
+                            <img src="/src/imagenes/logo-si-somos-unam2.png" class="img-responsive" alt="Responsive image"/> </center>
                             </a>
                         </div>  
                     </div>     
@@ -85,54 +86,60 @@
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-				<div class="login">	
-				<form class="form-horizontal">
-  				
-  				<div class="form-group">
-    				<label for="matricula" class="col-sm-2 control-label">Matricula</label>
-    				<div class="col-sm-10">
-      					<input type="text" class="form-control" id="matricula" placeholder="Matricula">
-    				</div>
-  				</div>
-  
-  				<div class="form-group">
-    				<label for="contraseña" class="col-sm-2 control-label">Contraseña</label>
-    				<div class="col-sm-10">
-      					<input type="password" class="form-control" id="contraseña" placeholder="Contraseña">
-    				</div>
-  				</div>
-  
-  				<div class="form-group">
-    			<div class="col-sm-offset-2 col-sm-10">
-      				<div class="checkbox">
-        			<label>
-          				<input type="checkbox"> Recordarme
-        			</label>
-      				</div>
-    			</div>
-  				</div>
+			
+            <div class="login-box">
+  <div class="login-logo">
+    
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Validar Sesión</p>
 
-  				<div class="form-group">
-    			<div class="col-sm-offset-2 col-sm-10">
-      				<button type="submit" class="btn btn-default">Validar Sesión</button>
-    			</div>
-  				</div>
+    <form action="../../index2.html" method="post">
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" placeholder="Matrícula">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Contraseña">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> Recordar
+            </label>
+          </div>
+        </div>
+        <!-- /.col -->
+        
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Validar</button>
+        </div>
+        <!-- /.col -->
+      
+      </div>
+    </form>
 
-				</form>
-			</div> <!-- Termina div de login -->
-            </div> <!--Termina diseño de login -->
+  </div>
+  <!-- /.login-box-body -->
+</div>
+        </div> <!--Termina Row de login -->
 
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                 <div class="rowderecho">
-
+                    <div class="logoFacultad">
+                    <img src="/src/imagenes/logo_computacion.png" class="img-responsive" alt="Responsive image"/>
+                    </div>
                 </div>  
             </div>
         </div>
     </div>
 </div>
 	
-    <script   src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-    <script src="src/js/bootstrap.min.js"></script>
-    <script src="src/js/bootstrap.js"></script>
+    <script src="src/js/bootstrap.min.js" language=”Javascript”></script>
+
 </body>
 </html>

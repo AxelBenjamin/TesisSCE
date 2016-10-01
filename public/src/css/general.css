@@ -24,3 +24,8 @@ header{
 .login{
 	justify-content: center; display: flex;
 }
+
+.logoFacultad{
+	display:scroll; position:fixed; bottom:20px; right:50px; height: auto;
+max-width: 100%; 
+}

@@ -5,6 +5,7 @@
 	<title>Sistema de Control Escolar</title>
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/general.css')}}">
+
 </head>
 
 <header>
@@ -29,8 +30,8 @@
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="logounam"> <center>
-                            <a href="https://www.unam.mx/" target="_new">
-                            <img src="/src/imagenes/logo_unam5.png" class="img-responsive" alt="Responsive image"/> </center>
+                            <a href="http://www.dgire.unam.mx/" target="_new">
+                            <img src="/src/imagenes/logo-si-somos-unam2.png" class="img-responsive" alt="Responsive image"/> </center>
                             </a>
                         </div>  
                     </div>     
@@ -92,15 +93,17 @@
 
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                 <div class="rowderecho">
-
+                    <div class="logoFacultad">
+                    <img src="/src/imagenes/logo_computacion.png" class="img-responsive" alt="Responsive image"/>
+                    </div>
                 </div>  
             </div>
         </div>
     </div>
 </div>
 	
-    <script   src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-    <script src="src/js/bootstrap.min.js"></script>
-    <script src="src/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="src/js/bootstrap.min.js" language=”Javascript”></script>
+
 </body>
 </html>
