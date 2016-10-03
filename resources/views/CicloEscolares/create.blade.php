@@ -2,6 +2,8 @@
 
 @section('content2')
 
+@include('layouts.partials.menuGCE')
+
 {!! Form::open(['route' => 'ce.store', 'method'=>'POST', 'class'=> 'form-horizontal']) !!}
 
  	@include('CicloEscolares.partials.campos')

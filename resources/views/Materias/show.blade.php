@@ -2,6 +2,8 @@
 
 @section('content2')
 
+@include('layouts.partials.menuGM')
+
 <div class="table-responsive">
 	
     <table class="table table-stripped table-hover">

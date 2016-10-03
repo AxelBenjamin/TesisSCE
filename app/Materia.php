@@ -23,4 +23,9 @@ class Materia extends Model
    		//->withPivot('ciclo_escolars_id','nombre','fechaInicio','fechaFinal');
 	
 	}
+
+  public function unidades(){
+
+      return $this->hasMany('App\Unidad','unidades_id');
+  }
 }

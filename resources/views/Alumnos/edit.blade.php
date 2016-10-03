@@ -2,6 +2,8 @@
 
 @section('content2')
 
+@include('layouts.partials.menuGU')
+
 {!! Form::model($Alumno, ['route' => ['alu.update', $Alumno->id], 'method'=>'PUT', 'class'=> 'form-horizontal']) !!}
 
  	@include('Alumnos.partials.campos')

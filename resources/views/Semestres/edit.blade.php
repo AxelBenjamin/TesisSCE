@@ -2,6 +2,8 @@
 
 @section('content2')
 
+@include('layouts.partials.menuGCE')
+
 {!! Form::model($Semestre, ['route' => ['sem.update', $Semestre->id], 'method'=>'PUT', 'class'=> 'form-horizontal']) !!}
 
  	@include('Semestres.partials.campos')

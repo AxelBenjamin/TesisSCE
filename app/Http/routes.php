@@ -10,9 +10,13 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-})->name('home');
+})->name('home');*/
+
+Route::get('/', function () {
+    return view('login');
+})->name('Prueba');
 
 Route::resource('ce', 'CicloEscolares');
 Route::resource('sem','Semestres');
@@ -21,3 +25,5 @@ Route::resource('alu','Alumnos');
 Route::resource('plan','PlanesEstudios');
 Route::resource('mae','Maestros');
 Route::resource('mat','Materias');
+Route::resource('uni','Unidades');
+Route::resource('tem','Temas');

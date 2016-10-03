@@ -2,6 +2,8 @@
 
 @section('content2')
 
+@include('layouts.partials.menuGM')
+
 {!! Form::open(['route' => 'mat.store', 'method'=>'POST', 'class'=> 'form-horizontal']) !!}
 
  	@include('Materias.partials.campos')

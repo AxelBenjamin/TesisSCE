@@ -1,33 +1,10 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="list-group">
+      <a href="{{ route('alu.index') }}" class="list-group-item">Gestión de Usuarios</a>
+      <a href="{{route('ce.index') }}" class="list-group-item">Gestión de Ciclo Escolar</a>
+      <a href="{{ route('mat.index') }}" class="list-group-item">Gestión de Materias</a>
+      <a href="{{route('ce.index') }}" class="list-group-item">Gestión de Documentos</a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="{{ route('ce.index') }}">Ciclo Escolar <span class="sr-only">(current)</span></a></li>
-        <li><a href="{{ route('plan.index') }}">Plan Estudios</a></li>
-        <li><a href="{{ route('sem.index') }}">Semestres</a></li>
-        <li><a href="{{ route('gru.index') }}">Grupos</a></li>
-      </ul>
-
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Buscar">
-        </div>
-        <button type="submit" class="btn btn-default">Buscar</button>
-      </form>
-
-     
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+  </div>
+</div>

@@ -2,6 +2,8 @@
 
 @section('content2')
 
+@include('layouts.partials.menuGCE')
+
 {!! Form::model($PlanEstudios, ['route' => ['plan.update', $PlanEstudios->id], 'method'=>'PUT', 'class'=> 'form-horizontal']) !!}
 
  	@include('PlanEstudios.partials.campos')
