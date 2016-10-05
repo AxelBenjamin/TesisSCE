@@ -4,7 +4,7 @@
 
 @include('layouts.partials.menuGU')
 
-{!! Form::open(['route' => 'alu.store', 'method'=>'POST', 'class'=> 'form-horizontal']) !!}
+{!! Form::open(['route' => 'alu.store', 'method'=>'POST', 'class'=> 'form-horizontal', 'files' => true]) !!}
 
  	@include('Alumnos.partials.campos')
 

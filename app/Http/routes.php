@@ -27,3 +27,9 @@ Route::resource('mae','Maestros');
 Route::resource('mat','Materias');
 Route::resource('uni','Unidades');
 Route::resource('tem','Temas');
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+
+//Route::get('/ce', 'CicloEscolares@index');
