@@ -3,12 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Sistema de Control Escolar</title>
-
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/general.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/general.min.css')}}">
-
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/AdminLTE/css/AdminLTE.css')}}">
 </head>
 
 <header>
@@ -68,11 +65,7 @@
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="cerrarsesion">
-
                         
-                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right">Cerrar sesión</div></a></p>
-                        
-
                         </div>  
                     </div>    
                 </div>
@@ -88,15 +81,13 @@
         <div class="row">
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                 <div class="menuizquierdo">
-                @include('layouts.partials.menuAdmin')    
+                   
                 </div>
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                <div class="contenido">
-					@yield('content2')
-                </div>
-            </div>
+			
+            </div> <!--Termina Row de login -->
 
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                 <div class="rowderecho">
@@ -109,10 +100,7 @@
     </div>
 </div>
 	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="src/js/bootstrap.min.js"></script>
-    <script src="src/js/bootstrap.js"></script>
-    <script   src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script src="src/js/bootstrap.min.js" language=”Javascript”></script>
 
 </body>
 </html>

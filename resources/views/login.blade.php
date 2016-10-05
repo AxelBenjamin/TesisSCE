@@ -95,15 +95,30 @@
   <div class="login-box-body">
     <p class="login-box-msg">Validar Sesión</p>
 
-    <form action="../../index2.html" method="post">
-      <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Matrícula">
+    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                        {{ csrf_field() }}
+      
+      <div class="form-group has-feedback {{ $errors->has('name') ? ' has-error' : '' }}">
+        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+        @if ($errors->has('name'))
+            <span class="help-block">
+                <strong>{{ $errors->first('Matricula') }}</strong>
+            </span>
+        @endif
       </div>
-      <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Contraseña">
+
+      <div class="form-group has-feedback {{ $errors->has('password') ? ' has-error' : '' }}">
+        <input id="password" type="password" class="form-control" name="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        @if ($errors->has('password'))
+            <span class="help-block">
+                <strong>{{ $errors->first('Contraseña') }}</strong>
+            </span>
+        @endif
       </div>
+
       <div class="row">
         
         <div class="col-xs-8">
@@ -116,6 +131,8 @@
         <!-- /.col -->
         
         <div class="col-xs-4">
+   
+
           <button type="submit" class="btn btn-primary btn-block btn-flat">Validar</button>
         </div>
         <!-- /.col -->

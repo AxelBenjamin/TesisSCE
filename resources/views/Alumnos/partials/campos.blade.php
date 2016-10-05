@@ -154,7 +154,7 @@
  	</div>
  	
  	<div class="col-lg-5">
-		{!! Form::file('foto',null,['class' => 'form-control']) !!}
+		{!! Form::file('foto', null) !!}
 	</div>
 </div>
 

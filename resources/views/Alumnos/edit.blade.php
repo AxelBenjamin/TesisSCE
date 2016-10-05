@@ -4,7 +4,7 @@
 
 @include('layouts.partials.menuGU')
 
-{!! Form::model($Alumno, ['route' => ['alu.update', $Alumno->id], 'method'=>'PUT', 'class'=> 'form-horizontal']) !!}
+{!! Form::model($Alumno, ['route' => ['alu.update', $Alumno->id], 'method'=>'PUT', 'class'=> 'form-horizontal', 'files' => true]) !!}
 
  	@include('Alumnos.partials.campos')
 

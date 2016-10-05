@@ -55,7 +55,9 @@
             </tr>
             <tr>
                 <th>Foto</th>
-                <td>{{ $Alumno->foto }}</td>
+                <th>
+                    <img src="ImagenesUsuarios/{{$Alumno->foto}}" style="width:100px;">
+                </th>
             </tr>
             <tr>
                 <th>Grupo</th>
