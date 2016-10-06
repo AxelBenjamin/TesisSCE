@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
+//use App\Http\Requests;
+use App\Reporte;
 
 class Reportes extends Controller
 {
@@ -15,7 +19,9 @@ class Reportes extends Controller
      */
     public function index()
     {
-        //
+        $Reportes = Reporte::all();
+
+        return View::make('Reportes.index')->with("Reportes", $Reportes);
     }
 
     /**

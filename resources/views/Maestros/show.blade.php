@@ -6,18 +6,16 @@
 
 <div class="table-responsive">
 	
-    <table class="table table-stripped table-hover">
-        
         <table class="table table-stripped table-hover">
-            <tr>
-                <th>Matricula</th>
-                <td>{{ $Maestro->matricula }}</td>
-            </tr>
+        
             <tr>
                 <th>Nombre</th>
                 <td>{{ $Maestro->apa }}
                     {{ $Maestro->ama }}
                     {{ $Maestro->nombre }}
+                </td>
+                <th>Foto</th>
+                <td><img src="ImagenesUsuarios/{{ $Maestro->foto }}" style="width:200px;">
                 </td>
             </tr>
             <tr>
@@ -33,37 +31,42 @@
                 <td>{{ $Maestro->curp }}</td>
             </tr>
             <tr>
-                <th>Dirección</th>
-                <td>{{ $Maestro->colonia }}
-                    {{ $Maestro->calle }}
-                    {{ $Maestro->cp }}
-                </td>
-            </tr>
-            <tr>
-                <th>Estado</th>
-                <td>{{ $Maestro->municipio }}, 
-                    {{ $Maestro->estado }}
-                </td>
-            </tr>
-            <tr>
-                <th>Telefono</th>
-                <td>{{ $Maestro->telefono }}</td>
-            </tr>
-            <tr>
-                <th>Correo</th>
-                <td>{{ $Maestro->correo }}</td>
-            </tr>
-            <tr>
-                <th>Foto</th>
-                <td>{{ $Maestro->foto }}</td>
-            </tr>
-            <tr>
+                <th>Matricula</th>
+                <td>{{ $Maestro->matricula }}</td>
                 <th>RFC</th>
                 <td>{{ $Maestro->rfc }}</td>
             </tr>
         </table>
 
-    </table>
+        <table class="table table-stripped table-hover">
+            
+            <tr>
+                <th>Dirección</th>
+            </tr>
+            <tr>
+                <th>Colonia</th>
+                <td>{{ $Maestro->colonia }}</td>
+                <th>Calle</th>
+                <td>{{ $Maestro->calle }}</td>
+            </tr>
+            <tr>
+                <th>Código Postal</th>
+                <td>{{ $Maestro->cp }}</td>
+                <th>Municipio</th>
+                <td>{{ $Maestro->municipio }}</td>
+                <th>Estado</th>
+                <td>{{ $Maestro->estado }}</td> 
+            </tr>
+        </table>
+
+        <table class="table table-stripped table-hover">
+            <tr>
+                <th>Telefono</th>
+                <td>{{ $Maestro->telefono }}</td>
+                <th>Correo</th>
+                <td>{{ $Maestro->correo }}</td>
+            </tr>            
+        </table>
 
 	</div>
 

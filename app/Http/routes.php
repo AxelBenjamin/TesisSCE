@@ -27,6 +27,7 @@ Route::resource('mae','Maestros');
 Route::resource('mat','Materias');
 Route::resource('uni','Unidades');
 Route::resource('tem','Temas');
+Route::resource('rep','Reportes');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
