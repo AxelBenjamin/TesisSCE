@@ -92,24 +92,29 @@
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            @include('Admin.layouts.partials.menuGD') 
 
             <div class="padre">
                 <div class="hijo">
-                    {!! link_to_route('alu.index', 'Gestión de Usuarios', null, array('class' => 'botonGU botonGU1')); !!}
+                    {!! link_to_route('alu.index', 'Horario de Clases', null, array('class' => 'botonGU botonGU1')); !!}
                 </div>
 
                 <div class="hijo">
-                    {!! link_to_route('mat.index', 'Gestión de Materias', null, array('class' => 'botonGU botonGU1')); !!}
+                    {!! link_to_route('mat.index', 'Calendario de Examenes', null, array('class' => 'botonGU botonGU1')); !!}
+                </div>
+
+                <div class="hijo">
+                    {!! link_to_route('ce.index', 'Lista de Alumnos', null, array('class' => 'botonGU botonGU1')); !!}
                 </div>
             </div>
 
             <div class="padre">
                 <div class="hijo">
-                    {!! link_to_route('ce.index', 'Gestión de Ciclo Escolar', null, array('class' => 'botonGU botonGU1')); !!}
+                    {!! link_to_route('ce.index', 'Calendario de Visitantes', null, array('class' => 'botonGU botonGU1')); !!}
                 </div>
                 
                 <div class="hijo">
-                    {!! link_to_route('Agregar Documentos', 'Gestión de Documentos', null, array('class' => 'botonGU botonGU1')); !!}
+                    {!! link_to_route('ce.index', 'Carta de Asignación', null, array('class' => 'botonGU botonGU1')); !!}
                 </div>
             </div>
 

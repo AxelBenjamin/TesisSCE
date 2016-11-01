@@ -21,7 +21,7 @@ class Temas extends Controller
     public function index()
     {
         $Temas = Tema::all()->sortBy("unidads_id");
-        return View::make('Temas.index')->with('Temas', $Temas);
+        return View::make('Admin.Temas.index')->with('Temas', $Temas);
     }
 
     /**
@@ -32,7 +32,7 @@ class Temas extends Controller
     public function create()
     {
         $Unidades = Unidad::pluck('nombre', 'id');
-        return view::make('Temas.create')->with('Unidades',$Unidades);
+        return view::make('Admin.Temas.create')->with('Unidades',$Unidades);
     }
 
     /**
@@ -69,7 +69,7 @@ class Temas extends Controller
         $Tema = Tema::find($id);
         $Unidades = Unidad::pluck('nombre','id');
         
-        return view::make('Temas.edit')->with('Tema', $Tema)->with('Unidades', $Unidades);
+        return view::make('Admin.Temas.edit')->with('Tema', $Tema)->with('Unidades', $Unidades);
     }
 
     /**
@@ -96,6 +96,6 @@ class Temas extends Controller
     public function destroy($id)
     {
         Tema::destroy($id);
-        return  redirect('/sem')->with('message','store');
+        return  redirect('/tem')->with('message','store');
     }
 }

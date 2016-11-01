@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sistema de Control Escolar</title>
+	<meta charset="UTF-8">
+	<title>Sistema de Control Escolar</title>
 
     <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/general.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/general.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/general.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/botonesPanel.css')}}">
 
 </head>
 
 <header>
-    <!--Row 1 Titulo y logos-->
-    <div class="row">
+	<!--Row 1 Titulo y logos-->
+	<div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
 
                 <div class="row">
@@ -47,7 +48,7 @@
 
 
 <div class="container-fluid">
-    @yield('content')
+	@yield('content')
 </div>
 
 <!--Row 2 PEqueño de fecha a la izquierda y cerrar sesión -->
@@ -87,33 +88,16 @@
         <!--Subdividimos este row en 3 columnas-->
         <div class="row">
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                <div class="menuizquierdo">   
+                <div class="menuizquierdo">
+                @include('Admin.layouts.partials.menuAdmin')    
                 </div>
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-
-            <div class="padre">
-                <div class="hijo">
-                    {!! link_to_route('alu.index', 'Gestión de Usuarios', null, array('class' => 'botonGU botonGU1')); !!}
-                </div>
-
-                <div class="hijo">
-                    {!! link_to_route('mat.index', 'Gestión de Materias', null, array('class' => 'botonGU botonGU1')); !!}
+                <div class="contenido">
+					@yield('content2')
                 </div>
             </div>
-
-            <div class="padre">
-                <div class="hijo">
-                    {!! link_to_route('ce.index', 'Gestión de Ciclo Escolar', null, array('class' => 'botonGU botonGU1')); !!}
-                </div>
-                
-                <div class="hijo">
-                    {!! link_to_route('Agregar Documentos', 'Gestión de Documentos', null, array('class' => 'botonGU botonGU1')); !!}
-                </div>
-            </div>
-
-            </div><!--Termina Row del contenido de en medio, del panel-->
 
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                 <div class="rowderecho">
@@ -125,7 +109,7 @@
         </div>
     </div>
 </div>
-    
+	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="src/js/bootstrap.min.js"></script>
     <script src="src/js/bootstrap.js"></script>

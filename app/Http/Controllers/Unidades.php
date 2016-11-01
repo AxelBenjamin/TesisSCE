@@ -22,7 +22,7 @@ class Unidades extends Controller
     public function index()
     {
         $Unidades = Unidad::all()->sortBy("materias_id");
-        return View::make('Unidades.index')->with('Unidades', $Unidades);
+        return View::make('Admin.Unidades.index')->with('Unidades', $Unidades);
     }
 
     /**
@@ -33,7 +33,7 @@ class Unidades extends Controller
     public function create()
     {
         $Materias = Materia::pluck('nombre', 'id');
-        return view::make('Unidades.create')->with('Materias',$Materias);
+        return view::make('Admin.Unidades.create')->with('Materias',$Materias);
     }
 
     /**
@@ -57,7 +57,7 @@ class Unidades extends Controller
     public function show($id)
     {
         $Unidad = Unidad::find($id);
-        return View::make('Unidades.show')->with('Unidad', $Unidad);
+        return View::make('Admin.Unidades.show')->with('Unidad', $Unidad);
     }
 
     /**
@@ -71,7 +71,7 @@ class Unidades extends Controller
         $Unidad = Unidad::find($id);
         $Materias = Materia::pluck('nombre','id');
         
-        return view::make('Unidades.edit')->with('Unidad', $Unidad)->with('Materias', $Materias);
+        return view::make('Admin.Unidades.edit')->with('Unidad', $Unidad)->with('Materias', $Materias);
     }
 
     /**

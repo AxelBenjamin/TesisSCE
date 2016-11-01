@@ -21,7 +21,7 @@ class Alumnos extends Controller
     public function index()
     {
         $Alumnos = Alumno::all()->sortBy("grupos_id");
-        return View::make('Alumnos.index')->with('Alumnos', $Alumnos);
+        return View::make('Admin.Alumnos.index')->with('Alumnos', $Alumnos);
     }
 
     /**
@@ -32,7 +32,7 @@ class Alumnos extends Controller
     public function create()
     {
         $Grupos = Grupo::pluck('nombre', 'id');
-        return view::make('Alumnos.create')->with('Grupos',$Grupos);
+        return view::make('Admin.Alumnos.create')->with('Grupos',$Grupos);
     }
 
     /**
@@ -56,7 +56,7 @@ class Alumnos extends Controller
     public function show($id)
     {
         $Alumno = Alumno::find($id);
-        return View::make('Alumnos.show')->with('Alumno', $Alumno);
+        return View::make('Admin.Alumnos.show')->with('Alumno', $Alumno);
     }
 
     /**
@@ -70,7 +70,7 @@ class Alumnos extends Controller
         $Alumno = Alumno::find($id);
         $Grupos = Grupo::pluck('nombre','id');
 
-        return View::make('Alumnos.edit')->with("Alumno", $Alumno)->with('Grupos', $Grupos);
+        return View::make('Admin.Alumnos.edit')->with("Alumno", $Alumno)->with('Grupos', $Grupos);
     }
 
     /**

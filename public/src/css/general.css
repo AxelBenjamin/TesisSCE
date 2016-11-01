@@ -17,6 +17,8 @@ header{
 
 .contenido { border-right: 2px solid; border-left: 2px solid; padding: 1em;}
 
+.panelAdmin { justify-content:center;}
+
 .fecha{ padding-left: 1em; }
 
 .cerrarsesion{ padding-right: 1em; }
@@ -28,4 +30,18 @@ header{
 .logoFacultad{
 	display:scroll; position:fixed; bottom:20px; right:50px; height: auto;
 max-width: 100%; 
+}
+
+.padre {
+  /* IMPORTANTE */
+  text-align: center;
+}
+
+.hijo {
+  /*background-color: yellow;*/
+  padding: 10px;
+  margin: 10px;
+  
+  /* IMPORTANTE */
+  display: inline-block;
 }
