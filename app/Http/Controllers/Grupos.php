@@ -21,7 +21,7 @@ class Grupos extends Controller
     public function index()
     {
         $Grupos = Grupo::all();
-        return View::make('Grupos.index')->with("Grupos", $Grupos);
+        return View::make('Admin.Grupos.index')->with("Grupos", $Grupos);
     }
 
     /**
@@ -31,7 +31,7 @@ class Grupos extends Controller
      */
     public function create()
     {
-        return View::make ('Grupos.create');
+        return View::make ('Admin.Grupos.create');
     }
 
     /**
@@ -66,7 +66,7 @@ class Grupos extends Controller
     public function edit($id)
     {
         $Grupo = Grupo::find($id);
-        return View::make('Grupos.edit')->with("Grupo", $Grupo);
+        return View::make('Admin.Grupos.edit')->with("Grupo", $Grupo);
     }
 
     /**

@@ -24,7 +24,7 @@ class CicloEscolares extends Controller
         //return view('CicloEscolares.index',compact('CiclosEscolares')); //CiclosEscolares es la variable
         
         $CiclosEscolares = CicloEscolar::all();
-        return View::make('CicloEscolares.index')->with("CiclosEscolares", $CiclosEscolares);
+        return View::make('Admin.CicloEscolares.index')->with("CiclosEscolares", $CiclosEscolares);
     }
 
     /**
@@ -34,7 +34,7 @@ class CicloEscolares extends Controller
      */
     public function create()
     {
-        return View::make ('CicloEscolares.create');
+        return View::make ('Admin.CicloEscolares.create');
     }
 
     /**
@@ -77,7 +77,7 @@ class CicloEscolares extends Controller
     {
         $CicloEscolar = CicloEscolar::find($id);
         //return view('CicloEscolares.edit',['CicloEscolar'=>$CicloEscolar]);
-        return View::make('CicloEscolares.edit')->with("CicloEscolar", $CicloEscolar);
+        return View::make('Admin.CicloEscolares.edit')->with("CicloEscolar", $CicloEscolar);
     
     }
 

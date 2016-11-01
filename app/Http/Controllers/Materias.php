@@ -28,7 +28,7 @@ class Materias extends Controller
     {
         $Materias = Materia::all()->sortBy("semestres_id");
         $Materias = Materia::all()->sortBy("maestros_id");
-        return View::make('Materias.index')->with('Materias',$Materias);
+        return View::make('Admin.Materias.index')->with('Materias',$Materias);
     }
 
     /**
@@ -40,7 +40,7 @@ class Materias extends Controller
     {
         $Semestres = Semestre::pluck('nombre', 'id');
         $Maestros = Maestro::all()->pluck("nombreCompleto","id");
-        return View::make('Materias.create')->with('Semestres',$Semestres)->with('Maestros',$Maestros);
+        return View::make('Admin.Materias.create')->with('Semestres',$Semestres)->with('Maestros',$Maestros);
     }
 
     /**
@@ -64,7 +64,7 @@ class Materias extends Controller
     public function show($id)
     {
         $Materia = Materia::find($id);
-        return View::make('Materias.show')->with("Materia", $Materia);
+        return View::make('Admin.Materias.show')->with("Materia", $Materia);
     }
 
     /**
@@ -79,7 +79,7 @@ class Materias extends Controller
         $Semestres = Semestre::pluck('nombre', 'id');
         $Maestros = Maestro::pluck('apa','id');
 
-        return View::make('Materias.edit')->with("Materia", $Materia)->with('Semestres', $Semestres)->with("Maestros",$Maestros);
+        return View::make('Admin.Materias.edit')->with("Materia", $Materia)->with('Semestres', $Semestres)->with("Maestros",$Maestros);
     }
 
     /**

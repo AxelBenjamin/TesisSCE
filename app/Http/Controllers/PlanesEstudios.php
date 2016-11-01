@@ -20,7 +20,7 @@ class PlanesEstudios extends Controller
     public function index()
     {
         $PlanesEstudios = PlanEstudios::all();
-        return View::make('PlanEstudios.index')->with("PlanesEstudios", $PlanesEstudios);
+        return View::make('Admin.PlanEstudios.index')->with("PlanesEstudios", $PlanesEstudios);
     }
 
     /**
@@ -30,7 +30,7 @@ class PlanesEstudios extends Controller
      */
     public function create()
     {
-        return View::make ('PlanEstudios.create');
+        return View::make ('Admin.PlanEstudios.create');
     }
 
     /**
@@ -65,7 +65,7 @@ class PlanesEstudios extends Controller
     public function edit($id)
     {
         $PlanEstudios = PlanEstudios::find($id);
-        return View::make('PlanEstudios.edit')->with("PlanEstudios",$PlanEstudios);
+        return View::make('Admin.PlanEstudios.edit')->with("PlanEstudios",$PlanEstudios);
     }
 
     /**

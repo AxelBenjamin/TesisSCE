@@ -21,7 +21,7 @@ class Maestros extends Controller
     public function index()
     {
         $Maestros = Maestro::all();
-        return View::make('Maestros.index')->with('Maestros', $Maestros);
+        return View::make('Admin.Maestros.index')->with('Maestros', $Maestros);
     }
 
     /**
@@ -31,7 +31,7 @@ class Maestros extends Controller
      */
     public function create()
     {
-        return View::make('Maestros.create');
+        return View::make('Admin.Maestros.create');
     }
 
     /**
@@ -55,7 +55,7 @@ class Maestros extends Controller
     public function show($id)
     {
         $Maestro = Maestro::find($id);
-        return View::make('Maestros.show')->with('Maestro', $Maestro);
+        return View::make('Admin.Maestros.show')->with('Maestro', $Maestro);
     }
 
     /**
@@ -67,7 +67,7 @@ class Maestros extends Controller
     public function edit($id)
     {
         $Maestro = Maestro::find($id);
-        return View::make('Maestros.edit')->with("Maestro", $Maestro);
+        return View::make('Admin.Maestros.edit')->with("Maestro", $Maestro);
     }
 
     /**

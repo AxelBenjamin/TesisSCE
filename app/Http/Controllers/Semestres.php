@@ -26,7 +26,7 @@ class Semestres extends Controller
         //$Semestres = \App\Semestre::all(); //trae todos los elementos de esa tabla
         //return view('Semestres.index',compact('Semestres','CiclosEscolares')); //Semestres es la variable
         $Semestres = Semestre::all()->sortBy("ciclo_escolars_id");
-        return View::make('Semestres.index')->with('Semestres', $Semestres);
+        return View::make('Admin.Semestres.index')->with('Semestres', $Semestres);
     }
 
     /**
@@ -41,7 +41,7 @@ class Semestres extends Controller
         //return view('Semestres.create',compact('CiclosEscolares')); //CiclosEscolares es la variable
 
         $CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
-        return view::make('Semestres.create')->with('CiclosEscolares',$CiclosEscolares);
+        return view::make('Admin.Semestres.create')->with('CiclosEscolares',$CiclosEscolares);
     }
 
     /**
@@ -98,7 +98,7 @@ class Semestres extends Controller
         $Semestre = Semestre::find($id);
         $CiclosEscolares = CicloEscolar::pluck('nombre','id');
         
-        return view::make('Semestres.edit')->with('Semestre', $Semestre)->with('CiclosEscolares', $CiclosEscolares);
+        return view::make('Admin.Semestres.edit')->with('Semestre', $Semestre)->with('CiclosEscolares', $CiclosEscolares);
     }
 
     /**

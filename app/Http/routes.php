@@ -32,5 +32,12 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/PanelAdmin', function () {
+    return view('Admin.panelAdmin');
+})->name('Panel de Administrador');
+
+Route::get('/AgregarDocumentos', function () {
+    return view('Admin.Documentos.AgregarDoc.AgregarDoc');
+})->name('Agregar Documentos');
 
 //Route::get('/ce', 'CicloEscolares@index');
