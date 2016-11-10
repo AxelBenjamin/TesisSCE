@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 //use App\Http\Requests;
 //use App\Http\Requests;
 use App\Grupo;
+use App\Alumno;
 
 class Grupos extends Controller
 {
@@ -54,7 +55,8 @@ class Grupos extends Controller
      */
     public function show($id)
     {
-        //
+        $Grupos = Grupo::all();
+        return View::make('Admin.Grupos.show')->with("Grupos", $Grupos);
     }
 
     /**
