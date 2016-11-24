@@ -41,3 +41,7 @@ Route::get('/AgregarDocumentos', function () {
 })->name('Agregar Documentos');
 
 //Route::get('/ce', 'CicloEscolares@index');
+//
+Route::get('/Documentos/AgregarDoc/ListaAlu', function () {
+    return view('Admin.Documentos.AgregarDoc.ListaAlu.ListaAlu');
+})->name('Agregar Documentos');
