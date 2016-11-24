@@ -55,8 +55,8 @@ class Grupos extends Controller
      */
     public function show($id)
     {
-        $Grupos = Grupo::all();
-        return View::make('Admin.Grupos.show')->with("Grupos", $Grupos);
+        $Grupo = Grupo::find($id);
+        return View::make('Admin.Grupos.show')->with('Grupo', $Grupo);
     }
 
     /**

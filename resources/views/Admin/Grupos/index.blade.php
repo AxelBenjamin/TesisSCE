@@ -37,11 +37,21 @@
 	@foreach($Grupos as $Grupo) 
 		<tbody>
 			<th> {{$Grupo->nombre}} </th>
-			<th> {!!link_to_route('gru.show', $title = 'Mostrar Alumnos', $parameters = $Grupo->id, $attributes = ['class'=>'btn btn-primary'])!!} </th>
-			<th> {!!link_to_route('gru.edit', $title = 'Editar', $parameters = $Grupo->id, $attributes = ['class'=>'btn btn-primary'])!!} </th>
-			<th>{!! Form::open(['route' => ['gru.destroy', $Grupo->id], 'method'=>'DELETE']) !!}
+
+			<th> 
+
+			<th>
+				{!!link_to_route('gru.show', $title = 'Mostrar Alumnos', $parameters = $Grupo->id, $attributes = ['class'=>'btn btn-primary'])!!} </th>
+
+			<th>	
+				{!!link_to_route('gru.edit', $title = 'Editar', $parameters = $Grupo->id, $attributes = ['class'=>'btn btn-primary'])!!} </th>
+
+			<th>	
+				{!! Form::open(['route' => ['gru.destroy', $Grupo->id], 'method'=>'DELETE']) !!}
 					{!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
 				{!! Form::close() !!} </th>
+			</th>
+			
 		</tbody>
 	@endforeach
 	</table>
