@@ -30,15 +30,15 @@
 	<div class="table-responsive">
 	<table class="table table-hover">
 		<thead>
-			<th>Nombre</th>
-			<th>Opciones</th>
+			<th>Grupo</th>
+			<th colspan="2">Opciones</th>
 		</thead>
 	
 	@foreach($Grupos as $Grupo) 
 		<tbody>
 			<th> {{$Grupo->nombre}} </th>
 
-			<th> 
+			
 
 			<th>
 				{!!link_to_route('gru.show', $title = 'Mostrar Alumnos', $parameters = $Grupo->id, $attributes = ['class'=>'btn btn-primary'])!!} </th>
@@ -50,7 +50,7 @@
 				{!! Form::open(['route' => ['gru.destroy', $Grupo->id], 'method'=>'DELETE']) !!}
 					{!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
 				{!! Form::close() !!} </th>
-			</th>
+			
 			
 		</tbody>
 	@endforeach

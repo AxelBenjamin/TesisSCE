@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 
-	@extends('layouts.master')
+	@extends('Admin.layouts.master')
     
 	<title>Sistema de Control Escolar</title>
 </head>
@@ -16,7 +16,7 @@
 
 @section('content2')
 
-@include('layouts.partials.menuGD')
+@include('Admin.layouts.partials.menuGD')
 
 	@if($mensaje == 'store')
 		<div class="alert alert-warning alert-dismissible" role="alert">
@@ -24,6 +24,7 @@
   		<p>Acción realizada con exito</p>
 		</div>
 	@endif
+	
 	
 @endsection
 	

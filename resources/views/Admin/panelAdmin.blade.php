@@ -93,24 +93,13 @@
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 
-            <div class="padre">
-                <div class="hijo">
-                    {!! link_to_route('alu.index', 'Gestión de Usuarios', null, array('class' => 'botonGU botonGU1')); !!}
-                </div>
+                    {!! link_to_route('alu.index', 'Gestión de Usuarios', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
+               
+                    {!! link_to_route('mat.index', 'Gestión de Materias', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
 
-                <div class="hijo">
-                    {!! link_to_route('mat.index', 'Gestión de Materias', null, array('class' => 'botonGU botonGU1')); !!}
-                </div>
-            </div>
-
-            <div class="padre">
-                <div class="hijo">
-                    {!! link_to_route('ce.index', 'Gestión de Ciclo Escolar', null, array('class' => 'botonGU botonGU1')); !!}
-                </div>
-                
-                <div class="hijo">
-                    {!! link_to_route('Agregar Documentos', 'Gestión de Documentos', null, array('class' => 'botonGU botonGU1')); !!}
-                </div>
+                    {!! link_to_route('ce.index', 'Gestión de Ciclo Escolar', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
+                  
+                    {!!link_to('/AgregarDocumentos', $title = 'Gestión de Documentos', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
             </div>
 
             </div><!--Termina Row del contenido de en medio, del panel-->
