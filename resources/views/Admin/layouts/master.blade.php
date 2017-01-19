@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/general.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/general.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/botonesPanel.css')}}">
 
 </head>
@@ -94,7 +93,8 @@
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                <div class="contenido">
+                <!--<div class="contenido">-->
+                <div style="border-left:1px solid #000; height:550px; border-right:1px solid #000; height:550px; padding:1em">
 					@yield('content2')
                 </div>
             </div>

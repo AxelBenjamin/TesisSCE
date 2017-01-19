@@ -87,21 +87,28 @@
         <!--Subdividimos este row en 3 columnas-->
         <div class="row">
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                <div class="menuizquierdo">   
+                <div class="menuizquierdo"> 
+                @include('Maestro.layouts.partials.menuMaestro')   
                 </div>
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div style="border-left:1px solid #000; height:550px; border-right:1px solid #000; height:550px; padding:1em">
+            @include('Maestro.layouts.partials.menuGD') 
 
-                    {!! link_to_route('ce.index', 'Boleta de Calificaciones', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
-                  
-                    {!!link_to('/AgregarDocumentosM', $title = 'Horario de Clases', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
 
-                    {!!link_to('/AgregarDocumentosM', $title = 'Calendario de Exámenes', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            {!! link_to_route('alu.index', 'Programa Sintetizado', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
 
-                    {!!link_to('/AgregarDocumentosM', $title = 'Acuerdo de Grupo', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
+            {!! link_to_route('alu.index', 'Programa Extendido', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
+
+            {!! link_to_route('grupoPDF.index', 'Acuerdo de Grupo', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
             </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+
             </div>
             </div><!--Termina Row del contenido de en medio, del panel-->
 

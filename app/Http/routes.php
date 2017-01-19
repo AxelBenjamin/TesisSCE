@@ -32,16 +32,38 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+
 Route::get('/PanelAdmin', function () {
     return view('Admin.panelAdmin');
 })->name('Panel de Administrador');
+
+Route::get('/PanelMaestro', function () {
+    return view('Maestro.panelMaestro');
+})->name('Panel de Maestro');
+
+
+Route::get('/PanelAlumno', function () {
+    return view('Alumno.panelAlumno');
+})->name('Panel de Alumno');
+
 
 Route::get('/AgregarDocumentos', function () {
     return view('Admin.Documentos.AgregarDoc.AgregarDoc');
 })->name('Agregar Documentos');
 
+Route::get('/AgregarDocumentosM', function () {
+    return view('Maestro.Documentos.AgregarDocM');
+})->name('Agregar Documentos');
+
 //Route::get('/ce', 'CicloEscolares@index');
 //
-Route::get('/Documentos/AgregarDoc/ListaAlu', function () {
+/*Route::get('/Documentos/AgregarDoc/ListaAlu', function () {
     return view('Admin.Documentos.AgregarDoc.ListaAlu.ListaAlu');
-})->name('Agregar Documentos');
+})->name('Agregar Lista de Alumnos');*/
+
+/*Route::get('/Documentos/AgregarDoc/ListaAlu/Lista_Alumnos', function () {
+    return view('Admin.Documentos.AgregarDoc.ListaAlu.Lista_Alumnos');
+})->name('Lista de Grupos');*/
+Route::resource('grupoPDF','ListaAlumnos');
+Route::get('crear_lista_alumnos/{tipo}/{id}', 'ListaAlumnos@crear_lista_alumnos');
+//

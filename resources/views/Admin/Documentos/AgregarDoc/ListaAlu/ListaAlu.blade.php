@@ -16,7 +16,7 @@
 
 @section('content2')
 
-@include('Admin.layouts.partials.menuGU')    
+@include('Admin.layouts.partials.menuGD')    
 
 	@if($mensaje == 'store')
 		<div class="alert alert-warning alert-dismissible" role="alert">
@@ -25,30 +25,27 @@
 		</div>
 	@endif
 
-	{!! link_to_route('alu.create', 'Agregar Alumno', null, array('class' => 'btn btn-default')); !!}
-
-	<div class="table-responsive">
-	
-	<table class="table table-stripped table-hover">
+    <div class="table-responsive">
+    <table class="table table-stripped table-hover">
         <thead>
             <th>Grupo</th>
             <th colspan="2">Opciones</th>
         </thead>
 
+        @foreach($Grupos as $Grupo) 
         <tbody>
-                <tr>
-                    <td>{!!link_to_route('alu.show', $title = 'Visualizar', $attributes = ['class'=>'btn btn-primary'])!!}
-                    </td>
+            <th> {{$Grupo->nombre}} </th>
 
-                    <td>{!!link_to_route('alu.edit', $title = 'Descargar', $attributes = ['class'=>'btn btn-primary'])!!}
-                    </td>
-                </tr>
+            <th>{!!link_to_action('ListaAlumnos@crear_lista_alumnos', $title = 'Mostrar Lista', $parameters = array('1' , $Grupo->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+
+            <th>{!!link_to_action('ListaAlumnos@crear_lista_alumnos', $title = 'Descargar', $parameters = array('2' , $Grupo->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+            
         </tbody>
+        @endforeach   
+    
     </table>
-
-
 	</div>
 @endsection
-	
+
 </body>
 </html>

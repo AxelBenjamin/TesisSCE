@@ -15,7 +15,7 @@ header{
 
 .rowderecho { /*border-left: 2px solid; */}
 
-.contenido { border-right: 2px solid; border-left: 2px solid; padding: 1em;}
+.contenido { border-right: 2px solid; border-left: 2px solid; }
 
 .panelAdmin { justify-content:center;}
 
