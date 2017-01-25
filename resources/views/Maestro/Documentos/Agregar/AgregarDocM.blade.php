@@ -104,7 +104,7 @@
 
             {!! link_to_route('alu.index', 'Programa Extendido', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
 
-            {!! link_to_route('grupoPDF.index', 'Acuerdo de Grupo', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
+            {!! link_to_route('AcuerdoGrupo.index', 'Acuerdo de Grupo', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>

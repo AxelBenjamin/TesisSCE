@@ -52,8 +52,19 @@ Route::get('/AgregarDocumentos', function () {
 })->name('Agregar Documentos');
 
 Route::get('/AgregarDocumentosM', function () {
-    return view('Maestro.Documentos.AgregarDocM');
+    return view('Maestro.Documentos.Agregar.AgregarDocM');
 })->name('Agregar Documentos');
+
+
+/*Route::get('/AgregarDocumentosM/Calificaciones', function () {
+    return view('Maestro.Documentos.Agregar.Calificaciones.ListaCalificacionesIndex');
+})->name('Asignar Calificaciones');*/
+
+Route::get('AgregarDocumentosM/Calificaciones','Calificaciones@index');
+
+Route::get('/AgregarDocumentosM/Calificaciones/ActaCalificaciones', function () {
+    return view('Maestro.Documentos.Agregar.Calificaciones.ActaCalificaciones');
+})->name('Acta de Calificaciones');
 
 //Route::get('/ce', 'CicloEscolares@index');
 //
@@ -64,6 +75,9 @@ Route::get('/AgregarDocumentosM', function () {
 /*Route::get('/Documentos/AgregarDoc/ListaAlu/Lista_Alumnos', function () {
     return view('Admin.Documentos.AgregarDoc.ListaAlu.Lista_Alumnos');
 })->name('Lista de Grupos');*/
+
+Route::resource('AcuerdoGrupo','Acuerdos');
+
 Route::resource('grupoPDF','ListaAlumnos');
 Route::get('crear_lista_alumnos/{tipo}/{id}', 'ListaAlumnos@crear_lista_alumnos');
 //

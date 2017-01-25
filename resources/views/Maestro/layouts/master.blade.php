@@ -87,15 +87,15 @@
         <!--Subdividimos este row en 3 columnas-->
         <div class="row">
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                <div class="menuizquierdo">   
+                <div class="menuizquierdo">
+                    @include('Maestro.layouts.partials.menuMaestro')   
                 </div>
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-
-                    {!! link_to('AgregarDocumentosM/Calificaciones', $title='Asignar Calificaciones y Faltas', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
-                  
-                    {!!link_to('/AgregarDocumentosM', $title = 'Gestión de Documentos', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
+                <div style="border-left:1px solid #000;height:450px; border-right:1px solid #000;height:450px; padding:1em">
+                    @yield('contentMaestro')
+                </div>
             </div>
 
             </div><!--Termina Row del contenido de en medio, del panel-->

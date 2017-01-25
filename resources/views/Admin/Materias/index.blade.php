@@ -6,7 +6,7 @@
     
 @section('content2')
 
-@include('Admin.layouts.partials.menuGM')
+@include('Admin.layouts.partials.menuGD')
 
 	@if($mensaje == 'store')
 		<div class="alert alert-warning alert-dismissible" role="alert">
@@ -15,7 +15,7 @@
 		</div>
 	@endif
 
-	{!! link_to_route('mat.create', 'Agregar Materia', null, array('class' => 'btn btn-default')); !!}
+	
 
 	<div class="table-responsive">
 	
@@ -24,7 +24,6 @@
             <th>Clave</th>
             <th>Nombre</th>
             <th>Semestre</th>
-            <th>Maestro</th>
             <th colspan="2">Opciones</th>
         </thead>
 
@@ -34,20 +33,14 @@
                 	<td>{{ $Materia->clave }}</td>
                     <td>{{ $Materia->nombre }}</td>
                     <td>{{ $Materia->semestres->nombre }}</td>
-                    <td>{{ $Materia->maestros->apa }}
-                        {{ $Materia->maestros->ama }}
-                        {{ $Materia->maestros->nombre }}
+
+                    <td>{!!link_to_route('mat.show', $title = 'Mostrar Acuerdo de Grupo', $parameters = $Materia->id, $attributes = ['class'=>'btn btn-primary'])!!}
                     </td>
 
-                    <td>{!!link_to_route('mat.show', $title = 'Mostrar', $parameters = $Materia->id, $attributes = ['class'=>'btn btn-primary'])!!}
-                    </td>
-
-                    <td>{!!link_to_route('mat.edit', $title = 'Editar', $parameters = $Materia->id, $attributes = ['class'=>'btn btn-primary'])!!}
+                    <td>{!!link_to_route('mat.edit', $title = 'Descargar', $parameters = $Materia->id, $attributes = ['class'=>'btn btn-primary'])!!}
                     </td>
                     
-                    <td>{!! Form::open(['route' => ['mat.destroy', $Materia->id], 'method'=>'DELETE'])!!}
-						{!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!} 
-					{!! Form::close() !!} </td>
+                    
                 </tr>
             @endforeach
         </tbody>
