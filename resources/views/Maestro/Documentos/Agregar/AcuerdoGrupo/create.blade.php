@@ -257,12 +257,12 @@ body,td,th {
           <li>1ER COPIA PROFESOR </li>
           <li>2DA COPIA FACULTAD</li>
         </ul>
-        {!! link_to('AcuerdoGrupo', $title='Regresar', $attributes = ['class' => 'btn btn-primary']) !!}
+        {!! link_to('AcuerdoGrupo', $title='Cancelar', $attributes = ['class' => 'btn btn-default']) !!}
       </div></td>
       <td>&nbsp;</td>
       <td><p align="center">&nbsp;</p>
       <p align="center">___________________________</p>
-      <div align="right">{!! link_to('AgregarDocumentosM/Calificaciones', $title='Guardar', $attributes = ['class' => 'btn btn-primary']) !!} </div>
+      <div align="right">{!! link_to('AgregarDocumentosM/Calificaciones', $title='Guardar', $attributes = ['class' => 'btn btn-default']) !!} </div>
       </td>
     </tr>
   </table>
