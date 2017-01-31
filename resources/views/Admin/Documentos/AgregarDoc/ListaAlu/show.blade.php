@@ -2,7 +2,7 @@
 
 @section('content2')
 
-@include('Admin.layouts.partials.menuGCE')
+@include('Admin.layouts.partials.menuGD')
 
 <div class="table-responsive">
     <p>Alumnos registrados en el grupo</p>
@@ -12,7 +12,8 @@
             <th>Apellidos</th>
             <th>Nombre(s)</th>
             </tr></thead>
-           
+    
+                
                 <tbody>
                 @foreach ($Grupo->alumnos as $alumno)
                 <tr>
@@ -33,7 +34,7 @@
 
     </div>
 
-    {!! link_to_route('gru.index', 'Atras', null, array('class' => 'btn btn-default')); !!}
+    {!! link_to_route('ListaAlumnos.index', 'Atras', null, array('class' => 'btn btn-default')); !!}
 
 @endsection
 

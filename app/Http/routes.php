@@ -78,6 +78,6 @@ Route::get('/AgregarDocumentosM/Calificaciones/ActaCalificaciones', function () 
 
 Route::resource('AcuerdoGrupo','Acuerdos');
 
-Route::resource('grupoPDF','ListaAlumnos');
+Route::resource('ListaAlumnos','ListaAlumnos');
 Route::get('crear_lista_alumnos/{tipo}/{id}', 'ListaAlumnos@crear_lista_alumnos');
 //

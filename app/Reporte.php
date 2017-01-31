@@ -8,6 +8,10 @@ class Reporte extends Model
 {
     protected $fillable = ['calificacionfaltaD1','calificacionD1','calificacionFaltaD2','calificacionD2','calificacionfaltaP','calificacionP','calificacionsemestre','calificacionFA','calificacionFB','calificaciontotal','cvtotalhrssemana','cvhrsgrupo','cvmes','cvdia1','cvdia2','psetotalhrssemana','psenumclasessemana','pseagdepartamentales','pseagpracticas','pseagtareaspart','pseagreqexentarA','pseagreqexentarB','pseagreqexentarC','psehrsteoricas','psehrspracticas','psepropositocurso','agtrabajopracfin','temas_id','plan_estudios_id','alumnos_id'];
 
+    //Horario . - Ciclo escolar, grupo, materia, maestro, psehrspracticas y psehrsteoricas
+    //Calen Exam .- 
+    //cvtotalhrssemana, cvhrsgrupo, cvmes, cvdia1, cvdia2  
+
     public function temas(){
    		return $this->belongsTo('App\Tema', 'temas_id');
 	}
@@ -19,4 +23,5 @@ class Reporte extends Model
 	public function alumnos(){
    		return $this->belongsTo('App\Alumno', 'alumnos_id');
 	}
+
 }

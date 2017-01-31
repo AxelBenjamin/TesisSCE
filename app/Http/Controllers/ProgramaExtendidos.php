@@ -3,16 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\View;
-//use App\Http\Requests;
-use App\Alumno;
-use App\Grupo;
-use App\Reporte;
 
-class Alumnos extends Controller
+use App\Http\Requests;
+
+class ProgramaExtendidos extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,8 +15,7 @@ class Alumnos extends Controller
      */
     public function index()
     {
-        $Alumnos = Alumno::all()->sortBy("grupos_id")->sortBy("reportes_id");
-        return View::make('Admin.Alumnos.index')->with('Alumnos', $Alumnos);
+        //
     }
 
     /**
@@ -32,8 +25,7 @@ class Alumnos extends Controller
      */
     public function create()
     {
-        $Grupos = Grupo::pluck('nombre', 'id');
-        return view::make('Admin.Alumnos.create')->with('Grupos',$Grupos);
+        //
     }
 
     /**
@@ -44,8 +36,7 @@ class Alumnos extends Controller
      */
     public function store(Request $request)
     {
-        Alumno::create( $request->all() );
-        return redirect('/alu')->with('message','store');
+        //
     }
 
     /**
@@ -56,8 +47,7 @@ class Alumnos extends Controller
      */
     public function show($id)
     {
-        $Alumno = Alumno::find($id);
-        return View::make('Admin.Alumnos.show')->with('Alumno', $Alumno);
+        //
     }
 
     /**
@@ -68,10 +58,7 @@ class Alumnos extends Controller
      */
     public function edit($id)
     {
-        $Alumno = Alumno::find($id);
-        $Grupos = Grupo::pluck('nombre','id');
-
-        return View::make('Admin.Alumnos.edit')->with("Alumno", $Alumno)->with('Grupos', $Grupos);
+        //
     }
 
     /**
@@ -81,12 +68,9 @@ class Alumnos extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        $Alumno = Alumno::find($id);
-        $input = Input::all();
-        $Alumno->update($input);
-        return  redirect('/alu')->with('message','store');
+        //
     }
 
     /**
@@ -97,7 +81,6 @@ class Alumnos extends Controller
      */
     public function destroy($id)
     {
-        Alumno::destroy($id);
-        return  redirect('/alu')->with('message','store');
+        //
     }
 }
