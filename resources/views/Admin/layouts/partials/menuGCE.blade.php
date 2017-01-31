@@ -1,3 +1,9 @@
+<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/general.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/general.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/botonesPanel.css')}}">
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -29,3 +35,8 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+    <script src="src/js/bootstrap.js"></script>
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>

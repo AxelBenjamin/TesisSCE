@@ -1,4 +1,4 @@
-
+ 
 <div class="table-responsive">
     <h3>Alumnos registrados en el grupo</h3>
     <table class="table table-hover">

@@ -23,7 +23,7 @@ class ListaAlumnos extends Controller
     public function index()
     {
         $Grupos = Grupo::all();
-        return View::make('Admin.Documentos.AgregarDoc.ListaAlu.ListaAlu')->with("Grupos", $Grupos);
+        return View::make('Admin.Documentos.AgregarDoc.ListaAlu.index')->with("Grupos", $Grupos);
         //return view("Admin.Documentos.AgregarDoc.ListaAlu.ListAlu");
     }
 
@@ -85,7 +85,8 @@ class ListaAlumnos extends Controller
      */
     public function show($id)
     {
-        
+        $Grupo = Grupo::find($id);
+        return View::make('Admin.Documentos.AgregarDoc.ListaAlu.show')->with('Grupo', $Grupo);
     }
 
     /**

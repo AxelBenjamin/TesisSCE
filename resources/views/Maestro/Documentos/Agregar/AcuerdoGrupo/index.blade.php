@@ -27,21 +27,23 @@
         </thead>
 
         <tbody>
-            
+            @foreach($Acuerdos as $Acuerdo)
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>{{$Acuerdo->agtrabajopracfin}}</td>
+                    <td>{{$Acuerdo->plan_estudios->nombre}}</td>
 
-                    <td>{!! link_to('AgregarDocumentosM/Calificaciones/ActaCalificaciones', $title='Mostrar', $attributes = ['class' => 'btn btn-primary']) !!}
+                    <td>{!! link_to_route('AcuerdoGrupo.show', $title='Mostrar', $parameters=$Acuerdo->id, $attributes = ['class' => 'btn btn-primary']) !!}
                     </td>
 
                     <td>{!! link_to('AgregarDocumentosM/Calificaciones/ActaCalificaciones', $title='Editar', $attributes = ['class' => 'btn btn-primary']) !!}
                     </td>
 
-                    <td>{!! link_to('AgregarDocumentosM/Calificaciones/ActaCalificaciones', $title='Eliminar', $attributes = ['class' => 'btn btn-danger']) !!}
-                    </td>
+                    <td>{!! Form::open(['route' => ['AcuerdoGrupo.destroy', $Acuerdo->id], 'method'=>'DELETE'])!!}
+                        {!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!} 
+                    {!! Form::close() !!} </td>
 
                 </tr>
+            @endforeach
             
         </tbody>
     </table>

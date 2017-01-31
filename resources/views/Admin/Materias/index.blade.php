@@ -1,8 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <?php
 	$mensaje = Session::get('message')
 ?>
 
-@extends('Admin.layouts.master')
+<head>
+    <meta charset="UTF-8">
+
+    @extends('Admin.layouts.master')
+    
+    <title>Sistema de Control Escolar</title>
+</head>
+<body>
     
 @section('content2')
 
@@ -51,6 +61,8 @@
         </tbody>
     </table>
 
-
 	</div>
 @endsection
+
+</body>
+</html>

@@ -14,8 +14,8 @@ use App\Alumno;
 use App\CicloEscolar;
 use App\Materia;
 use App\Reporte;
-
-use App\Http\Requests;
+use App\Tema;
+use App\PlanEstudios;
 
 class Acuerdos extends Controller
 {
@@ -26,7 +26,7 @@ class Acuerdos extends Controller
      */
     public function index()
     {
-        $Acuerdos = Reporte::all();
+        $Acuerdos = Reporte::all()->sortBy("plan_estudios_id");
         return View::make('Maestro.Documentos.Agregar.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);
     }
 
@@ -37,10 +37,14 @@ class Acuerdos extends Controller
      */
     public function create()
     {
-        $CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
-        $Materias = Materia::pluck('nombre', 'id');
-        $Grupos = Grupo::pluck('nombre', 'id');
-        return view::make('Maestro.Documentos.Agregar.AcuerdoGrupo.create')->with('CiclosEscolares',$CiclosEscolares)->with('Materias',$Materias)->with('Grupos',$Grupos);
+        //$CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
+        //$Materias = Materia::pluck('nombre', 'id');
+        //$Grupos = Grupo::pluck('nombre','id');
+        $Temas = Tema::pluck('nombre','id');
+        $PlanesEstudios = PlanEstudios::pluck('nombre','id');
+        $Alumnos = Alumno::pluck('nombre','id');
+        return view::make('Maestro.Documentos.Agregar.AcuerdoGrupo.create')
+        /*->with('CiclosEscolares',$CiclosEscolares)->with('Materias',$Materias)->with('Grupos',$Grupos)*/->with('Temas',$Temas)->with('PlanesEstudios',$PlanesEstudios)->with('Alumnos',$Alumnos);
     }
 
     /**
@@ -51,7 +55,8 @@ class Acuerdos extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Reporte::create($request->all());
+        return redirect ('/AcuerdoGrupo')->with('message','store');
     }
 
     /**
@@ -62,7 +67,8 @@ class Acuerdos extends Controller
      */
     public function show($id)
     {
-        //
+        $Acuerdo = Reporte::find($id);
+        return View::make('Maestro.Documentos.Agregar.AcuerdoGrupo.show')->with("Acuerdo",$Acuerdo);
     }
 
     /**
@@ -96,6 +102,7 @@ class Acuerdos extends Controller
      */
     public function destroy($id)
     {
-        //
+        Reporte::destroy($id);
+        return redirect('/AcuerdoGrupo')->with('message','store');
     }
 }
