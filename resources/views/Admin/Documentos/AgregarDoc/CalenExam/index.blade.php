@@ -2,11 +2,11 @@
     $mensaje = Session::get('message')
 ?>
 
-@extends('Maestro.layouts.master')
+@extends('Admin.layouts.master')
     
-@section('contentMaestro')
+@section('content2')
 
-@include('Maestro.layouts.partials.menuGD')  
+@include('Admin.layouts.partials.menuGD')  
 
     @if($mensaje == 'store')
         <div class="alert alert-warning alert-dismissible" role="alert">
@@ -17,7 +17,7 @@
 
     <div class="table-responsive">
 
-    {!! link_to_route('AcuerdoGrupo.create', 'Agregar Acuerdo de Grupo', null, array('class' => 'btn btn-default')); !!}
+    {!! link_to_route('CalendarioExamenes.create', 'Agregar Calendario de Examenes', null, array('class' => 'btn btn-default')); !!}
     
     <table class="table table-stripped table-hover">
         <thead>
@@ -27,21 +27,17 @@
         </thead>
 
         <tbody>
-            @foreach($Acuerdos as $Acuerdo)
+            @foreach($CalendarioExamenes as $CalendarioExamen)
                 <tr>
                     
-                    <td>{{$Acuerdo->materias->nombre}}</td>
-                    <td>{{$Acuerdo->grupos->nombre}}</td>
+                    <td>{{$CalendarioExamen->planes_estudios->nombre}}</td>
 
-                    <td>{!! link_to_route('AcuerdoGrupo.show', $title='Mostrar', $parameters=$Acuerdo->id, $attributes = ['class' => 'btn btn-primary']) !!}
+                    <td>{!! link_to_route('AcuerdoGrupo.show', $title='Mostrar', $parameters=$CalendarioExamen->id, $attributes = ['class' => 'btn btn-primary']) !!}
                     </td>
 
                     <td>{!! link_to('AgregarDocumentosM/Calificaciones/ActaCalificaciones', $title='Editar', $attributes = ['class' => 'btn btn-primary']) !!}
                     </td>
 
-                    <td>{!! Form::open(['route' => ['AcuerdoGrupo.destroy', $Acuerdo->id], 'method'=>'DELETE'])!!}
-                        {!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!} 
-                    {!! Form::close() !!} </td>
 
                 </tr>
             @endforeach

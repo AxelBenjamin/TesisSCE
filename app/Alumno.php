@@ -16,6 +16,11 @@ class Alumno extends Model
    		return $this->belongsTo('App\Grupo', 'grupos_id');
    	}
 
+   	public function reportes(){
+
+   		return $this->hasMany('App\Reporte','reportes_id');
+	}
+
    	public function setFotoAttribute($foto){
 		if(!empty($foto)){
 			$this->attributes['foto'] = Carbon::now()->second.$foto->getClientOriginalName();

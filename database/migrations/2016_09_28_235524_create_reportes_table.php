@@ -46,7 +46,24 @@ class CreateReportesTable extends Migration
             $table->longtext("psepropositocurso");
 
             $table->longtext("agtrabajopracfin");
+
+            //Llaves extras para guardar y jalar datos de otras tablas
+            $table->integer('ciclo_escolars_id')->unsigned();
+            $table->foreign('ciclo_escolars_id')->references('id')->on('ciclo_escolars');
             
+            $table->integer('materias_id')->unsigned();
+            $table->foreign('materias_id')->references('id')->on('materias');
+            
+            $table->integer('grupos_id')->unsigned();;
+            $table->foreign('grupos_id')->references('id')->on('grupos');
+            
+            $table->integer('semestres_id')->unsigned();;
+            $table->foreign('semestres_id')->references('id')->on('semestres');
+
+            $table->integer('maestros_id')->unsigned();;
+            $table->foreign('maestros_id')->references('id')->on('maestros');
+
+            //Relaciones directas
             $table->integer('temas_id')->unsigned();
             $table->foreign('temas_id')->references('id')->on('temas')->onDelete('cascade');
             

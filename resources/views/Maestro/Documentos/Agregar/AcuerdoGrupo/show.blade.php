@@ -45,7 +45,7 @@ body,td,th {
       <td><div align="left"><strong>CICLO ESCOLAR </strong></div>
       </td>
       <td>
-        {{ $Acuerdo->plan_estudios->nombre }}
+        {{ $Acuerdo->ciclo_escolars->nombre}}
       </td>
     </tr>
   </table>
@@ -54,13 +54,13 @@ body,td,th {
 <div align="center">
   <table width="896" border="0">
     <tr>
-      <td width="350"><div align="left"><strong>MATERIA </strong></div>
+      <td width="350"><div align="left"><strong>MATERIA: {{ $Acuerdo->materias->nombre }} </strong></div>
       </td>
 
-      <td width="191"><div align="left"><strong>GRUPO </strong></div>
+      <td width="191"><div align="left"><strong>GRUPO: {{ $Acuerdo->grupos->nombre }} </strong></div>
       </td>
 
-      <td width="191"><div align="left"><strong>FECHA </strong>
+      <td width="191"><div align="left"><strong>FECHA:  </strong>
       <?php
       echo date('d/m/Y');
       ?>
@@ -79,18 +79,18 @@ body,td,th {
       <td width="539"><div align="center"><strong>Nombre del Alumno</strong></div></td>
       <td width="150"><div align="center"><strong>Firma</strong></div></td>
     </tr>
-    <tr>
-      <td><div align="center"> 1      </div></td>
-      <td>&nbsp;
-      
-      </td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><div align="center">2</div></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
+
+    @foreach($Acuerdo->grupos->alumnos as $alumno)      
+      <tr>
+        <td><div align="center">{{ $alumno->id }}</div></td>
+        <td><div align="left">&nbsp;
+        {{ $alumno->apa }}
+        {{ $alumno->ama }}
+        {{ $alumno->nombre }}</div></td>
+        <td>&nbsp;</td>
+      </tr>
+    @endforeach
+  
     <tr>
       <td><div align="center">3</div></td>
       <td>&nbsp;</td>

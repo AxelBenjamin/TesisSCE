@@ -38,6 +38,8 @@
 
             <th>
                 {!!link_to_route('ListaAlumnos.show', $title = 'Generar Lista', $parameters = $Grupo->id, $attributes = ['class'=>'btn btn-primary'])!!} </th>
+
+                
             
         </tbody>
         @endforeach   

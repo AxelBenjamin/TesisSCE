@@ -26,8 +26,9 @@ class Acuerdos extends Controller
      */
     public function index()
     {
-        $Acuerdos = Reporte::all()->sortBy("plan_estudios_id");
-        return View::make('Maestro.Documentos.Agregar.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);
+        $Acuerdos = Reporte::all()->sortBy("materias_id");
+        //$Grupos = Grupo::all();
+        return View::make('Maestro.Documentos.Agregar.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);//->with("Grupos", $Grupos);
     }
 
     /**
@@ -37,14 +38,14 @@ class Acuerdos extends Controller
      */
     public function create()
     {
-        //$CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
-        //$Materias = Materia::pluck('nombre', 'id');
-        //$Grupos = Grupo::pluck('nombre','id');
-        $Temas = Tema::pluck('nombre','id');
-        $PlanesEstudios = PlanEstudios::pluck('nombre','id');
-        $Alumnos = Alumno::pluck('nombre','id');
+        $CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
+        $Materias = Materia::pluck('nombre', 'id');
+        $Grupos = Grupo::pluck('nombre','id');
+        //$Temas = Tema::pluck('nombre','id');
+        //$PlanesEstudios = PlanEstudios::pluck('nombre','id');
+        $Alumnos = Alumno::all();
         return view::make('Maestro.Documentos.Agregar.AcuerdoGrupo.create')
-        /*->with('CiclosEscolares',$CiclosEscolares)->with('Materias',$Materias)->with('Grupos',$Grupos)*/->with('Temas',$Temas)->with('PlanesEstudios',$PlanesEstudios)->with('Alumnos',$Alumnos);
+        ->with('CiclosEscolares',$CiclosEscolares)->with('Materias',$Materias)->with('Grupos',$Grupos)/*->with('Temas',$Temas)->with('PlanesEstudios',$PlanesEstudios)*/->with('Alumnos',$Alumnos);
     }
 
     /**
@@ -68,7 +69,7 @@ class Acuerdos extends Controller
     public function show($id)
     {
         $Acuerdo = Reporte::find($id);
-        return View::make('Maestro.Documentos.Agregar.AcuerdoGrupo.show')->with("Acuerdo",$Acuerdo);
+        return View::make('Maestro.Documentos.Agregar.AcuerdoGrupo.show')->with('Acuerdo',$Acuerdo);
     }
 
     /**

@@ -13,9 +13,9 @@ class Tema extends Model
    		return $this->belongsTo('App\Unidad', 'unidads_id');
 	}
 
-	/*Para la relacion con reporte
+	//Para la relacion con reporte
 	public function reportes(){
 
    		return $this->hasMany('App\Reporte','reportes_id');
-	}*/
+	}
 }
