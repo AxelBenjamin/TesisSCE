@@ -13,4 +13,9 @@ class Grupo extends Model
 
    		return $this->hasMany('App\Alumno','grupos_id');
 	}
+
+	public function reportes(){
+
+   		return $this->hasMany('App\Reporte','reportes_id');
+	}
 }

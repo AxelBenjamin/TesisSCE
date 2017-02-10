@@ -23,8 +23,8 @@ class ListaAlumnos extends Controller
     public function index()
     {
         $Grupos = Grupo::all();
-        return View::make('Admin.Documentos.AgregarDoc.ListaAlu.index')->with("Grupos", $Grupos);
-        //return view("Admin.Documentos.AgregarDoc.ListaAlu.ListAlu");
+        //return View::make('Admin.Documentos.AgregarDoc.ListaAlu.index')->with("Grupos", $Grupos);
+        return view("Maestro.Documentos.Ver.ListaAlumnos.index")->with("Grupos", $Grupos);
     }
 
     /**
@@ -52,8 +52,8 @@ class ListaAlumnos extends Controller
     
     public function crear_lista_alumnos($tipo, $id){
 
-     $Grupo = Grupo::all();
-     $vistaurl="Admin.Documentos.AgregarDoc.ListaAlu.Lista_Alumnos";
+     $Grupo = Grupo::find($id);
+     $vistaurl="Maestro.Documentos.Ver.ListaAlumnos.show";
      
      return $this->crearPDF($Grupo, $vistaurl, $tipo, $id);
      

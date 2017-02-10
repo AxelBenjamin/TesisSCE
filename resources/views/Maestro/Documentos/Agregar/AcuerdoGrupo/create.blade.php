@@ -4,14 +4,17 @@
 
 @include('Maestro.layouts.partials.menuGD')
 
+
 {!! Form::open(['route' => 'AcuerdoGrupo.store', 'method'=>'POST', 'class'=> 'form-horizontal']) !!}
 
-{!! Form::select('temas_id', $Temas, null, array()) !!}
+  {!! Form::label('ciclo_escolars_id','Seleccionar Ciclo Escolar:',['class' => 'control-label'])!!}
+  {!! Form::select('ciclo_escolars_id', $CiclosEscolares, null, array()) !!}  </br>  </br>
 
-{!! Form::select('plan_estudios_id', $PlanesEstudios, null, array()) !!}
+  {!! Form::label('materias_id','Seleccionar Materia:',['class' => 'control-label'])!!}
+  {!! Form::select('materias_id', $Materias, null, array()) !!}  </br>  </br> 
 
-{!! Form::select('alumnos_id', $Alumnos, null, array()) !!}
-
+  {!! Form::label('grupos_id','Seleccionar Grupo:',['class' => 'control-label'])!!}
+  {!! Form::select('grupos_id', $Grupos, null, array()) !!}  </br>  </br>
 
   {!! form::label('agtrabajopracfin', 'Trabajo y/o Practica Final:',['class' => 'control-label'])!!}
   {!! form::text('agtrabajopracfin', null, ['class' => 'form-control'])!!}

@@ -8,8 +8,8 @@ class PlanEstudios extends Model
 {
     protected $fillable = ['clave','nombre','archivo'];
 
-    /*public function reportes(){
+    public function reportes(){
 
    		return $this->hasMany('App\Reporte','reporte_id');
-	}*/
+	}
 }
