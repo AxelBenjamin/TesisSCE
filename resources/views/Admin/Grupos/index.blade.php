@@ -38,8 +38,6 @@
 		<tbody>
 			<th> {{$Grupo->nombre}} </th>
 
-			
-
 			<th>
 				{!!link_to_route('gru.show', $title = 'Mostrar Alumnos', $parameters = $Grupo->id, $attributes = ['class'=>'btn btn-primary'])!!} </th>
 

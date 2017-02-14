@@ -51,10 +51,19 @@ Route::get('/AgregarDocumentos', function () {
     return view('Admin.Documentos.AgregarDoc.AgregarDoc');
 })->name('Agregar Documentos');
 
+//Ver Admin
+Route::get('/VerDocumentos', function () {
+    return view('Admin.Documentos.VerDoc.VerDoc');
+})->name('Ver Documentos');
+
 Route::get('/AgregarDocumentosM', function () {
     return view('Maestro.Documentos.Agregar.AgregarDocM');
 })->name('Agregar Documentos');
 
+//Ver Maestro
+Route::get('/VerDocumentosM', function () {
+    return view('Maestro.Documentos.Ver.VerDocM');
+})->name('Ver Documentos');
 
 /*Route::get('/AgregarDocumentosM/Calificaciones', function () {
     return view('Maestro.Documentos.Agregar.Calificaciones.ListaCalificacionesIndex');
@@ -77,7 +86,8 @@ Route::get('/AgregarDocumentosM/Calificaciones/ActaCalificaciones', function () 
 })->name('Lista de Grupos');*/
 
 Route::resource('AcuerdoGrupo','Acuerdos');
+Route::resource('CalendarioExamenes','CalendarioExamenes');
 
-Route::resource('grupoPDF','ListaAlumnos');
+Route::resource('ListaAlumnos','ListaAlumnos');
 Route::get('crear_lista_alumnos/{tipo}/{id}', 'ListaAlumnos@crear_lista_alumnos');
 //

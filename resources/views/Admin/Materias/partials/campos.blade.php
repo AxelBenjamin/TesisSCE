@@ -134,9 +134,6 @@
  	</div>
 
 	<div class="col-lg-5">
-
-		
-
 		{!! Form::select('maestros_id', $Maestros, null, array('class' => 'form-control')) !!}
 	</div>
 </div>

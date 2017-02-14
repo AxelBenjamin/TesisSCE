@@ -152,6 +152,8 @@ return [
 
         Barryvdh\DomPDF\ServiceProvider::class,
 
+        Barryvdh\Debugbar\ServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -210,6 +212,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         'PDF' => 'Barryvdh\DomPDF\Facade',
+
+        'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
     ],
 

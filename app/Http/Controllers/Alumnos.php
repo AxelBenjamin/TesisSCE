@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\View;
 //use App\Http\Requests;
 use App\Alumno;
 use App\Grupo;
+use App\Reporte;
 
 class Alumnos extends Controller
 {
@@ -20,8 +21,15 @@ class Alumnos extends Controller
      */
     public function index()
     {
-        $Alumnos = Alumno::all()->sortBy("grupos_id");
+        /*$Alumnos = Alumno::all()->sortBy("grupos_id")->sortBy("reportes_id");
+        return View::make('Admin.Alumnos.index')->with('Alumnos', $Alumnos);*/
+
+        $Alumnos = Alumno::orderBy('apa')->get()->sortBy("grupos_id")->sortBy("reportes_id");
         return View::make('Admin.Alumnos.index')->with('Alumnos', $Alumnos);
+
+        /*$HomeBanners = HomeBanner::all()->orderBy('ordering', 'asc'); 
+        return view('home', compact('HomeBanners'));*/
+
     }
 
     /**

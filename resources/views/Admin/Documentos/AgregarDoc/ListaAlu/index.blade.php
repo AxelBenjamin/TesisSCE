@@ -36,9 +36,10 @@
         <tbody>
             <th> {{$Grupo->nombre}} </th>
 
-            <th>{!!link_to_action('ListaAlumnos@crear_lista_alumnos', $title = 'Mostrar Lista', $parameters = array('1' , $Grupo->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+            <th>
+                {!!link_to_route('ListaAlumnos.show', $title = 'Generar Lista', $parameters = $Grupo->id, $attributes = ['class'=>'btn btn-primary'])!!} </th>
 
-            <th>{!!link_to_action('ListaAlumnos@crear_lista_alumnos', $title = 'Descargar', $parameters = array('2' , $Grupo->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+                
             
         </tbody>
         @endforeach   

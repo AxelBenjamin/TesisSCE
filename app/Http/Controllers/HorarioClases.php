@@ -3,17 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\View;
 
-//use App\Http\Requests;
+use App\Http\Requests;
 
-use App\Grupo;
-use App\Alumno;
-
-class ListaAlumnos extends Controller
+class HorarioClases extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,9 +15,7 @@ class ListaAlumnos extends Controller
      */
     public function index()
     {
-        $Grupos = Grupo::all();
-        //return View::make('Admin.Documentos.AgregarDoc.ListaAlu.index')->with("Grupos", $Grupos);
-        return view("Maestro.Documentos.Ver.ListaAlumnos.index")->with("Grupos", $Grupos);
+        //
     }
 
     /**
@@ -32,35 +23,6 @@ class ListaAlumnos extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function crearPDF($datos,$vistaurl,$tipo, $id)
-    {
-        $data = $datos;
-        //$date = date('Y-m-d');
-        $view =  \View::make($vistaurl, compact('data'))->render();
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
-
-        
-        
-        //return $pdf->stream('Lista_Alumnos');
-        if($tipo==1){return $pdf->stream('Lista_Alumnos');}
-        if($tipo==2){return $pdf->download('Lista_Alumnos.pdf'); }
-
-        
-    }
-
-    
-    public function crear_lista_alumnos($tipo, $id){
-
-     $Grupo = Grupo::find($id);
-     $vistaurl="Maestro.Documentos.Ver.ListaAlumnos.show";
-     
-     return $this->crearPDF($Grupo, $vistaurl, $tipo, $id);
-     
-
-
-    }
-
     public function create()
     {
         //
@@ -85,8 +47,7 @@ class ListaAlumnos extends Controller
      */
     public function show($id)
     {
-        $Grupo = Grupo::find($id);
-        return View::make('Admin.Documentos.AgregarDoc.ListaAlu.show')->with('Grupo', $Grupo);
+        //
     }
 
     /**

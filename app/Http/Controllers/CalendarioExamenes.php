@@ -7,17 +7,15 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
-//use App\Http\Requests;
-//use App\Http\Requests;
-use App\Grupo;
-use App\Alumno;
+
 use App\CicloEscolar;
+use App\PlanEstudios;
+use App\Grupo;
+use App\Semestre;
 use App\Materia;
 use App\Reporte;
-use App\Tema;
-use App\PlanEstudios;
 
-class Acuerdos extends Controller
+class CalendarioExamenes extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,9 +24,8 @@ class Acuerdos extends Controller
      */
     public function index()
     {
-        $Acuerdos = Reporte::all()->sortBy("materias_id");
-        //$Grupos = Grupo::all();
-        return View::make('Maestro.Documentos.Agregar.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);//->with("Grupos", $Grupos);
+        /*$CalendarioExamenes = Reporte::all()->sortBy("plan_estudios_id");
+        return View::make('Admin.Documentos.AgregarDoc.CalenExam.index')->with("CalendarioExamenes",$CalendarioExamenes);*/
     }
 
     /**
@@ -38,14 +35,14 @@ class Acuerdos extends Controller
      */
     public function create()
     {
-        $CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
-        $Materias = Materia::pluck('nombre', 'id');
+        /*$CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
+        $PlanesEstudios = PlanEstudios::pluck('nombre', 'id');
         $Grupos = Grupo::pluck('nombre','id');
+        $Semestres = Semestre::pluck('nombre','id');
         //$Temas = Tema::pluck('nombre','id');
         //$PlanesEstudios = PlanEstudios::pluck('nombre','id');
-        $Alumnos = Alumno::all();
-        return view::make('Maestro.Documentos.Agregar.AcuerdoGrupo.create')
-        ->with('CiclosEscolares',$CiclosEscolares)->with('Materias',$Materias)->with('Grupos',$Grupos)/*->with('Temas',$Temas)->with('PlanesEstudios',$PlanesEstudios)*/->with('Alumnos',$Alumnos);
+        return view::make('Admin.Documentos.AgregarDoc.CalenExam.create')
+        ->with('CiclosEscolares',$CiclosEscolares)->with('PlanesEstudios',$PlanesEstudios)->with('Grupos',$Grupos)->with('Semestres',$Semestres);/*->with('Temas',$Temas)->with('PlanesEstudios',$PlanesEstudios)*/
     }
 
     /**
@@ -56,8 +53,8 @@ class Acuerdos extends Controller
      */
     public function store(Request $request)
     {
-        Reporte::create($request->all());
-        return redirect ('/AcuerdoGrupo')->with('message','store');
+        /*Reporte::create($request->all());
+        return redirect ('/CalendarioExamenes')->with('message','store');*/
     }
 
     /**
@@ -68,8 +65,7 @@ class Acuerdos extends Controller
      */
     public function show($id)
     {
-        $Acuerdo = Reporte::find($id);
-        return View::make('Maestro.Documentos.Agregar.AcuerdoGrupo.show')->with('Acuerdo',$Acuerdo);
+        //
     }
 
     /**
@@ -103,7 +99,6 @@ class Acuerdos extends Controller
      */
     public function destroy($id)
     {
-        Reporte::destroy($id);
-        return redirect('/AcuerdoGrupo')->with('message','store');
+        //
     }
 }

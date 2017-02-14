@@ -8,13 +8,15 @@
             <th>Nombre</th>
         </tr></thead>
     
-        @foreach ($data as $Grupo)
+        @foreach ($data->alumnos as $alumno)
         <tbody>
                 <tr>
                 
                 <td>
-                    {{$Grupo->nombre}}
+                    {{$alumno->nombre}}
                 </td>
+
+
                 
                 </tr>
         </tbody>

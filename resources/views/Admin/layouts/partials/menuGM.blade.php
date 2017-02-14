@@ -13,7 +13,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{{ route('mat.index') }}">Materias <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="{{ route('mat.index') }}">Materias</a></li>
         <li><a href="{{ route('uni.index') }}">Unidades</a></li>
         <li><a href="{{ route('tem.index') }}">Temas</a></li>
       </ul>

@@ -1,12 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <?php
 	$mensaje = Session::get('message')
 ?>
 
-@extends('Admin.layouts.master')
+<head>
+    <meta charset="UTF-8">
+
+    @extends('Admin.layouts.master')
+    
+    <title>Sistema de Control Escolar</title>
+</head>
+<body>
     
 @section('content2')
 
-@include('Admin.layouts.partials.menuGD')
+@include('Admin.layouts.partials.menuGM')
 
 	@if($mensaje == 'store')
 		<div class="alert alert-warning alert-dismissible" role="alert">
@@ -15,7 +25,7 @@
 		</div>
 	@endif
 
-	
+	{!! link_to_route('mat.create', 'Agregar Materia', null, array('class' => 'btn btn-default')); !!}
 
 	<div class="table-responsive">
 	
@@ -34,11 +44,16 @@
                     <td>{{ $Materia->nombre }}</td>
                     <td>{{ $Materia->semestres->nombre }}</td>
 
-                    <td>{!!link_to_route('mat.show', $title = 'Mostrar Acuerdo de Grupo', $parameters = $Materia->id, $attributes = ['class'=>'btn btn-primary'])!!}
+                    <td>{!!link_to_route('mat.show', $title = 'Mostrar', $parameters = $Materia->id, $attributes = ['class'=>'btn btn-primary'])!!}
                     </td>
 
-                    <td>{!!link_to_route('mat.edit', $title = 'Descargar', $parameters = $Materia->id, $attributes = ['class'=>'btn btn-primary'])!!}
+                    <td>{!!link_to_route('mat.edit', $title = 'Editar', $parameters = $Materia->id, $attributes = ['class'=>'btn btn-primary'])!!}
                     </td>
+
+                    <th>{!! Form::open(['route' => ['mat.destroy', $Materia->id], 'method'=>'DELETE']) !!}
+                        {!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
+                        {!! Form::close() !!} 
+                    </th>
                     
                     
                 </tr>
@@ -46,6 +61,8 @@
         </tbody>
     </table>
 
-
 	</div>
 @endsection
+
+</body>
+</html>
