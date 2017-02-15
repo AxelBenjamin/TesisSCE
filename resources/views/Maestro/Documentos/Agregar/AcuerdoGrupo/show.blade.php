@@ -46,6 +46,8 @@ body,td,th {
       </td>
       <td>
         {{ $Acuerdo->ciclo_escolars->nombre}}
+      }
+      }
       </td>
     </tr>
   </table>
@@ -261,19 +263,14 @@ body,td,th {
           <li>1ER COPIA PROFESOR </li>
           <li>2DA COPIA FACULTAD</li>
         </ul>
-<<<<<<< HEAD
+
         {!! link_to('AcuerdoGrupo', $title='Volver', $attributes = ['class' => 'btn btn-default']) !!}
-=======
-        {!! link_to('AcuerdoGrupo', $title='Cancelar', $attributes = ['class' => 'btn btn-default']) !!}
->>>>>>> master
+
       </div></td>
       <td>&nbsp;</td>
       <td><p align="center">&nbsp;</p>
       <p align="center">___________________________</p>
-<<<<<<< HEAD
-=======
-      <div align="right">{!! link_to('AgregarDocumentosM/Calificaciones', $title='Guardar', $attributes = ['class' => 'btn btn-default']) !!} </div>
->>>>>>> master
+
       </td>
     </tr>
   </table>
