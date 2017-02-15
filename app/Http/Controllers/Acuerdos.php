@@ -30,12 +30,38 @@ class Acuerdos extends Controller
         //$Grupos = Grupo::all();
         return View::make('Maestro.Documentos.Agregar.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);//->with("Grupos", $Grupos);
     }
-
-    /**
+/**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+    
+//INICIA Función para crear PDF 
+    public function crearPDF($datos,$vistaurl,$tipo, $id)
+    {
+        $data = $datos;
+        //$date = date('Y-m-d');
+        $view =  \View::make($vistaurl, compact('data'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        
+        //return $pdf->stream('Lista_Alumnos');
+        if($tipo==1){return $pdf->stream('Acuerdo_Grupo');}
+        if($tipo==2){return $pdf->download('Acuerdo_Grupo.pdf'); }        
+    }
+
+    
+    public function crear_acuerdo_grupo($tipo, $id){
+
+     $Acuerdo = Reporte::find($id);
+     $vistaurl="Maestro.Documentos.Agregar.AcuerdoGrupo.show";
+     
+     return $this->crearPDF($Acuerdo, $vistaurl, $tipo, $id);
+ }
+
+//TERMINA Función para crear PDF 
+
+    
     public function create()
     {
         $CiclosEscolares = CicloEscolar::pluck('nombre', 'id');

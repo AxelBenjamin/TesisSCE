@@ -85,9 +85,15 @@ Route::get('/AgregarDocumentosM/Calificaciones/ActaCalificaciones', function () 
     return view('Admin.Documentos.AgregarDoc.ListaAlu.Lista_Alumnos');
 })->name('Lista de Grupos');*/
 
-Route::resource('AcuerdoGrupo','Acuerdos');
+//RUTAS DE ACUERDO DE GRUPO
+Route::resource('AcuerdoGrupo','Acuerdos'); 
+Route::get('crear_acuerdo_grupo/{tipo}/{id}', 'Acuerdos@crear_acuerdo_grupo'); //ruta para pdf
+
+
+//RUTAS DE CALNEDARIO DE EXAMENES
 Route::resource('CalendarioExamenes','CalendarioExamenes');
 
+//RUTAS DE LISTA DE ALUMNOS
 Route::resource('ListaAlumnos','ListaAlumnos');
 Route::get('crear_lista_alumnos/{tipo}/{id}', 'ListaAlumnos@crear_lista_alumnos');
 //

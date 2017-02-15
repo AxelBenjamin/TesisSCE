@@ -43,6 +43,8 @@
                         {!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!} 
                     {!! Form::close() !!} </td>
 
+                    <th>{!!link_to_action('Acuerdos@crear_acuerdo_grupo', $title = 'Ver Acuerdo', $parameters = array('1' , $Acuerdo->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+
                 </tr>
             @endforeach
             

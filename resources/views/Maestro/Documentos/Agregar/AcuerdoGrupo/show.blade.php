@@ -46,6 +46,8 @@ body,td,th {
       </td>
       <td>
         {{ $Acuerdo->ciclo_escolars->nombre}}
+      }
+      }
       </td>
     </tr>
   </table>
