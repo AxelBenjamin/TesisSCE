@@ -45,7 +45,9 @@ body,td,th {
       <td><div align="left"><strong>CICLO ESCOLAR </strong></div>
       </td>
       <td>
-        {{ $Acuerdo->ciclo_escolars->nombre}}
+        {{ $data->ciclo_escolars->nombre}}
+      }
+      }
       </td>
     </tr>
   </table>
@@ -54,10 +56,10 @@ body,td,th {
 <div align="center">
   <table width="896" border="0">
     <tr>
-      <td width="350"><div align="left"><strong>MATERIA: {{ $Acuerdo->materias->nombre }} </strong></div>
+      <td width="350"><div align="left"><strong>MATERIA: {{ $data->materias->nombre }} </strong></div>
       </td>
 
-      <td width="191"><div align="left"><strong>GRUPO: {{ $Acuerdo->grupos->nombre }} </strong></div>
+      <td width="191"><div align="left"><strong>GRUPO: {{ $data->grupos->nombre }} </strong></div>
       </td>
 
       <td width="191"><div align="left"><strong>FECHA:  </strong>
@@ -80,7 +82,7 @@ body,td,th {
       <td width="150"><div align="center"><strong>Firma</strong></div></td>
     </tr>
 
-    @foreach($Acuerdo->grupos->alumnos as $alumno)      
+    @foreach($data->grupos->alumnos as $alumno)      
       <tr>
         <td><div align="center">{{ $alumno->id }}</div></td>
         <td><div align="left">&nbsp;
@@ -182,7 +184,7 @@ body,td,th {
       <th width="788" scope="col">TRABAJO Y/O PRACTICA FINAL</th>
     </tr>
     <tr>
-      <td>{{ $Acuerdo->agtrabajopracfin }}</td>
+      <td>{{ $data->agtrabajopracfin }}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -193,13 +195,13 @@ body,td,th {
       <th scope="col">CONSIDERACIONES ESPECIALES</th>
     </tr>
     <tr>
-      <td>{{ $Acuerdo->pseagreqexentarA}}</td>
+      <td>{{ $data->pseagreqexentarA}}</td>
     </tr>
     <tr>
-      <td>{{ $Acuerdo->pseagreqexentarB}}</td>
+      <td>{{ $data->pseagreqexentarB}}</td>
     </tr>
     <tr>
-      <td>{{ $Acuerdo->pseagreqexentarC}}</td>
+      <td>{{ $data->pseagreqexentarC}}</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -210,13 +212,13 @@ body,td,th {
       <th colspan="2" scope="col">EVALUACIÓN DEPARTAMENTAL</th>
     </tr>
     <tr>
-      <td colspan="2">Departamentales: {{ $Acuerdo->pseagdepartamentales }}</td>
+      <td colspan="2">Departamentales: {{ $data->pseagdepartamentales }}</td>
     </tr>
     <tr>
-      <td colspan="2">Practicas: {{ $Acuerdo->pseagpracticas }}</td>
+      <td colspan="2">Practicas: {{ $data->pseagpracticas }}</td>
     </tr>
     <tr>
-      <td colspan="2">Tareas/Participación: {{ $Acuerdo->pseagtareaspart }}</td>
+      <td colspan="2">Tareas/Participación: {{ $data->pseagtareaspart }}</td>
     </tr>
     <tr>
       <td colspan="2">&nbsp;</td>
@@ -262,7 +264,7 @@ body,td,th {
           <li>2DA COPIA FACULTAD</li>
         </ul>
 
-        {!! link_to('AcuerdoGrupo', $title='Volver', $attributes = ['class' => 'btn btn-default']) !!}
+        {!! link_to('AcuerdoGrupoAdmin', $title='Volver', $attributes = ['class' => 'btn btn-default']) !!}
 
       </div></td>
       <td>&nbsp;</td>
