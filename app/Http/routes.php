@@ -88,6 +88,7 @@ Route::get('/AgregarDocumentosM/Calificaciones/ActaCalificaciones', function () 
 //RUTAS DE ACUERDO DE GRUPO
 Route::resource('AcuerdoGrupo','Acuerdos'); 
 Route::get('crear_acuerdo_grupo/{tipo}/{id}', 'Acuerdos@crear_acuerdo_grupo'); //ruta para pdf
+Route::get('AcuerdoGrupoAdmin', 'Acuerdos@indexAdmin'); //index Admin
 
 
 //RUTAS DE CALNEDARIO DE EXAMENES

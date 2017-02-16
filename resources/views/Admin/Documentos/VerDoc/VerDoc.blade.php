@@ -104,7 +104,7 @@
 
             {!! link_to_route('CalendarioExamenes.index', 'Programa Extendido', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
 
-            {!! link_to_route('ListaAlumnos.index', 'Acuerdo Grupo', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
+            {!! link_to('/AcuerdoGrupoAdmin', $title = 'Acuerdo Grupo', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
             </div>
 

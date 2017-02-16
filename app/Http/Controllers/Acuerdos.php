@@ -30,6 +30,14 @@ class Acuerdos extends Controller
         //$Grupos = Grupo::all();
         return View::make('Maestro.Documentos.Agregar.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);//->with("Grupos", $Grupos);
     }
+
+//INDEX PARA QUE EL ADMIN VEA PDF
+    public function indexAdmin()
+    {
+        $Acuerdos = Reporte::all()->sortBy("materias_id");
+        //$Grupos = Grupo::all();
+        return View::make('Admin.Documentos.VerDoc.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);//->with("Grupos", $Grupos);
+    }
 /**
      * Show the form for creating a new resource.
      *
@@ -51,13 +59,13 @@ class Acuerdos extends Controller
     }
 
     
-    public function crear_acuerdo_grupo($tipo, $id){
-
-     $Acuerdo = Reporte::find($id);
-     $vistaurl="Maestro.Documentos.Agregar.AcuerdoGrupo.show";
+    public function crear_acuerdo_grupo($tipo, $id)
+    {
+        $Acuerdo = Reporte::find($id);
+        $vistaurl="Admin.Documentos.VerDoc.AcuerdoGrupo.show";
      
-     return $this->crearPDF($Acuerdo, $vistaurl, $tipo, $id);
- }
+        return $this->crearPDF($Acuerdo, $vistaurl, $tipo, $id);
+    }
 
 //TERMINA Función para crear PDF 
 

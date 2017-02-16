@@ -104,7 +104,7 @@
 
             {!! link_to_route('alu.index', 'Calendario de Examenes', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
 
-            {!! link_to_route('AcuerdoGrupo.index', 'Lista de Alumnos', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
+            {!! link_to_route('ListaAlumnos.index', 'Lista de Alumnos', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
 
             {!! link_to_route('AcuerdoGrupo.index', 'Calendario de Visitantes', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
 
