@@ -26,7 +26,7 @@ class Acuerdos extends Controller
      */
     public function index()
     {
-        $Acuerdos = Reporte::all()->sortBy("materias_id");
+        $Acuerdos = Reporte::all()->where('tipo', 'Acuerdo')->sortBy("materias_id");
         //$Grupos = Grupo::all();
         return View::make('Maestro.Documentos.Agregar.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);//->with("Grupos", $Grupos);
     }
@@ -52,6 +52,9 @@ class Acuerdos extends Controller
         $view =  \View::make($vistaurl, compact('data'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
+
+        // (Optional) Setup the paper size and orientation
+        //$pdf->setPaper('A4', 'landscape');
         
         //return $pdf->stream('Lista_Alumnos');
         if($tipo==1){return $pdf->stream('Acuerdo_Grupo');}
@@ -114,7 +117,13 @@ class Acuerdos extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $Acuerdo = Reporte::find($id);
+        $CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
+        $Materias = Materia::pluck('nombre', 'id');
+        $Grupos = Grupo::pluck('nombre','id');
+        $Alumnos = Alumno::all();
+        return view::make('Maestro.Documentos.Agregar.AcuerdoGrupo.edit')->with('Acuerdo',$Acuerdo)->with('CiclosEscolares',$CiclosEscolares)->with('Materias',$Materias)->with('Grupos',$Grupos)->with('Alumnos',$Alumnos);
     }
 
     /**
@@ -126,7 +135,10 @@ class Acuerdos extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Acuerdo = Reporte::find($id);
+        $input = Input::all();
+        $Acuerdo->update($input);
+        return  redirect('/AcuerdoGrupo')->with('message','store');
     }
 
     /**

@@ -97,4 +97,11 @@ Route::resource('CalendarioExamenes','CalendarioExamenes');
 //RUTAS DE LISTA DE ALUMNOS
 Route::resource('ListaAlumnos','ListaAlumnos');
 Route::get('crear_lista_alumnos/{tipo}/{id}', 'ListaAlumnos@crear_lista_alumnos');
+
+////RUTAS DE LISTA DE ALUMNOS
+Route::resource('CartaAsignacion','CartaAsignaciones');
+//
+
+////RUTAS DE Programa Sintetizado
+Route::resource('PrograSintetizado','ProgramaSintetizados');
 //

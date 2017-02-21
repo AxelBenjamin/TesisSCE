@@ -25,4 +25,10 @@ class Semestre extends Model
    		return $this->hasMany('App\Materia','semestres_id');
 	}
 
+  public function reportes(){
+
+      return $this->hasMany('App\Reporte','reportes_id');
+  }
+
+
 }
