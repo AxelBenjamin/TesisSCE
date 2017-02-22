@@ -16,6 +16,7 @@ class CreateMateriasTable extends Migration
             $table->increments('id');
             $table->char('clave');
             $table->char('nombre');
+            $table->char('tipo');
             $table->date('fechad1');
             $table->date('fechad2');
             $table->date('fechaA');

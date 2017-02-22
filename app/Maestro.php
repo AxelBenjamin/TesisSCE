@@ -8,7 +8,7 @@ use Carbon\Carbon;
 
 class Maestro extends Model
 {
-    protected $fillable = ['nombre','apa','ama','nacimiento','nacionalidad','curp','matricula','contraseña','colonia','calle','cp','municipio','estado','telefono','correo','foto', 'rfc'];
+    protected $fillable = ['nombre','apa','ama','grado','nacimiento','nacionalidad','curp','matricula','contraseña','colonia','calle','cp','municipio','estado','telefono','correo','foto', 'rfc'];
 
     public function materias(){
 

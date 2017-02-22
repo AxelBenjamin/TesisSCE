@@ -21,6 +21,12 @@
                 <th>Horas Practicas</th>
                 <td>{{ $Unidad->hrspracticas }}</td>
             </tr>
+
+            <tr>
+                <th>Total horas</th>
+                <td>{{ $Unidad->hrspracticas + $Unidad->hrsteoricas}}</td>
+            </tr>
+
             <tr>
                 <th>Clases Teoricas</th>
                 <td>{{ $Unidad->clasesteoricas }}</td>

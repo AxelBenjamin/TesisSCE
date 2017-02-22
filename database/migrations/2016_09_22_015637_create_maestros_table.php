@@ -17,6 +17,7 @@ class CreateMaestrosTable extends Migration
             $table->char('nombre');
             $table->char('apa');
             $table->char('ama');
+            $table->char('grado');
             $table->date('nacimiento');
             $table->char('nacionalidad');
             $table->char('curp');

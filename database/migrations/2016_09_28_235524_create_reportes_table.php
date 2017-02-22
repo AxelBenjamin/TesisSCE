@@ -32,6 +32,7 @@ class CreateReportesTable extends Migration
             $table->char("cvdia1");
             $table->char("cvdia2");
 
+            $table->date("fechaelaboracion");
             $table->float("psetotalhrssemana");
             $table->float("psenumclasessemana");
 

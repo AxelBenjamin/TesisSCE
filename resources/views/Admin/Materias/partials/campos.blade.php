@@ -20,6 +20,19 @@
 
 <div class="form-group">
 <div class="col-lg-3">
+ 		{!! Form::label('tipo','Tipo:',['class' => 'control-label'])!!}
+ 	</div>
+	<div class="col-lg-3">
+ 		{{ Form::select('tipo', [
+   			'Optativa' => 'Optativa',
+   			'Obligatoria' => 'Obligatoria' ]
+		, null, array('class' => 'form-control') ) }}
+ 	</div>
+ </div>
+
+
+<div class="form-group">
+<div class="col-lg-3">
  		{!! Form::label('fechad1','Fecha Departamental 1:',['class' => 'control-label'])!!}
  	</div>
  	

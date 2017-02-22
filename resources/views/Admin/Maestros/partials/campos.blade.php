@@ -42,6 +42,19 @@
  	<div class="col-lg-3">
 		{!! Form::date('nacimiento',null,['class' => 'form-control']) !!}
 	</div>
+
+	<div class="col-lg-3"> 
+		{!! Form::label('grado','Grado:',['class' => 'control-label'])!!}
+ 	</div>
+
+ 	<div class="col-lg-3">
+ 		{{ Form::select('grado', [
+   			'Lic.' => 'Licenciado',
+   			'Ing.' => 'Ingeniero',
+   			'M. en C.' => 'Maestro',
+   			'Dr.' => 'Doctor' ]
+		, null, array('class' => 'form-control') ) }}
+ 	</div> 
 </div>
 
 <div class="form-group">

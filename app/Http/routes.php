@@ -104,4 +104,8 @@ Route::resource('CartaAsignacion','CartaAsignaciones');
 
 ////RUTAS DE Programa Sintetizado
 Route::resource('PrograSintetizado','ProgramaSintetizados');
+
+
+////RUTAS DE Programa Extendido
+Route::resource('PrograExtendido','ProgramaExtendidos');
 //
