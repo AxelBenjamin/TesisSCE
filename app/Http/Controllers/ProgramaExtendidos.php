@@ -3,6 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
+
+use App\Maestro;
+
+use App\Grupo;
+use App\Materia;
+use App\Semestre;
+use App\Reporte;
 
 use App\Http\Requests;
 

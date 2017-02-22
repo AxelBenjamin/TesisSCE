@@ -17,7 +17,7 @@
 
     <div class="table-responsive">
 
-    {!! link_to_route('AcuerdoGrupo.create', 'Agregar Acuerdo de Grupo', null, array('class' => 'btn btn-default')); !!}
+    {!! link_to_route('PrograSintetizado.create', 'Agregar Programa Sintetizado', null, array('class' => 'btn btn-default')); !!}
     
     <table class="table table-stripped table-hover">
         <thead>
@@ -33,13 +33,13 @@
                     <td>{{$Acuerdo->materias->nombre}}</td>
                     <td>{{$Acuerdo->grupos->nombre}}</td>
 
-                    <td>{!! link_to_route('AcuerdoGrupo.show', $title='Mostrar', $parameters=$Acuerdo->id, $attributes = ['class' => 'btn btn-primary']) !!}
+                    <td>{!! link_to_route('PrograSintetizado.show', $title='Mostrar', $parameters=$Acuerdo->id, $attributes = ['class' => 'btn btn-primary']) !!}
                     </td>
 
-                    <td>{!! link_to_route('AcuerdoGrupo.edit', $title='Editar', $parameters=$Acuerdo->id, $attributes = ['class' => 'btn btn-primary']) !!}
+                    <td>{!! link_to_route('PrograSintetizado.edit', $title='Editar', $parameters=$Acuerdo->id, $attributes = ['class' => 'btn btn-primary']) !!}
                     </td>
 
-                    <td>{!! Form::open(['route' => ['AcuerdoGrupo.destroy', $Acuerdo->id], 'method'=>'DELETE'])!!}
+                    <td>{!! Form::open(['route' => ['PrograSintetizado.destroy', $Acuerdo->id], 'method'=>'DELETE'])!!}
                         {!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!} 
                     {!! Form::close() !!} </td>
 

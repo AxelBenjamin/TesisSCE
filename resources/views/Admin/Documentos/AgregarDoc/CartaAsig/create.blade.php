@@ -6,23 +6,14 @@
 
 {!! Form::open(['route' => 'CalendarioExamenes.store', 'method'=>'POST', 'class'=> 'form-horizontal']) !!}
 
-{{ Form::hidden('tipo', 'Calendario') }}
+{{ Form::hidden('tipo', 'CartaAsig') }}
 
 <div class="form-group">
   <div class="col-lg-4">
-    {!! Form::label('ciclo_escolars_id','Seleccionar Ciclo Escolar:',['class' => 'control-label'])!!}
+    {!! Form::label('maestros_id','Seleccionar Maestro:',['class' => 'control-label'])!!}
   </div>
   <div class="col-lg-3">
-    {!! Form::select('ciclo_escolars_id', $CiclosEscolares, null, array('class' => 'form-control')) !!}
-  </div>
-</div>
-
-<div class="form-group">
-  <div class="col-lg-4">
-    {!! Form::label('plan_estudios_id','Seleccionar Plan de Estudios:',['class' => 'control-label'])!!}
-  </div>
-  <div class="col-lg-3">
-    {!! Form::select('plan_estudios_id', $PlanesEstudios, null, array('class' => 'form-control')) !!}
+    {!! Form::select('maestros_id', $Maestros, null, array('class' => 'form-control')) !!}
   </div>
 </div>
 

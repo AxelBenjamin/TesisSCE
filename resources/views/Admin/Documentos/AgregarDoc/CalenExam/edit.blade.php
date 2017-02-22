@@ -4,7 +4,7 @@
 
 @include('Admin.layouts.partials.menuGD')
 
-{!! Form::open(['route' => 'CalendarioExamenes.store', 'method'=>'POST', 'class'=> 'form-horizontal']) !!}
+{!! Form::model($CalendarioExamen, ['route' => ['CalendarioExamenes.update', $CalendarioExamen->id], 'method'=>'PUT', 'class'=> 'form-horizontal', 'files' => true]) !!}
 
 {{ Form::hidden('tipo', 'Calendario') }}
 

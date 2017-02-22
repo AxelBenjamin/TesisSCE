@@ -4,10 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Acuerdo de Grupo</title>
 
-<link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/general.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ URL::to('src/css/botonesPanel.css')}}">
+
 
 <style type="text/css">
 body,td,th {

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Materia extends Model
 {
-    protected $fillable = ['clave','nombre','fechad1','fechad2','fechaA','fechaB','dia1','dia1horario','dia2','dia2horario','dia3','dia3horario', 'semestres_id','maestros_id'];
+    protected $fillable = ['clave','nombre','tipo','fechad1','fechad2','fechaA','fechaB','dia1','dia1horario','dia2','dia2horario','dia3','dia3horario', 'semestres_id','maestros_id'];
 
     public function semestres(){
 

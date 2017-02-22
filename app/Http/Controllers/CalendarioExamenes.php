@@ -24,8 +24,8 @@ class CalendarioExamenes extends Controller
      */
     public function index()
     {
-        /*$CalendarioExamenes = Reporte::all()->sortBy("plan_estudios_id");
-        return View::make('Admin.Documentos.AgregarDoc.CalenExam.index')->with("CalendarioExamenes",$CalendarioExamenes);*/
+        $CalendarioExamenes = Reporte::all()->where('tipo', 'Calendario')->sortBy('semestres_id');
+        return View::make('Admin.Documentos.AgregarDoc.CalenExam.index')->with("CalendarioExamenes",$CalendarioExamenes);
     }
 
     /**
@@ -35,14 +35,14 @@ class CalendarioExamenes extends Controller
      */
     public function create()
     {
-        /*$CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
-        $PlanesEstudios = PlanEstudios::pluck('nombre', 'id');
+        $CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
         $Grupos = Grupo::pluck('nombre','id');
+        $PlanesEstudios = PlanEstudios::pluck('nombre', 'id');
         $Semestres = Semestre::pluck('nombre','id');
         //$Temas = Tema::pluck('nombre','id');
         //$PlanesEstudios = PlanEstudios::pluck('nombre','id');
         return view::make('Admin.Documentos.AgregarDoc.CalenExam.create')
-        ->with('CiclosEscolares',$CiclosEscolares)->with('PlanesEstudios',$PlanesEstudios)->with('Grupos',$Grupos)->with('Semestres',$Semestres);/*->with('Temas',$Temas)->with('PlanesEstudios',$PlanesEstudios)*/
+        ->with('CiclosEscolares',$CiclosEscolares)->with('Grupos',$Grupos)->with('PlanesEstudios',$PlanesEstudios)->with('Semestres',$Semestres);/*->with('Temas',$Temas)->with('PlanesEstudios',$PlanesEstudios)*/
     }
 
     /**
@@ -53,8 +53,8 @@ class CalendarioExamenes extends Controller
      */
     public function store(Request $request)
     {
-        /*Reporte::create($request->all());
-        return redirect ('/CalendarioExamenes')->with('message','store');*/
+        Reporte::create($request->all());
+        return redirect ('/CalendarioExamenes')->with('message','store');
     }
 
     /**
@@ -65,7 +65,8 @@ class CalendarioExamenes extends Controller
      */
     public function show($id)
     {
-        //
+        $CalendarioExamen = Reporte::find($id);
+        return View::make('Admin.Documentos.AgregarDoc.CalenExam.show')->with('CalendarioExamen',$CalendarioExamen);
     }
 
     /**
@@ -76,7 +77,13 @@ class CalendarioExamenes extends Controller
      */
     public function edit($id)
     {
-        //
+        $CalendarioExamen = Reporte::find($id);
+        $CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
+        $Grupos = Grupo::pluck('nombre','id');
+        $PlanesEstudios = PlanEstudios::pluck('nombre', 'id');
+        $Semestres = Semestre::pluck('nombre','id');
+
+        return view::make('Admin.Documentos.AgregarDoc.CalenExam.edit')->with('CalendarioExamen',$CalendarioExamen)->with('CiclosEscolares',$CiclosEscolares)->with('Grupos',$Grupos)->with('PlanesEstudios',$PlanesEstudios)->with('Semestres',$Semestres);
     }
 
     /**
@@ -88,7 +95,10 @@ class CalendarioExamenes extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $CalendarioExamen = Reporte::find($id);
+        $input = Input::all();
+        $CalendarioExamen->update($input);
+        return  redirect('/CalendarioExamenes')->with('message','store');
     }
 
     /**
@@ -99,6 +109,7 @@ class CalendarioExamenes extends Controller
      */
     public function destroy($id)
     {
-        //
+        Reporte::destroy($id);
+        return redirect('/CalendarioExamenes')->with('message','store');
     }
 }

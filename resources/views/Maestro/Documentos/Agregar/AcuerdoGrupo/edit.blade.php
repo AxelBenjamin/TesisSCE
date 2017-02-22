@@ -4,7 +4,7 @@
 
 @include('Maestro.layouts.partials.menuGD')
 
-{!! Form::open(['route' => 'AcuerdoGrupo.store', 'method'=>'POST', 'class'=> 'form-horizontal']) !!}
+{!! Form::model($Acuerdo, ['route' => ['AcuerdoGrupo.update', $Acuerdo->id], 'method'=>'PUT', 'class'=> 'form-horizontal', 'files' => true]) !!}
 
 {{ Form::hidden('tipo', 'Acuerdo') }}
 
@@ -123,7 +123,7 @@
   <div>
     <p></p>
     {!! Form::submit('Enviar',['class' => 'btn btn-default']) !!}
-    {!! link_to_route('AcuerdoGrupo.index', 'Cancelar', null, array('class' => 'btn btn-default')); !!}
+    {!! link_to_route('CalendarioExamenes.index', 'Cancelar', null, array('class' => 'btn btn-default')); !!}
   </div>
  
 {!! Form::close() !!}

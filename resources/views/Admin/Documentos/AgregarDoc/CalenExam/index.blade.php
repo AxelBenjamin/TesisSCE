@@ -21,22 +21,26 @@
     
     <table class="table table-stripped table-hover">
         <thead>
-            <th>Materia</th>
-            <th>Grupo</th>
-            <th colspan="3">Opciones</th>
+            <th>Semestre</th>
+            <th colspan="4">Opciones</th>
         </thead>
 
         <tbody>
             @foreach($CalendarioExamenes as $CalendarioExamen)
                 <tr>
                     
-                    <td>{{$CalendarioExamen->planes_estudios->nombre}}</td>
+                    <td>{{$CalendarioExamen->semestres->nombre}}</td>
+                    <td>{{$CalendarioExamen->tipo}}</td>
 
-                    <td>{!! link_to_route('AcuerdoGrupo.show', $title='Mostrar', $parameters=$CalendarioExamen->id, $attributes = ['class' => 'btn btn-primary']) !!}
+                    <td>{!! link_to_route('CalendarioExamenes.show', $title='Mostrar', $parameters=$CalendarioExamen->id, $attributes = ['class' => 'btn btn-primary']) !!}
                     </td>
 
-                    <td>{!! link_to('AgregarDocumentosM/Calificaciones/ActaCalificaciones', $title='Editar', $attributes = ['class' => 'btn btn-primary']) !!}
+                    <td>{!! link_to_route('CalendarioExamenes.edit', $title='Editar', $parameters=$CalendarioExamen->id, $attributes = ['class' => 'btn btn-primary']) !!}
                     </td>
+
+                    <th>{!! Form::open(['route' => ['CalendarioExamenes.destroy', $CalendarioExamen->id], 'method'=>'DELETE']) !!}
+                    {!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
+                    {!! Form::close() !!} </th>
 
 
                 </tr>
