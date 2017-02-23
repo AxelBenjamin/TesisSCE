@@ -108,4 +108,8 @@ Route::resource('PrograSintetizado','ProgramaSintetizados');
 
 ////RUTAS DE Programa Extendido
 Route::resource('PrograExtendido','ProgramaExtendidos');
+Route::resource('PrograUnidad','PSEunidades');
+//Route::get('PrograUnidad/{id}', 'ProgramaExtendidos@editUnidad');
+//Route::put('PrograUnidad/', 'ProgramaExtendidos@updateUnidad');
+//Route::post('PrograExtendido/', 'ProgramaExtendidos@storeUnidad');
 //

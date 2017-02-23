@@ -6,7 +6,25 @@
 
 {!! Form::model($Unidad, ['route' => ['uni.update', $Unidad->id], 'method'=>'PUT', 'class'=> 'form-horizontal']) !!}
 
- 	@include('Admin.Unidades.partials.campos')
+ 	<div class="form-group">
+<div class="col-lg-3">
+ 		{!! Form::label('nombre','Nombre:',['class' => 'control-label'])!!}
+ 	</div>
+ 	
+ 	<div class="col-lg-5">
+		{!! Form::text('nombre',null,['class' => 'form-control']) !!}
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="col-lg-3">
+ 		{!! Form::label('nombre','Selecciona una Materia:',['class' => 'control-label'])!!}
+ 	</div>
+
+	<div class="col-lg-5">
+		{!! Form::select('materias_id', $Materias, null, array('class' => 'form-control')) !!}
+	</div>
+</div>
 
 	<div>
 		<p></p>

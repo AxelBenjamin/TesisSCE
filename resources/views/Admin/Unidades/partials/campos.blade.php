@@ -1,15 +1,5 @@
 <div class="form-group">
 <div class="col-lg-3">
- 		{!! Form::label('nombre','Nombre:',['class' => 'control-label'])!!}
- 	</div>
- 	
- 	<div class="col-lg-5">
-		{!! Form::text('nombre',null,['class' => 'form-control']) !!}
-	</div>
-</div>
-
-<div class="form-group">
-<div class="col-lg-3">
  		{!! Form::label('hrsteoricas','Número de horas teoricas:',['class' => 'control-label'])!!}
  	</div>
  	
@@ -99,11 +89,11 @@
 </div>
 
 <div class="form-group">
-	<div class="col-lg-3">
- 		{!! Form::label('nombre','Selecciona una Materia:',['class' => 'control-label'])!!}
+<div class="col-lg-3">
+ 		{!! Form::label('fechaprogramada','Fecha Programada:',['class' => 'control-label'])!!}
  	</div>
-
-	<div class="col-lg-5">
-		{!! Form::select('materias_id', $Materias, null, array('class' => 'form-control')) !!}
+ 	
+ 	<div class="col-lg-5">
+		{!! Form::text('fechaprogramada',null,['class' => 'form-control']) !!}
 	</div>
 </div>

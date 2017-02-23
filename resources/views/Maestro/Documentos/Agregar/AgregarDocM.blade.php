@@ -102,7 +102,7 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
             {!! link_to_route('alu.index', 'Programa Sintetizado', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
 
-            {!! link_to_route('alu.index', 'Programa Extendido', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
+            {!! link_to_route('PrograExtendido.index', 'Programa Extendido', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
 
             {!! link_to_route('AcuerdoGrupo.index', 'Acuerdo de Grupo', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
             </div>

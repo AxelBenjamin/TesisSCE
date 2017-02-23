@@ -24,8 +24,13 @@ class Materia extends Model
 	
 	}
 
-  public function unidades(){
+  public function unidads(){
 
-      return $this->hasMany('App\Unidad','unidades_id');
+      return $this->hasMany('App\Unidad','materias_id');
+  }
+
+  public function reportes(){
+
+      return $this->hasMany('App\Reporte','reportes_id');
   }
 }
