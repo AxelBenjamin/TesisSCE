@@ -108,7 +108,7 @@
 
             {!! link_to_route('AcuerdoGrupo.index', 'Calendario de Visitantes', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
 
-            {!! link_to_route('AcuerdoGrupo.index', 'Carta de Asignación', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
+            {!! link_to('/CartaAsignacionMaestro', $title = 'Carta de Asignación', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
             </div>
 
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>

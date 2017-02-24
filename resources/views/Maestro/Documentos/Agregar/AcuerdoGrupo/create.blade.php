@@ -35,6 +35,16 @@
   </div>
 </div>
 
+<div class="form-group">
+  <div class="col-lg-3">
+    {!! Form::label('grupos_id','Fecha:',['class' => 'control-label'])!!}
+  </div>
+  <div class="col-lg-3">
+    {!! Form::date('fechaelaboracion', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
+  </div>
+</div>
+
+
 
 <div class="form-group">
   <div class="col-lg-3">

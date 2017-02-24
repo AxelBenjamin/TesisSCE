@@ -4,7 +4,7 @@
 
 @include('Admin.layouts.partials.menuGD')
 
-{!! Form::open(['route' => 'CalendarioExamenes.store', 'method'=>'POST', 'class'=> 'form-horizontal']) !!}
+{!! Form::open(['route' => 'CartaAsignacion.store', 'method'=>'POST', 'class'=> 'form-horizontal']) !!}
 
 {{ Form::hidden('tipo', 'CartaAsig') }}
 
@@ -38,7 +38,7 @@
   <div>
     <p></p>
     {!! Form::submit('Enviar',['class' => 'btn btn-default']) !!}
-    {!! link_to_route('CalendarioExamenes.index', 'Cancelar', null, array('class' => 'btn btn-default')); !!}
+    {!! link_to_route('CartaAsignacion.index', 'Cancelar', null, array('class' => 'btn btn-default')); !!}
   </div>
  
 {!! Form::close() !!}

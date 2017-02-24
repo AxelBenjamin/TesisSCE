@@ -20,7 +20,8 @@ class Maestros extends Controller
      */
     public function index()
     {
-        $Maestros = Maestro::all();
+        $Maestros = Maestro::orderBy('apa')->get();
+        //$Maestros = Maestro::all();
         return View::make('Admin.Maestros.index')->with('Maestros', $Maestros);
     }
 

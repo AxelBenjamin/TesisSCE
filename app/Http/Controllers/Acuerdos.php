@@ -55,7 +55,6 @@ class Acuerdos extends Controller
 
         // (Optional) Setup the paper size and orientation
         //$pdf->setPaper('A4', 'landscape');
-        
         //return $pdf->stream('Lista_Alumnos');
         if($tipo==1){return $pdf->stream('Acuerdo_Grupo');}
         if($tipo==2){return $pdf->download('Acuerdo_Grupo.pdf'); }        

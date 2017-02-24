@@ -2,11 +2,11 @@
     $mensaje = Session::get('message')
 ?>
 
-@extends('Admin.layouts.master')
+@extends('Maestro.layouts.master')
     
-@section('content2')
+@section('contentMaestro')
 
-@include('Admin.layouts.partials.menuGD')  
+@include('Maestro.layouts.partials.menuGD')  
 
     @if($mensaje == 'store')
         <div class="alert alert-warning alert-dismissible" role="alert">
@@ -16,14 +16,11 @@
     @endif
 
     <div class="table-responsive">
-
-    {!! link_to_route('CartaAsignacion.create', 'Agregar Carta de Asignación', null, array('class' => 'btn btn-default')); !!}
     
     <table class="table table-stripped table-hover">
         <thead>
             <th>Semestre</th>
             <th>Maestro</th>
-            <th>Tipo</th>
             <th colspan="3">Opciones</th>
         </thead>
 
@@ -35,18 +32,10 @@
                     <td>{{$CartaAsignacion->maestros->apa}}
                     {{$CartaAsignacion->maestros->ama}}
                     {{$CartaAsignacion->maestros->nombre}}</td>
-                    <td>{{$CartaAsignacion->tipo}}</td>
 
-                    <td>{!! link_to_route('CartaAsignacion.show', $title='Mostrar', $parameters=$CartaAsignacion->id, $attributes = ['class' => 'btn btn-primary']) !!}
-                    </td>
+                    <th>{!!link_to_action('CartaAsignaciones@crear_carta_asignacion', $title = 'Ver Carta', $parameters = array('1' , $CartaAsignacion->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
 
-                    <td>{!! link_to_route('CartaAsignacion.edit', $title='Editar', $parameters=$CartaAsignacion->id, $attributes = ['class' => 'btn btn-primary']) !!}
-                    </td>
-
-                    <th>{!! Form::open(['route' => ['CartaAsignacion.destroy', $CartaAsignacion->id], 'method'=>'DELETE']) !!}
-                    {!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
-                    {!! Form::close() !!} </th>
-
+                    <th>{!!link_to_action('CartaAsignaciones@crear_carta_asignacion', $title = 'Descargar Carta', $parameters = array('2' , $CartaAsignacion->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
 
                 </tr>
             @endforeach

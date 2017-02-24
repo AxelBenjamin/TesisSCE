@@ -8,7 +8,7 @@
 
 <style type="text/css">
 body,td,th {
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-family: "Arial", "Arial", Arial, serif;
 	text-align: center;
 }
 </style>
@@ -16,73 +16,58 @@ body,td,th {
 
 <body>
 <div align="center">
-  <p>&nbsp;</p>
-  <img src="/src/imagenes/logo_americana_vertical.jpg" class="img-responsive" alt="Responsive image" width="111" height="160" align="left" /><img src="/src/imagenes/logo_computacion.png" class="img-responsive" alt="Responsive image" alt="" width="111" height="160" align="right" />
-  <table width="635" border="0">
+  <img src="/src/imagenes/logo_americana_vertical.jpg" width="71" height="100" align="left" />
+  <img src="/src/imagenes/logo_computacion.png" alt="" width="71" height="100" align="right" />
+  <table width="545" border="0">
     <tr>
-      <td width="668"><h3 align="center">FACULTAD DE ARQUITECTURA E INGENIERÍA</h3></td>
+      <td><strong align="center">FACULTAD DE ARQUITECTURA E INGENIERÍA</strong></td>
     </tr>
-  </table>
-  <table width="200" border="0">
     <tr>
-      <td><strong>ACUERDO DE GRUPO</strong></td>
+      <td><strong align='center'>ACUERDO DE GRUPO</strong></td>
     </tr>
-  </table>
-</div>
-<div align="center">
-  <table width="364" border="0">
     <tr>
-      <td width="358"><div align="center">
-        <h4><strong>INGENIERÍA EN COMPUTACIÓN</strong></h4>
-      </div></td>
-    </tr>
-  </table>
-  <table width="280" border="0">
-    <tr>
-      <td><div align="left"><strong>CICLO ESCOLAR </strong></div>
+      <td><strong align='center'>INGENIERÍA EN COMPUTACIÓN</strong>
       </td>
-      <td>
-        {{ $data->ciclo_escolars->nombre}}
-      }
-      }
+    </tr>
+    <tr>
+      <td><strong align="center">CICLO ESCOLAR {{ $data->ciclo_escolars->nombre}}</strong>
       </td>
     </tr>
   </table>
-</div>
-<p align="center">&nbsp;</p>
-<div align="center">
-  <table width="896" border="0">
+
+  <table width="545" border="0">
     <tr>
-      <td width="350"><div align="left"><strong>MATERIA: {{ $data->materias->nombre }} </strong></div>
+      <td width="180"><div align="left"><strong>MATERIA: {{ $data->materias->nombre }} </strong></div>
       </td>
 
-      <td width="191"><div align="left"><strong>GRUPO: {{ $data->grupos->nombre }} </strong></div>
+      <td width="180"><div align="center"><strong>GRUPO: {{ $data->grupos->nombre }} </strong></div>
       </td>
 
-      <td width="191"><div align="left"><strong>FECHA:  </strong>
-      <?php
-      echo date('d/m/Y');
-      ?>
+      <td width="180"><div align="right"><strong>FECHA:  {{ $data->fechaelaboracion }}
+      
+      </strong>
       </div>      
       </td>
     </tr>
   </table>
-  <table width="795" border="1" cellspacing="0">
+
+  <table width="545" border="1" cellspacing="0">
     <tr>
-      <td width="492"><div align="center">LOS ALUMNOS ABAJO FIRMANTES AFIRMAN HABER RECIBIDO EL PROGRAMA SINTETIZADO.</div></td>
+      <td><div align="center">LOS ALUMNOS ABAJO FIRMANTES AFIRMAN HABER RECIBIDO EL PROGRAMA SINTETIZADO.</div></td>
     </tr>
   </table>
-  <table width="794" border="1" align="center" cellspacing="0">
+
+  <table width="543" border="1" align="center" cellspacing="0">
     <tr>
-      <td width="83"><div align="center"><strong>Número</strong></div></td>
-      <td width="539"><div align="center"><strong>Nombre del Alumno</strong></div></td>
-      <td width="150"><div align="center"><strong>Firma</strong></div></td>
+      
+      <td width="200"><div align="center"><strong>Nombre del Alumno</strong></div></td>
+      <td width="50"><div align="center"><strong>Firma</strong></div></td>
     </tr>
 
     @foreach($data->grupos->alumnos as $alumno)      
       <tr>
-        <td><div align="center">{{ $alumno->id }}</div></td>
-        <td><div align="left">&nbsp;
+        
+        <td><div align="left">
         {{ $alumno->apa }}
         {{ $alumno->ama }}
         {{ $alumno->nombre }}</div></td>
@@ -91,94 +76,75 @@ body,td,th {
     @endforeach
   
     <tr>
-      <td><div align="center">3</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      
     </tr>
     <tr>
-      <td><div align="center">4</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      
     </tr>
     <tr>
-      <td><div align="center">5</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      
     </tr>
     <tr>
-      <td><div align="center">6</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      
     </tr>
     <tr>
-      <td><div align="center">7</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      
     </tr>
     <tr>
-      <td><div align="center">8</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      
     </tr>
     <tr>
-      <td><div align="center">9</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      
     </tr>
     <tr>
-      <td><div align="center">10</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      
     </tr>
     <tr>
-      <td><div align="center">11</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      
     </tr>
     <tr>
-      <td><div align="center">12</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      
     </tr>
     <tr>
-      <td><div align="center">13</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      
     </tr>
     <tr>
-      <td><div align="center">14</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
+      
     </tr>
     <tr>
-      <td><div align="center">15</div></td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><div align="center">16</div></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><div align="center">17</div></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><div align="center">18</div></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><div align="center">19</div></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      
     </tr>
   </table>
-  <table width="794" border="1" cellspacing="0">
+
+  <table width="545" border="1" cellspacing="0">
     <tr>
-      <th width="788" scope="col">TRABAJO Y/O PRACTICA FINAL</th>
+      <th scope="col">TRABAJO Y/O PRACTICA FINAL</th>
     </tr>
     <tr>
       <td>{{ $data->agtrabajopracfin }}</td>
@@ -186,8 +152,7 @@ body,td,th {
     <tr>
       <td>&nbsp;</td>
     </tr>
-  </table>
-  <table width="794" border="1" cellspacing="0">
+
     <tr>
       <th scope="col">CONSIDERACIONES ESPECIALES</th>
     </tr>
@@ -204,39 +169,39 @@ body,td,th {
       <td>&nbsp;</td>
     </tr>
   </table>
-  <table width="794" border="1" cellspacing="0">
+
+  <table width="545" border="1" cellspacing="0">
     <tr>
       <th colspan="2" scope="col">EVALUACIÓN DEPARTAMENTAL</th>
     </tr>
     <tr>
-      <td colspan="2">Departamentales: {{ $data->pseagdepartamentales }}</td>
+      <td width="385"><div align="left">Exámenes Departamentales </div></td>
+      <td width="150"> {{ $data->pseagdepartamentales }}</td>
     </tr>
     <tr>
-      <td colspan="2">Practicas: {{ $data->pseagpracticas }}</td>
+      <td width="385"><div align="left">Practicas </div></td>
+      <td width="150"> {{ $data->pseagpracticas }}</td>
     </tr>
     <tr>
-      <td colspan="2">Tareas/Participación: {{ $data->pseagtareaspart }}</td>
+      <td width="385"><div align="left">Tareas/Participación </div></td>
+      <td width="150"> {{ $data->pseagtareaspart }}</td>
+    </tr> 
+    <tr>
+      <td width="385">&nbsp;</td>
+      <td width="150"></td>
     </tr>
     <tr>
-      <td colspan="2">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="2">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="2">&nbsp;</td>
-    </tr>
-    <tr>
-      <td width="628">TOTAL</td>
+      <td width="385">TOTAL</td>
       <td width="150">100 %</td>
     </tr>
   </table>
   <p>&nbsp;</p>
-  <table width="794" border="0">
+
+  <table width="545" border="0">
     <tr>
-      <td width="260"> <div align="center">FIRMA DEL PROFESOR</div></td>
-      <td width="260">&nbsp;</td>
-      <td width="260"><div align="center">FIRMA DEL JEFE DE GRUPO</div></td>
+      <td width="180"> <div align="center">FIRMA DEL PROFESOR</div></td>
+      <td width="180">&nbsp;</td>
+      <td width="180"><div align="center">FIRMA DEL JEFE DE GRUPO</div></td>
     </tr>
     <tr>
       <td><p align="center">&nbsp;</p>
@@ -246,11 +211,12 @@ body,td,th {
       <p align="center">___________________________</p></td>
     </tr>
   </table>
-  <table width="794" border="0">
+
+  <table width="545" border="0">
     <tr>
-      <td width="227"><div align="left"></div></td>
-      <td width="293">&nbsp;</td>
-      <td width="260"><p align="center">Vo. Bo.</p>
+      <td width="180"><div align="left"></div></td>
+      <td width="180">&nbsp;</td>
+      <td width="180"><p align="center">Vo. Bo.</p>
       <p align="center">DIRECTOR TECNICO</p></td>
     </tr>
     <tr>
@@ -261,8 +227,6 @@ body,td,th {
           <li>2DA COPIA FACULTAD</li>
         </ul>
 
-        {!! link_to('AcuerdoGrupoAdmin', $title='Volver', $attributes = ['class' => 'btn btn-default']) !!}
-
       </div></td>
       <td>&nbsp;</td>
       <td><p align="center">&nbsp;</p>
@@ -271,7 +235,6 @@ body,td,th {
       </td>
     </tr>
   </table>
-  <hr />
 </div>
 </body>
 </html>
