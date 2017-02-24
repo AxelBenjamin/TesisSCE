@@ -60,11 +60,7 @@ body,td,th {
       <td width="191"><div align="left"><strong>GRUPO: {{ $Acuerdo->grupos->nombre }} </strong></div>
       </td>
 
-      <td width="191"><div align="left"><strong>FECHA:  </strong>
-      <?php
-      echo date('d/m/Y');
-      ?>
-      </div>      
+      <td width="191"><div align="left"><strong>FECHA: {{$Acuerdo->fechaelaboracion}} </strong></div>      
       </td>
     </tr>
   </table>
