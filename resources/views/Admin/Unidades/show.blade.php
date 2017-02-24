@@ -1,8 +1,8 @@
-@extends('Admin.layouts.master')
+@extends('Maestro.layouts.master')
 
-@section('content2')
+@section('contentMaestro')
 
-@include('Admin.layouts.partials.menuGM')
+@include('Maestro.layouts.partials.menuGD')
 
 <div class="table-responsive">
 	
@@ -57,12 +57,16 @@
                 <th>Sistema de Evaluacion</th>
                 <td>{{ $Unidad->sistemaevaluacion }}</td>
             </tr>
+            <tr>
+                <th>Fecha Programada</th>
+                <td>{{ $Unidad->fechaprogramada }}</td>
+            </tr>
         </table>
 
     </table>
 
 	</div>
 
-    {!! link_to_route('uni.index', 'Atras', null, array('class' => 'btn btn-default')); !!}
+    {!! link_to_route('PrograExtendido.index', 'Atras', null, array('class' => 'btn btn-default')); !!}
 
 @endsection

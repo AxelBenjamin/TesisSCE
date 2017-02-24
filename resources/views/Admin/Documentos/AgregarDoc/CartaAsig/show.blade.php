@@ -40,7 +40,9 @@ body,td,th {
 <div align="center">
   <table width="800" border="0">
     <tr>
-      <td>Ing {{ $CartaAsignacion->maestros->apa }}
+      <td>
+      {{ $CartaAsignacion->maestros->grado }}
+      {{ $CartaAsignacion->maestros->apa }}
       {{ $CartaAsignacion->maestros->ama }}
       {{ $CartaAsignacion->maestros->nombre }}</td>
       </tr>
@@ -57,9 +59,11 @@ body,td,th {
     <table width="800" border="0">
       <tr>
         <td><div align="justify">
-        <p>Ing {{ $CartaAsignacion->maestros->apa }}
-      {{ $CartaAsignacion->maestros->ama }}
-      {{ $CartaAsignacion->maestros->nombre }}</p>
+        <p>
+        {{ $CartaAsignacion->maestros->grado }} 
+        {{ $CartaAsignacion->maestros->apa }}
+        {{ $CartaAsignacion->maestros->ama }}
+        {{ $CartaAsignacion->maestros->nombre }}</p>
           <p>Por acuerdo del <em><strong>Consejo Directivo</strong></em>, ha sido designado como Profesor de las Cátedras que a continuación se señalan:</p>
         </div></td>
       </tr>
