@@ -95,6 +95,12 @@ Route::resource('CartaAsignacion','CartaAsignaciones');
 Route::get('crear_carta_asignacion/{tipo}/{id}', 'CartaAsignaciones@crear_carta_asignacion');
 Route::get('CartaAsignacionMaestro', 'CartaAsignaciones@indexMaestro');
 
+////RUTAS DE Programa Extendido
+Route::resource('PrograExtendido','ProgramaExtendidos');
+Route::resource('PrograUnidad','PSEunidades');
+Route::get('crear_programa_extendido/{tipo}/{id}', 'ProgramaExtendidos@crear_programa_extendido');
+Route::get('ProgramaExtendidoAdmin', 'ProgramaExtendidos@indexAdmin');
+
 //RUTAS DE CALNEDARIO DE EXAMENES
 Route::resource('CalendarioExamenes','CalendarioExamenes');
 
@@ -109,9 +115,7 @@ Route::get('crear_lista_alumnos/{tipo}/{id}', 'ListaAlumnos@crear_lista_alumnos'
 Route::resource('PrograSintetizado','ProgramaSintetizados');
 
 
-////RUTAS DE Programa Extendido
-Route::resource('PrograExtendido','ProgramaExtendidos');
-Route::resource('PrograUnidad','PSEunidades');
+
 //Route::get('PrograUnidad/{id}', 'ProgramaExtendidos@editUnidad');
 //Route::put('PrograUnidad/', 'ProgramaExtendidos@updateUnidad');
 //Route::post('PrograExtendido/', 'ProgramaExtendidos@storeUnidad');

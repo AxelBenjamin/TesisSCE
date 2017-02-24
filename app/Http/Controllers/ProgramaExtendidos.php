@@ -35,11 +35,46 @@ class ProgramaExtendidos extends Controller
         return View::make('Maestro.Documentos.Agregar.PrograExtendido.index')->with("PrograExtendidos", $PrograExtendidos)->with("Unidades",$Unidades);
     }
 
+    //INDEX PARA QUE EL ADMIN VEA PDF
+    public function indexAdmin()
+    {
+        $PrograExtendidos = Reporte::all()->where('tipo', 'ProgramaExtendido')->sortBy("materias_id");
+        //$Grupos = Grupo::all();
+        return View::make('Admin.Documentos.VerDoc.ProgramaExtendido.index')->with("PrograExtendidos", $PrograExtendidos);//->with("Grupos", $Grupos);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+    
+    //INICIA Función para crear PDF 
+    public function crearPDF($datos,$vistaurl,$tipo, $id)
+    {
+        $data = $datos;
+        //$date = date('Y-m-d');
+        $view =  \View::make($vistaurl, compact('data'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+
+        // (Optional) Setup the paper size and orientation
+        $pdf->setPaper('A4', 'landscape');
+        //return $pdf->stream('Lista_Alumnos');
+        if($tipo==1){return $pdf->stream('Programa_Extendido');}
+        if($tipo==2){return $pdf->download('Programa_Extendido.pdf'); }        
+    }
+
+    
+    public function crear_programa_extendido($tipo, $id)
+    {
+        $PrograExtendido = Reporte::find($id);
+        $vistaurl="Admin.Documentos.VerDoc.ProgramaExtendido.show";
+     
+        return $this->crearPDF($PrograExtendido, $vistaurl, $tipo, $id);
+    }
+
+//TERMINA Función para crear PDF 
     public function create()
     {
         $Materias = Materia::pluck('nombre', 'id');
