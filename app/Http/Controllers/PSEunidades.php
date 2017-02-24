@@ -8,19 +8,11 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
 
-use App\Maestro;
-
-use App\Grupo;
-use App\Materia;
-use App\CicloEscolar;
-use App\Unidad;
-use App\Tema;
-use App\Reporte;
-use App\PlanEstudios;
-
 use App\Http\Requests;
 
-class ProgramaExtendidos extends Controller
+use App\Unidad;
+
+class PSEunidades extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,10 +21,7 @@ class ProgramaExtendidos extends Controller
      */
     public function index()
     {
-        $PrograExtendidos = Reporte::all()->where('tipo', 'ProgramaExtendido')->sortBy("materias_id");
-        $Unidades = Unidad::all();
-        //$Grupos = Grupo::all();
-        return View::make('Maestro.Documentos.Agregar.PrograExtendido.index')->with("PrograExtendidos", $PrograExtendidos)->with("Unidades",$Unidades);
+        //
     }
 
     /**
@@ -42,13 +31,7 @@ class ProgramaExtendidos extends Controller
      */
     public function create()
     {
-        $Materias = Materia::pluck('nombre', 'id');
-        $Maestros = Maestro::all()->pluck("nombreCompleto","id");
-        $CicloEscolares = CicloEscolar::pluck('nombre', 'id');
-        $PlanEstudios = PlanEstudios::pluck('nombre', 'id');
-        $Grupos = Grupo::pluck('nombre', 'id');
-        //$Alumnos = Alumno::all();
-        return view::make('Maestro.Documentos.Agregar.PrograExtendido.create')->with('Materias',$Materias)->with('Maestros',$Maestros)->with('CicloEscolares',$CicloEscolares)->with('PlanEstudios',$PlanEstudios)->with('Grupos',$Grupos);
+        //
     }
 
     /**
@@ -59,8 +42,7 @@ class ProgramaExtendidos extends Controller
      */
     public function store(Request $request)
     {
-        Reporte::create($request->all());
-        return redirect ('/PrograExtendido')->with('message','store');
+        //
     }
 
     /**
@@ -71,9 +53,7 @@ class ProgramaExtendidos extends Controller
      */
     public function show($id)
     {
-        $PrograExtendido = Reporte::find($id);
-        //$Unidades = Unidad::all();
-        return View::make('Maestro.Documentos.Agregar.PrograExtendido.show')->with('PrograExtendido',$PrograExtendido);
+        //
     }
 
     /**
@@ -84,7 +64,10 @@ class ProgramaExtendidos extends Controller
      */
     public function edit($id)
     {
-        //
+        $Unidad = Unidad::find($id);
+        //$Materias = Materia::pluck('nombre','id');
+        
+        return view::make('Maestro.Documentos.Agregar.PrograExtendido.editUnidad')->with('Unidad', $Unidad);
     }
 
     /**
@@ -96,7 +79,10 @@ class ProgramaExtendidos extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Unidad = Unidad::find($id);
+        $input = Input::all();
+        $Unidad->update($input);
+        return  redirect('/PrograExtendido')->with('message','store');
     }
 
     /**
@@ -107,7 +93,6 @@ class ProgramaExtendidos extends Controller
      */
     public function destroy($id)
     {
-        Reporte::destroy($id);
-        return redirect('/PrograExtendido')->with('message','store');
+        //
     }
 }

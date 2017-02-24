@@ -24,6 +24,7 @@ class CreateUnidadsTable extends Migration
             $table->string('recursosdidacticos');
             $table->string('propositos');
             $table->string('sistemaevaluacion');
+            $table->char('fechaprogramada');
 
             $table->integer('materias_id')->unsigned();
             $table->foreign('materias_id')->references('id')->on('materias')->onDelete('cascade');

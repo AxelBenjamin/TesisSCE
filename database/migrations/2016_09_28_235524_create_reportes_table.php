@@ -65,6 +65,9 @@ class CreateReportesTable extends Migration
             $table->integer('maestros_id')->unsigned();;
             $table->foreign('maestros_id')->references('id')->on('maestros');
 
+            $table->integer('unidads_id')->unsigned();;
+            $table->foreign('unidads_id')->references('id')->on('unidads');
+
             //Relaciones directas
             $table->integer('temas_id')->unsigned();
             $table->foreign('temas_id')->references('id')->on('temas')->onDelete('cascade');

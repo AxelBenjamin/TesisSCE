@@ -42,8 +42,6 @@
                 	<td>{{ $Unidad->nombre }}</td>
                     <td>{{ $Unidad->materias->nombre }}</td>
 
-                    <td>{!!link_to_route('uni.show', $title = 'Mostrar', $parameters = $Unidad->id, $attributes = ['class'=>'btn btn-primary'])!!}
-                    </td>
 
                     <td>{!!link_to_route('uni.edit', $title = 'Editar', $parameters = $Unidad->id, $attributes = ['class'=>'btn btn-primary'])!!}
                     </td>
