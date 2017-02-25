@@ -23,7 +23,8 @@ class Unidad extends Model
 
 	public function reportes(){
 
-   		return $this->hasMany('App\Reporte','reportes_id');
+   		return $this->hasMany('App\Reporte','unidads_id');
+                                              //reportes
 	}
 
 	

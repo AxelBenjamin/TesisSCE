@@ -21,6 +21,16 @@ class Alumno extends Model
    		return $this->hasMany('App\Reporte','reportes_id');
 	}
 
+    public function calificacions(){
+
+      return $this->hasMany('App\Calificacion','alumnos_id');
+  }
+
+  //Hago función para concatenar columnas(mostrar mas de 1 columna en el combo box)
+  public function getnombreCompletoAttribute(){
+    return $this->attributes['apa'] .' '. $this->attributes['ama'] .' '. $this->attributes['nombre'];
+  }
+
    	public function setFotoAttribute($foto){
 		if(!empty($foto)){
 			$this->attributes['foto'] = Carbon::now()->second.$foto->getClientOriginalName();

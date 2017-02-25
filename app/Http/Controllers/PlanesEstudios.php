@@ -53,7 +53,8 @@ class PlanesEstudios extends Controller
      */
     public function show($id)
     {
-        //
+        $PlanEstudio = PlanEstudios::find($id);
+        return View::make('Admin.PlanEstudios.show')->with('PlanEstudio',$PlanEstudio);
     }
 
     /**

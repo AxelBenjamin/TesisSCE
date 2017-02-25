@@ -15,6 +15,11 @@ class Maestro extends Model
    		return $this->hasMany('App\Materia','maestros_id');
 	}
 
+	public function calificacions(){
+
+   		return $this->hasMany('App\Calificacion','maestros_id');
+	}
+
 	//Hago función para concatenar columnas(mostrar mas de 1 columna en el combo box)
 	public function getnombreCompletoAttribute(){
 		return $this->attributes['apa'] .' '. $this->attributes['ama'] .' '. $this->attributes['nombre'];
