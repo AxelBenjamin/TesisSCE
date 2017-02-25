@@ -87,33 +87,17 @@
         <!--Subdividimos este row en 3 columnas-->
         <div class="row">
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                <div class="menuizquierdo"> 
-                @include('Maestro.layouts.partials.menuMaestro')   
+                <div class="menuizquierdo">
+                    @include('Alumno.layouts.partials.menuAlumno')   
                 </div>
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-            <div style="border-left:1px solid #000; height:550px; border-right:1px solid #000; height:550px; padding:1em">
-            @include('Maestro.layouts.partials.menuGD') 
-
-            
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            {!! link_to_route('alu.index', 'Horario de Clases', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
-
-            {!! link_to('/CalendarioExamenesMaestro', 'Calendario de Examenes', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
-
-            {!! link_to('ListaAlumnosMaestro', 'Lista de Alumnos', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
-
-            {!! link_to_route('AcuerdoGrupo.index', 'Calendario de Visitantes', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
-
-            {!! link_to('/CartaAsignacionMaestro', $title = 'Carta de Asignación', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
+                <div style="border-left:1px solid #000;height:450px; border-right:1px solid #000;height:450px; padding:1em">
+                    @yield('contentAlumno')
+                </div>
             </div>
 
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
-
-            </div>
             </div><!--Termina Row del contenido de en medio, del panel-->
 
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">

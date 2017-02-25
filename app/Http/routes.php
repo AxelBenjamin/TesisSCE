@@ -89,6 +89,7 @@ Route::get('/AgregarDocumentosM/Calificaciones/ActaCalificaciones', function () 
 Route::resource('AcuerdoGrupo','Acuerdos'); 
 Route::get('crear_acuerdo_grupo/{tipo}/{id}', 'Acuerdos@crear_acuerdo_grupo'); //ruta para pdf
 Route::get('AcuerdoGrupoAdmin', 'Acuerdos@indexAdmin'); //index Admin
+Route::get('AcuerdoGrupoAlumno', 'Acuerdos@indexAlumno');
 
 ////RUTAS DE Carta de Asignación
 Route::resource('CartaAsignacion','CartaAsignaciones');
@@ -103,12 +104,14 @@ Route::get('ProgramaExtendidoAdmin', 'ProgramaExtendidos@indexAdmin');
 
 //RUTAS DE CALNEDARIO DE EXAMENES
 Route::resource('CalendarioExamenes','CalendarioExamenes');
+Route::get('crear_calendario_examenes/{tipo}/{id}', 'CalendarioExamenes@crear_calendario_examenes');
+Route::get('CalendarioExamenesMaestro', 'CalendarioExamenes@indexMaestro');
+Route::get('CalendarioExamenesAlumno', 'CalendarioExamenes@indexAlumno');
 
 //RUTAS DE LISTA DE ALUMNOS
 Route::resource('ListaAlumnos','ListaAlumnos');
 Route::get('crear_lista_alumnos/{tipo}/{id}', 'ListaAlumnos@crear_lista_alumnos');
-
-
+Route::get('ListaAlumnosMaestro', 'ListaAlumnos@indexMaestro');
 //
 
 ////RUTAS DE Programa Sintetizado

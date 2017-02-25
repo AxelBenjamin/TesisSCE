@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\View;
 
 use App\Grupo;
 use App\Alumno;
+use App\CicloEscolar;
+use App\Reporte;
 
 class ListaAlumnos extends Controller
 {
@@ -22,9 +24,14 @@ class ListaAlumnos extends Controller
      */
     public function index()
     {
-        $Grupos = Grupo::all();
-        //return View::make('Admin.Documentos.AgregarDoc.ListaAlu.index')->with("Grupos", $Grupos);
-        return view("Maestro.Documentos.Ver.ListaAlumnos.index")->with("Grupos", $Grupos);
+        $ListaAlumnos = Reporte::all()->where('tipo', 'ListaAlu')->sortBy("grupos_id");
+        return View::make('Admin.Documentos.AgregarDoc.ListaAlu.index')->with("ListaAlumnos", $ListaAlumnos);
+    }
+
+    public function indexMaestro()
+    {
+        $ListaAlumnos = Reporte::all()->where('tipo', 'ListaAlu')->sortBy("grupos_id");
+        return View::make('Maestro.Documentos.Ver.ListaAlumnos.index')->with("ListaAlumnos", $ListaAlumnos);
     }
 
     /**
@@ -52,10 +59,10 @@ class ListaAlumnos extends Controller
     
     public function crear_lista_alumnos($tipo, $id){
 
-     $Grupo = Grupo::find($id);
+     $ListaAlumno = Reporte::find($id);
      $vistaurl="Maestro.Documentos.Ver.ListaAlumnos.show";
      
-     return $this->crearPDF($Grupo, $vistaurl, $tipo, $id);
+     return $this->crearPDF($ListaAlumno, $vistaurl, $tipo, $id);
      
 
 
@@ -63,7 +70,10 @@ class ListaAlumnos extends Controller
 
     public function create()
     {
-        //
+        $Grupos = Grupo::pluck('nombre','id');
+        $CicloEscolars = CicloEscolar::pluck('nombre','id');
+
+        return view::make('Admin.Documentos.AgregarDoc.ListaAlu.create')->with('Grupos',$Grupos)->with('CicloEscolars',$CicloEscolars);
     }
 
     /**
@@ -74,7 +84,8 @@ class ListaAlumnos extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Reporte::create($request->all());
+        return redirect ('/ListaAlumnos')->with('message','store');
     }
 
     /**
@@ -85,8 +96,8 @@ class ListaAlumnos extends Controller
      */
     public function show($id)
     {
-        $Grupo = Grupo::find($id);
-        return View::make('Admin.Documentos.AgregarDoc.ListaAlu.show')->with('Grupo', $Grupo);
+        $ListaAlumno = Reporte::find($id);
+        return View::make('Admin.Documentos.AgregarDoc.ListaAlu.show')->with('ListaAlumno', $ListaAlumno);
     }
 
     /**
@@ -120,6 +131,7 @@ class ListaAlumnos extends Controller
      */
     public function destroy($id)
     {
-        //
+        Reporte::destroy($id);
+        return redirect('/ListaAlumnos')->with('message','store');
     }
 }

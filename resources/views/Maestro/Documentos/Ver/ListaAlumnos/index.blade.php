@@ -20,17 +20,17 @@
     <table class="table table-stripped table-hover">
         <thead>
             <th>Grupo</th>
-            <th colspan="3">Opciones</th>
+            <th colspan="2">Opciones</th>
         </thead>
 
-        @foreach($Grupos as $Grupo) 
+        @foreach($ListaAlumnos as $ListaAlumno) 
   
         <tbody>
-            <th> {{$Grupo->nombre}} </th>
+            <th> {{$ListaAlumno->grupos->nombre}} </th>
 
-            <th>{!!link_to_action('ListaAlumnos@crear_lista_alumnos', $title = 'Ver Lista', $parameters = array('1' , $Grupo->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+            <th>{!!link_to_action('ListaAlumnos@crear_lista_alumnos', $title = 'Ver Lista', $parameters = array('1' , $ListaAlumno->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
 
-            <th>{!!link_to_action('ListaAlumnos@crear_lista_alumnos', $title = 'Descargar Lista', $parameters = array('2' , $Grupo->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+            <th>{!!link_to_action('ListaAlumnos@crear_lista_alumnos', $title = 'Descargar Lista', $parameters = array('2' , $ListaAlumno->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
                 
             
         </tbody>

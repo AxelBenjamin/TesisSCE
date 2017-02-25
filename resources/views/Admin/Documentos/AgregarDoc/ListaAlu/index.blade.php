@@ -26,23 +26,38 @@
 	@endif
 
     <div class="table-responsive">
+    {!! link_to_route('ListaAlumnos.create', 'Agregar Lista de Alumnos', null, array('class' => 'btn btn-default')); !!}
     <table class="table table-stripped table-hover">
         <thead>
             <th>Grupo</th>
             <th colspan="2">Opciones</th>
         </thead>
 
-        @foreach($Grupos as $Grupo) 
         <tbody>
-            <th> {{$Grupo->nombre}} </th>
+            @foreach($ListaAlumnos as $ListaAlumno)
+                <tr>
+                    <td>
+                    {{$ListaAlumno->grupos->nombre}}
+                    </td>
 
-            <th>
-                {!!link_to_route('ListaAlumnos.show', $title = 'Generar Lista', $parameters = $Grupo->id, $attributes = ['class'=>'btn btn-primary'])!!} </th>
+                    <td>{!! link_to_route('ListaAlumnos.show', $title='Mostrar', $parameters=$ListaAlumno
+                    ->id, $attributes = ['class' => 'btn btn-primary']) !!}
+                    </td>
 
-                
+                    <td>{!! link_to_route('ListaAlumnos.edit', $title='Editar', $parameters=$ListaAlumno
+                    ->id, $attributes = ['class' => 'btn btn-primary']) !!}
+                    </td>
+
+                    <th>{!! Form::open(['route' => ['ListaAlumnos.destroy', $ListaAlumno
+                    ->id], 'method'=>'DELETE']) !!}
+                    {!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
+                    {!! Form::close() !!} </th>
+
+
+                </tr>
+            @endforeach
             
-        </tbody>
-        @endforeach   
+        </tbody>  
     
     </table>
 	</div>

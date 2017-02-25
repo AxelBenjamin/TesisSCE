@@ -72,24 +72,18 @@ body,td,th {
   <div align="center">
     <table width="700" border="0">
 
+
       @foreach($CartaAsignacion->maestros->materias as $materia)
-      <tr>
-        <td><p>{{ $materia->nombre }}</p>
-          <p>GRUPO</p>
-        <p>{{ $materia->dia1 }} de {{ $materia->dia1horario }} y {{ $materia->dia2 }} de {{ $materia->dia2horario }}</p></td>
-      </tr>
+        <tr>
+          <td>
+          {{ $materia->nombre }}<br>
+          GRUPO IC<br>
+          {{ $materia->dia1 }} de {{ $materia->dia1horario }} y {{ $materia->dia2 }} de {{ $materia->dia2horario }}
+          </td>
+        </tr>
       @endforeach
 
-      <tr>
-        <td><p>&nbsp;</p>
-          <p>&nbsp;</p>
-        <p>&nbsp;</p></td>
-      </tr>
-      <tr>
-        <td><p>&nbsp;</p>
-          <p>&nbsp;</p>
-        <p>&nbsp;</p></td>
-      </tr>
+
     </table>
     <p>&nbsp;</p>
   </div>
