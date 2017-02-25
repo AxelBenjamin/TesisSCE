@@ -69,21 +69,18 @@ Route::get('/VerDocumentosM', function () {
     return view('Maestro.Documentos.Agregar.Calificaciones.ListaCalificacionesIndex');
 })->name('Asignar Calificaciones');*/
 
-Route::get('AgregarDocumentosM/Calificaciones','Calificaciones@index');
+//Ruta de calificaciones yf altas
+Route::resource('Calificaciones','Calificaciones');
+Route::get('CalificacionesFaltas','CalificacionesFaltas@index');
+Route::get('CalificacionesFaltas/{id}','CalificacionesFaltas@mostrar');
+//Route::get('Calificaciones/Alumnos/{id}', 'Calificaciones@index2');
 
-Route::get('/AgregarDocumentosM/Calificaciones/ActaCalificaciones', function () {
-    return view('Maestro.Documentos.Agregar.Calificaciones.ActaCalificaciones');
-})->name('Acta de Calificaciones');
-
-//Route::get('/ce', 'CicloEscolares@index');
-//
-/*Route::get('/Documentos/AgregarDoc/ListaAlu', function () {
-    return view('Admin.Documentos.AgregarDoc.ListaAlu.ListaAlu');
-})->name('Agregar Lista de Alumnos');*/
-
-/*Route::get('/Documentos/AgregarDoc/ListaAlu/Lista_Alumnos', function () {
-    return view('Admin.Documentos.AgregarDoc.ListaAlu.Lista_Alumnos');
-})->name('Lista de Grupos');*/
+//Ruta de CAlificaciones2
+Route::resource('Calificaciones2','Calificaciones2');
+//Ruta para mostrar ya con plantilla calificaciones por materia
+Route::get('Calificaciones3','Calificaciones2@index2');
+//Ruta para ver calificaciones por alumno
+Route::get('Calificaciones3/{id}','Calificaciones2@show2');
 
 //RUTAS DE ACUERDO DE GRUPO
 Route::resource('AcuerdoGrupo','Acuerdos'); 

@@ -93,7 +93,7 @@
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 
-                    {!! link_to('AgregarDocumentosM/Calificaciones', $title='Asignar Calificaciones y Faltas', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
+                    {!! link_to('Calificaciones2', $title='Asignar Calificaciones y Faltas', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
                   
                     {!!link_to('/AgregarDocumentosM', $title = 'Gestión de Documentos', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
             </div>

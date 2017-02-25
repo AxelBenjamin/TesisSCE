@@ -18,4 +18,9 @@ class Grupo extends Model
 
    		return $this->hasMany('App\Reporte','reportes_id');
 	}
+
+	public function calificacions(){
+
+   		return $this->hasMany('App\Calificacion','grupos_id');
+	}
 }

@@ -40,6 +40,9 @@
 			<th> {{$PlanEstudio->clave}} </th>
 			<th> {{$PlanEstudio->nombre}} </th>
 			<th> {!!link_to_route('plan.edit', $title = 'Editar', $parameters = $PlanEstudio->id, $attributes = ['class'=>'btn btn-primary'])!!} </th>
+
+			<th> {!!link_to_route('plan.show', $title = 'Editar', $parameters = $PlanEstudio->id, $attributes = ['class'=>'btn btn-primary'])!!} </th>
+
 			<th>{!! Form::open(['route' => ['plan.destroy', $PlanEstudio->id], 'method'=>'DELETE']) !!}
 					{!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
 				{!! Form::close() !!} </th>

@@ -30,5 +30,10 @@ class Semestre extends Model
       return $this->hasMany('App\Reporte','reportes_id');
   }
 
+  public function calificacions(){
+
+      return $this->hasMany('App\Calificacion','semestres_id');
+  }
+
 
 }
