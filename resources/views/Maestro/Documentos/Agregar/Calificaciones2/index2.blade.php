@@ -17,25 +17,26 @@
     
     <table class="table table-stripped table-hover">
         <thead>
-            <th>Clave</th>
-            <th>Nombre</th>
-            <th>Semestre</th>
-            <th colspan="2">Opciones</th>
+            <th>Materias</th>
+            <th>Grupos</th>
+            <th colspan="3">Opciones</th>
         </thead>
 
         <tbody>
             @foreach($Materias as $Materia)
                 <tr>
-                    <td>{{ $Materia->clave }}</td>
-                    <td>{{ $Materia->nombre }}</td>
-                    <td>{{ $Materia->semestres->nombre }}</td>
-
-                    <td>{!! link_to('AgregarDocumentosM/Calificaciones/ActaCalificaciones', $title='Calificar', $attributes = ['class' => 'btn btn-primary']) !!}
+                    
+                    <td>{{$Materia->nombre}}</td>
+                    
+                    <td>{!! link_to_route('Calificaciones2.show', $title='Mostrar', $parameters=$Materia->id, $attributes = ['class' => 'btn btn-primary']) !!}
                     </td>
 
                 </tr>
             @endforeach
+            
         </tbody>
+
+        
     </table>
 
 

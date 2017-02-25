@@ -18,8 +18,9 @@ use App\Maestro;
 use App\Alumno;
 use App\Reporte;
 use App\Tema;
+use App\Calificacion;
 
-class Calificaciones extends Controller
+class Calificaciones2 extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,11 +29,14 @@ class Calificaciones extends Controller
      */
     public function index()
     {
-        $Calificaciones = Reporte::all()->where('tipo', 'Calificacion')->sortBy("materias_id")->sortBy("alumnos_id")->sortBy("grupos_id");
-        return View::make('Maestro.Documentos.Agregar.Calificaciones.index')->with("Calificaciones", $Calificaciones);
+        $Calificaciones2 = Calificacion::all()->sortBy("materias_id");
+        return View::make('Maestro.Documentos.Agregar.Calificaciones2.index')->with("Calificaciones2", $Calificaciones2);
+    }
 
-        /*$Materias = Materia::all();
-        return View::make('Maestro.Documentos.Agregar.Calificaciones.index2')->with("Materias", $Materias);*/
+    public function index2()
+    {
+        $Materias = Materia::all()->sortBy("grupos_id");
+        return View::make('Maestro.Documentos.Agregar.Calificaciones2.index2')->with("Materias", $Materias);
     }
 
     /**
@@ -49,7 +53,7 @@ class Calificaciones extends Controller
         $Grupos = Grupo::pluck('nombre','id');
         $Alumnos = Alumno::all()->pluck("nombreCompleto","id");
         //$Alumnos = Alumno::all();
-        return view::make('Maestro.Documentos.Agregar.Calificaciones.create')->with('Materias',$Materias)->with('Maestros',$Maestros)->with('CicloEscolares',$CicloEscolares)->with('Semestres',$Semestres)->with('Alumnos',$Alumnos)->with('Grupos',$Grupos);
+        return view::make('Maestro.Documentos.Agregar.Calificaciones2.create')->with('Materias',$Materias)->with('Maestros',$Maestros)->with('CicloEscolares',$CicloEscolares)->with('Semestres',$Semestres)->with('Alumnos',$Alumnos)->with('Grupos',$Grupos);
     }
 
     /**
@@ -60,8 +64,8 @@ class Calificaciones extends Controller
      */
     public function store(Request $request)
     {
-        Reporte::create($request->all());
-        return redirect ('/Calificaciones')->with('message','store');
+        Calificacion::create($request->all());
+        return redirect ('/Calificaciones2')->with('message','store');
     }
 
     /**
@@ -72,9 +76,14 @@ class Calificaciones extends Controller
      */
     public function show($id)
     {
-        //$Calificacion = Reporte::find($id);
         $Materia = Materia::find($id);
-        return View::make('Maestro.Documentos.Agregar.Calificaciones.show')->with('Materia',$Materia);
+        return View::make('Maestro.Documentos.Agregar.Calificaciones2.show')->with('Materia',$Materia);
+    }
+
+    public function show2($id)
+    {
+        $Calificaciones2 = Calificacion::find($id);
+        return View::make('Maestro.Documentos.Agregar.Calificaciones2.show2')->with('Calificaciones2',$Calificaciones2);
     }
 
     /**

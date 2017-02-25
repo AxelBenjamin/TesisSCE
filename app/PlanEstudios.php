@@ -10,6 +10,6 @@ class PlanEstudios extends Model
 
     public function reportes(){
 
-   		return $this->hasMany('App\Reporte','reporte_id');
+   		return $this->hasMany('App\Reporte','plan_estudios_id');
 	}
 }

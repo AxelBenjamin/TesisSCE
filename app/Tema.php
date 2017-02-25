@@ -16,6 +16,6 @@ class Tema extends Model
 	//Para la relacion con reporte
 	public function reportes(){
 
-   		return $this->hasMany('App\Reporte','reportes_id');
+   		return $this->hasMany('App\Reporte','temas_id');
 	}
 }

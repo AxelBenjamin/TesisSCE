@@ -31,6 +31,12 @@ class Materia extends Model
 
   public function reportes(){
 
-      return $this->hasMany('App\Reporte','reportes_id');
+      return $this->hasMany('App\Reporte','materias_id');
+                                            //reportes
+  }
+
+  public function calificacions(){
+
+      return $this->hasMany('App\Calificacion','materias_id');
   }
 }
