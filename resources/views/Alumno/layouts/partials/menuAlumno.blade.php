@@ -3,8 +3,8 @@
     <div class="list-group">
       <a> {!!link_to('/AgregarDocumentosM/Calificaciones', $title = 'Boleta de Calificaciones', $attributes = ['class' => 'list-group-item']) !!}</a>
       <a> {!!link_to('/AgregarDocumentosM', $title = 'Horario de Clases', $attributes = ['class' => 'list-group-item']) !!}</a>
-      <a> {!!link_to('/AgregarDocumentosM', $title = 'Calendarios de Exámenes', $attributes = ['class' => 'list-group-item']) !!}</a>
-      <a> {!!link_to('/AgregarDocumentosM', $title = 'Acuerdo de Grupo', $attributes = ['class' => 'list-group-item']) !!}</a>
+      <a> {!!link_to('/CalendarioExamenesAlumno', $title = 'Calendarios de Exámenes', $attributes = ['class' => 'list-group-item']) !!}</a>
+      <a> {!!link_to('/AcuerdoGrupoAlumno', $title = 'Acuerdo de Grupo', $attributes = ['class' => 'list-group-item']) !!}</a>
     </div>
   </div>
 </div>

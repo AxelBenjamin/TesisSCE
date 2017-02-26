@@ -5,17 +5,15 @@
 @include('Admin.layouts.partials.menuGD')
 
 <div class="table-responsive">
-    <p>Alumnos registrados en el grupo</p>
     <table class="table table-stripped table-hover">
         <thead><tr>
             <th>Matricula</th>
-            <th>Apellidos</th>
-            <th>Nombre(s)</th>
+            <th>Nombre</th>
             </tr></thead>
     
                 
                 <tbody>
-                @foreach ($Grupo->alumnos as $alumno)
+                @foreach ($ListaAlumno->grupos->alumnos as $alumno)
                 <tr>
                 <td>
                     {{$alumno->matricula}}
@@ -23,8 +21,6 @@
                 <td>
                     {{$alumno->apa}}
                     {{$alumno->ama}}
-                </td>
-                <td>
                     {{$alumno->nombre}}
                 </td>
                 </tr>

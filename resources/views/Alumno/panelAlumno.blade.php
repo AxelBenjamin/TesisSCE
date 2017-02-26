@@ -98,9 +98,9 @@
                   
                     {!!link_to('/AgregarDocumentosM', $title = 'Horario de Clases', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
-                    {!!link_to('/AgregarDocumentosM', $title = 'Calendario de Exámenes', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
+                    {!! link_to('/CalendarioExamenesAlumno', 'Calendario de Examenes', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
-                    {!!link_to('/AgregarDocumentosM', $title = 'Acuerdo de Grupo', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
+                    {!!link_to('/AcuerdoGrupoAlumno', $title = 'Acuerdo de Grupo', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
             </div>
             </div>
             </div><!--Termina Row del contenido de en medio, del panel-->

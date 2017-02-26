@@ -23,11 +23,10 @@ body,td,th {
       <td><strong align="center">FACULTAD DE ARQUITECTURA E INGENIERÍA</strong></td>
     </tr>
     <tr>
-      <td><strong align='center'>ACUERDO DE GRUPO</strong></td>
+      <td><strong align='center'>INGENIERÍA EN COMPUTACIÓN</strong></td>
     </tr>
     <tr>
-      <td><strong align='center'>INGENIERÍA EN COMPUTACIÓN</strong>
-      </td>
+      <td><strong align='center'>ACUERDO DE GRUPO</strong></td>
     </tr>
     <tr>
       <td><strong align="center">CICLO ESCOLAR {{ $data->ciclo_escolars->nombre}}</strong>

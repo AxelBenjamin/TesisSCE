@@ -34,9 +34,16 @@ class Acuerdos extends Controller
 //INDEX PARA QUE EL ADMIN VEA PDF
     public function indexAdmin()
     {
-        $Acuerdos = Reporte::all()->sortBy("materias_id");
+        $Acuerdos = Reporte::all()->where('tipo', 'Acuerdo')->sortBy("materias_id");
         //$Grupos = Grupo::all();
         return View::make('Admin.Documentos.VerDoc.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);//->with("Grupos", $Grupos);
+    }
+
+    public function indexAlumno()
+    {
+        $Acuerdos = Reporte::all()->where('tipo', 'Acuerdo')->sortBy("materias_id");
+        //$Grupos = Grupo::all();
+        return View::make('Alumno.Documentos.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);//->with("Grupos", $Grupos);
     }
 /**
      * Show the form for creating a new resource.
