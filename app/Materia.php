@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Materia extends Model
 {
-    protected $fillable = ['clave','nombre','tipo','fechad1','fechad2','fechaA','fechaB','dia1','dia1horario','dia2','dia2horario','dia3','dia3horario', 'semestres_id','maestros_id'];
+    protected $fillable = ['clave','nombre','tipo','fechad1','fechad2','fechaA','fechaB','dia1','dia1horario','dia2','dia2horario','dia3','dia3horario', 'semestres_id','maestros_id', 'grupos_id'];
 
     public function semestres(){
 
@@ -39,4 +39,10 @@ class Materia extends Model
 
       return $this->hasMany('App\Calificacion','materias_id');
   }
+
+  public function grupos(){
+
+      return $this->belongsTo('App\Grupo', 'grupos_id');
+    }
+
 }

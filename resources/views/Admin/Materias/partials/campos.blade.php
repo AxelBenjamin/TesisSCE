@@ -150,3 +150,13 @@
 		{!! Form::select('maestros_id', $Maestros, null, array('class' => 'form-control')) !!}
 	</div>
 </div>
+
+<div class="form-group">
+	<div class="col-lg-3">
+ 		{!! Form::label('nombre','Selecciona un Grupo:',['class' => 'control-label'])!!}
+ 	</div>
+
+	<div class="col-lg-2">
+		{!! Form::select('grupos_id', $Grupos, null, array('class' => 'form-control')) !!}
+	</div>
+</div>

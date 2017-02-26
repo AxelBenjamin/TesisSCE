@@ -19,7 +19,6 @@
     
     <table class="table table-stripped table-hover">
         <thead>
-            <th>Semestre</th>
             <th>Maestro</th>
             <th colspan="3">Opciones</th>
         </thead>
@@ -27,12 +26,11 @@
         <tbody>
             @foreach($CartaAsignaciones as $CartaAsignacion)
                 <tr>
-                    
-                    <td>{{$CartaAsignacion->semestres->nombre}}</td>
-                    <td>{{$CartaAsignacion->maestros->apa}}
+                    <td>
+                    {{$CartaAsignacion->maestros->apa}}
                     {{$CartaAsignacion->maestros->ama}}
-                    {{$CartaAsignacion->maestros->nombre}}</td>
-
+                    {{$CartaAsignacion->maestros->nombre}}
+                    </td>
                     <th>{!!link_to_action('CartaAsignaciones@crear_carta_asignacion', $title = 'Ver Carta', $parameters = array('1' , $CartaAsignacion->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
 
                     <th>{!!link_to_action('CartaAsignaciones@crear_carta_asignacion', $title = 'Descargar Carta', $parameters = array('2' , $CartaAsignacion->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>

@@ -74,7 +74,7 @@ body,td,th {
       <tr>
         <td>
         <blockquote><strong>{{ $materia->nombre }}</strong><br>
-        GRUPO IC<br>
+        {{ $materia->grupos->nombre }} IC<br>
         {{ $materia->dia1 }}  {{ $materia->dia1horario }} 
         {{ $materia->dia2 }}  {{ $materia->dia2horario }}
         {{ $materia->dia3 }}  {{ $materia->dia3horario }}<br>

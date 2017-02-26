@@ -21,7 +21,7 @@ class Grupos extends Controller
      */
     public function index()
     {
-        $Grupos = Grupo::all();
+        $Grupos = Grupo::orderBy('nombre')->get();
         return View::make('Admin.Grupos.index')->with("Grupos", $Grupos);
     }
 
