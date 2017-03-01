@@ -34,6 +34,9 @@ class CreateMateriasTable extends Migration
             $table->integer('maestros_id')->unsigned();
             $table->foreign('maestros_id')->references('id')->on('maestros')->onDelete('cascade');
 
+            $table->integer('grupos_id')->unsigned();
+            $table->foreign('grupos_id')->references('id')->on('grupos')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

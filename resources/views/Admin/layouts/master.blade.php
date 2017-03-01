@@ -71,7 +71,7 @@
                         <div class="cerrarsesion">
 
                         
-                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right">Cerrar sesión</div></a></p>
+                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right"><span class="glyphicon glyphicon-user"></span>Cerrar sesión</div></a></p>
                         
 
                         </div>  
@@ -95,7 +95,7 @@
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                 <!--<div class="contenido">-->
-                <div style="border-left:1px solid #000;height:550px; border-right:1px solid #000;height:550px; padding:1em">
+                <div style="border-left:1px solid #000;height:620px; border-right:1px solid #000;height:620px; padding:1em">
 					@yield('content2')
                 </div>
                 <!--</div>-->

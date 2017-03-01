@@ -52,7 +52,13 @@
         </tr>
         <tr>
             <th>Maestro que impartirá</th>
-            <td>{{ $Materia->maestros->nombre }}</td>
+            <td>{{ $Materia->maestros->apa }}
+            {{ $Materia->maestros->ama }}
+            {{ $Materia->maestros->nombre }}</td>
+        </tr>
+        <tr>
+            <th>Grupo en que impartirá</th>
+            <td>{{ $Materia->grupos->nombre }}</td>
         </tr>
     </table>
     

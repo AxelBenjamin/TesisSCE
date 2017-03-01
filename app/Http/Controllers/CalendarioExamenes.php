@@ -22,6 +22,12 @@ class CalendarioExamenes extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('adminAuth');
+    }
+
     public function index()
     {
         $CalendarioExamenes = Reporte::all()->where('tipo', 'Calendario')->sortBy('semestres_id');
@@ -33,54 +39,12 @@ class CalendarioExamenes extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
-    //INDEX PARA QUE EL MAESTRO VEA PDF
-    public function indexMaestro()
-    {
-        $CalendarioExamenes = Reporte::all()->where('tipo', 'Calendario')->sortBy("semestres_id");
-        //$Grupos = Grupo::all();
-        return View::make('Maestro.Documentos.Ver.CalendarioExamenes.index')->with("CalendarioExamenes", $CalendarioExamenes);//->with("Grupos", $Grupos);
-    }
-
-    public function indexAlumno()
-    {
-        $CalendarioExamenes = Reporte::all()->where('tipo', 'Calendario')->sortBy("semestres_id");
-        //$Grupos = Grupo::all();
-        return View::make('Alumno.Documentos.CalendarioExamenes.index')->with("CalendarioExamenes", $CalendarioExamenes);//->with("Grupos", $Grupos);
-    }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
-     */
-    
-    //INICIA Función para crear PDF 
-    public function crearPDF($datos,$vistaurl,$tipo, $id)
-    {
-        $data = $datos;
-        //$date = date('Y-m-d');
-        $view =  \View::make($vistaurl, compact('data'))->render();
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
-
-        // (Optional) Setup the paper size and orientation
-        $pdf->setPaper('A4', 'landscape');
-        //return $pdf->stream('Lista_Alumnos');
-        if($tipo==1){return $pdf->stream('Calendario_Examenes');}
-        if($tipo==2){return $pdf->download('Calendario_Examenes.pdf'); }        
-    }
-
-    
-    public function crear_calendario_examenes($tipo, $id)
-    {
-        $CalendarioExamen = Reporte::find($id);
-        $vistaurl="Maestro.Documentos.Ver.CalendarioExamenes.show";
-     
-        return $this->crearPDF($CalendarioExamen, $vistaurl, $tipo, $id);
-    }
-
-//TERMINA Función para crear PDF 
+     */ 
 //
     public function create()
     {

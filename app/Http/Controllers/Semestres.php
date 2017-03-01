@@ -19,6 +19,12 @@ class Semestres extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('adminAuth');
+    }
+    
     public function index()
     {
         //Con el ::all los traigo todos de la tabla

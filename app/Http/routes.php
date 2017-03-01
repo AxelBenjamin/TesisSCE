@@ -28,12 +28,9 @@ Route::resource('mat','Materias');
 Route::resource('uni','Unidades');
 Route::resource('tem','Temas');
 Route::resource('rep','Reportes');
-Route::auth();
+//Route::auth();
 
-Route::get('/home', 'HomeController@index');
-
-
-Route::get('/PanelAdmin', function () {
+/*Route::get('/PanelAdmin', function () {
     return view('Admin.panelAdmin');
 })->name('Panel de Administrador');
 
@@ -44,7 +41,11 @@ Route::get('/PanelMaestro', function () {
 
 Route::get('/PanelAlumno', function () {
     return view('Alumno.panelAlumno');
-})->name('Panel de Alumno');
+})->name('Panel de Alumno');*/
+
+Route::resource('PanelAdmin','PanelAdmin');
+Route::resource('PanelMaestro','PanelMaestro');
+Route::resource('PanelAlumno','PanelAlumno');
 
 
 Route::get('/AgregarDocumentos', function () {
@@ -84,31 +85,39 @@ Route::get('Calificaciones3/{id}','Calificaciones2@show2');
 
 //RUTAS DE ACUERDO DE GRUPO
 Route::resource('AcuerdoGrupo','Acuerdos'); 
-Route::get('crear_acuerdo_grupo/{tipo}/{id}', 'Acuerdos@crear_acuerdo_grupo'); //ruta para pdf
-Route::get('AcuerdoGrupoAdmin', 'Acuerdos@indexAdmin'); //index Admin
-Route::get('AcuerdoGrupoAlumno', 'Acuerdos@indexAlumno');
+
+Route::get('crear_acuerdo_grupo/{tipo}/{id}', 'AcuerdosAd@crear_acuerdo_grupo'); //ruta para pdf
+Route::resource('AcuerdoGrupoAdmin', 'AcuerdosAd'); //index Admin
+
+Route::get('crear_acuerdo_grupo/{tipo}/{id}', 'AcuerdosAlu@crear_acuerdo_grupo'); //ruta para pdf
+Route::resource('AcuerdoGrupoAlumno', 'AcuerdosAlu');
 
 ////RUTAS DE Carta de Asignación
 Route::resource('CartaAsignacion','CartaAsignaciones');
-Route::get('crear_carta_asignacion/{tipo}/{id}', 'CartaAsignaciones@crear_carta_asignacion');
-Route::get('CartaAsignacionMaestro', 'CartaAsignaciones@indexMaestro');
+
+Route::get('crear_carta_asignacion/{tipo}/{id}', 'CartaAsignacionesM@crear_carta_asignacion');
+Route::resource('CartaAsignacionMaestro', 'CartaAsignacionesM');
 
 ////RUTAS DE Programa Extendido
 Route::resource('PrograExtendido','ProgramaExtendidos');
 Route::resource('PrograUnidad','PSEunidades');
-Route::get('crear_programa_extendido/{tipo}/{id}', 'ProgramaExtendidos@crear_programa_extendido');
-Route::get('ProgramaExtendidoAdmin', 'ProgramaExtendidos@indexAdmin');
+
+Route::get('crear_programa_extendido/{tipo}/{id}', 'ProgramaExtendidosAd@crear_programa_extendido');
+Route::resource('ProgramaExtendidoAdmin', 'ProgramaExtendidosAd');
 
 //RUTAS DE CALNEDARIO DE EXAMENES
 Route::resource('CalendarioExamenes','CalendarioExamenes');
-Route::get('crear_calendario_examenes/{tipo}/{id}', 'CalendarioExamenes@crear_calendario_examenes');
-Route::get('CalendarioExamenesMaestro', 'CalendarioExamenes@indexMaestro');
-Route::get('CalendarioExamenesAlumno', 'CalendarioExamenes@indexAlumno');
+Route::get('crear_calendario_examenes/{tipo}/{id}', 'CalendarioExamenesM@crear_calendario_examenes');
+Route::resource('CalendarioExamenesMaestro', 'CalendarioExamenesM');
+
+Route::get('crear_calendario_examenes/{tipo}/{id}', 'CalendarioExamenesAlu@crear_calendario_examenes');
+Route::resource('CalendarioExamenesAlumno', 'CalendarioExamenesAlu');
 
 //RUTAS DE LISTA DE ALUMNOS
 Route::resource('ListaAlumnos','ListaAlumnos');
-Route::get('crear_lista_alumnos/{tipo}/{id}', 'ListaAlumnos@crear_lista_alumnos');
-Route::get('ListaAlumnosMaestro', 'ListaAlumnos@indexMaestro');
+
+Route::get('crear_lista_alumnos/{tipo}/{id}', 'ListaAlumnosM@crear_lista_alumnos');
+Route::resource('ListaAlumnosMaestro', 'ListaAlumnosM');
 //
 
 ////RUTAS DE Programa Sintetizado
@@ -120,3 +129,7 @@ Route::resource('PrograSintetizado','ProgramaSintetizados');
 //Route::put('PrograUnidad/', 'ProgramaExtendidos@updateUnidad');
 //Route::post('PrograExtendido/', 'ProgramaExtendidos@storeUnidad');
 //
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

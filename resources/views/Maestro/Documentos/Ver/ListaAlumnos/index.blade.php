@@ -28,9 +28,9 @@
         <tbody>
             <th> {{$ListaAlumno->grupos->nombre}} </th>
 
-            <th>{!!link_to_action('ListaAlumnos@crear_lista_alumnos', $title = 'Ver Lista', $parameters = array('1' , $ListaAlumno->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+            <th>{!!link_to_action('ListaAlumnosM@crear_lista_alumnos', $title = 'Ver Lista', $parameters = array('1' , $ListaAlumno->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
 
-            <th>{!!link_to_action('ListaAlumnos@crear_lista_alumnos', $title = 'Descargar Lista', $parameters = array('2' , $ListaAlumno->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+            <th>{!!link_to_action('ListaAlumnosM@crear_lista_alumnos', $title = 'Descargar Lista', $parameters = array('2' , $ListaAlumno->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
                 
             
         </tbody>

@@ -16,7 +16,7 @@
                 </td>
                 <th>Foto</th>
                 <th>
-                    <img src="/ImagenesUsuarios/{{$Alumno->foto}}" style="width:200px;">
+                    <img src="/ImagenesUsuarios/{{$Alumno->foto}}" width="150" height="100">
                 </th>
             </tr>
             <tr>

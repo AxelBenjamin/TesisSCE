@@ -15,9 +15,7 @@
   <div class="col-lg-3">
     {!! Form::select('ciclo_escolars_id', $CiclosEscolares, null, array('class' => 'form-control')) !!}
   </div>
-</div>
 
-<div class="form-group">
   <div class="col-lg-3">
     {!! Form::label('materias_id','Seleccionar Materia:',['class' => 'control-label'])!!}
   </div>
@@ -33,25 +31,21 @@
   <div class="col-lg-3">
     {!! Form::select('grupos_id', $Grupos, null, array('class' => 'form-control')) !!}
   </div>
-</div>
 
-<div class="form-group">
   <div class="col-lg-3">
-    {!! Form::label('grupos_id','Fecha:',['class' => 'control-label'])!!}
+    {!! Form::label('grupos_id','Fecha de Elaboración:',['class' => 'control-label'])!!}
   </div>
   <div class="col-lg-3">
     {!! Form::date('fechaelaboracion', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
   </div>
 </div>
 
-
-
 <div class="form-group">
   <div class="col-lg-3">
     {!! form::label('agtrabajopracfin', 'Trabajo y/o Practica Final:',['class' => 'control-label'])!!}
   </div>
   
-  <div class="col-lg-4">
+  <div class="col-lg-6">
     {!! form::textarea('agtrabajopracfin', null, ['class' => 'form-control'])!!}
   </div>
 </div>
