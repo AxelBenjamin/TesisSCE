@@ -18,6 +18,12 @@ class Maestros extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('adminAuth');
+    }
+    
     public function index()
     {
         $Maestros = Maestro::orderBy('apa')->get();

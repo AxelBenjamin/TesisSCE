@@ -22,16 +22,16 @@ class ListaAlumnos extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('adminAuth');
+    }
+
     public function index()
     {
         $ListaAlumnos = Reporte::all()->where('tipo', 'ListaAlu')->sortBy("grupos_id");
         return View::make('Admin.Documentos.AgregarDoc.ListaAlu.index')->with("ListaAlumnos", $ListaAlumnos);
-    }
-
-    public function indexMaestro()
-    {
-        $ListaAlumnos = Reporte::all()->where('tipo', 'ListaAlu')->sortBy("grupos_id");
-        return View::make('Maestro.Documentos.Ver.ListaAlumnos.index')->with("ListaAlumnos", $ListaAlumnos);
     }
 
     /**
@@ -63,8 +63,6 @@ class ListaAlumnos extends Controller
      $vistaurl="Maestro.Documentos.Ver.ListaAlumnos.show";
      
      return $this->crearPDF($ListaAlumno, $vistaurl, $tipo, $id);
-     
-
 
     }
 

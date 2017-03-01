@@ -70,7 +70,7 @@
                         <div class="cerrarsesion">
 
                         
-                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right">Cerrar sesión</div></a></p>
+                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right"><span class="glyphicon glyphicon-user"></span> Cerrar sesión</div></a></p>
                         
 
                         </div>  
@@ -101,6 +101,8 @@
                     {!! link_to('/CalendarioExamenesAlumno', 'Calendario de Examenes', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
                     {!!link_to('/AcuerdoGrupoAlumno', $title = 'Acuerdo de Grupo', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
+
+                    <a href="http://132.248.38.20/contenido_wp/wp-content/uploads/2016/04/Licenciatura_2016-2017.pdf" class="btn btn-default btn-lg btn-block" role="button" aria-pressed="true" target="blank">Calendario Escolar</a>
             </div>
             </div>
             </div><!--Termina Row del contenido de en medio, del panel-->

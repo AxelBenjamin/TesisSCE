@@ -19,6 +19,18 @@ class Alumnos extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    //Solo se puede acceder a este controlador si se esta logeado y si es admin
+    public function __construct()
+    {
+        $this->middleware('adminAuth');
+    }
+
+    public function __construct()
+    {
+        $this->middleware('alumnoAuth');
+    }
+
     public function index()
     {
         /*$Alumnos = Alumno::all()->sortBy("grupos_id")->sortBy("reportes_id");

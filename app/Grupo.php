@@ -23,4 +23,10 @@ class Grupo extends Model
 
    		return $this->hasMany('App\Calificacion','grupos_id');
 	}
+
+  public function materias(){
+
+      return $this->hasMany('App\Materia','grupos_id');
+  }
+  
 }

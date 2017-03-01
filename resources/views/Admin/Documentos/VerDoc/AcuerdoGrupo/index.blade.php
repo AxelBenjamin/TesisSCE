@@ -31,9 +31,9 @@
                     <td>{{$Acuerdo->materias->nombre}}</td>
                     <td>{{$Acuerdo->grupos->nombre}}</td>
 
-                    <th>{!!link_to_action('Acuerdos@crear_acuerdo_grupo', $title = 'Ver Acuerdo', $parameters = array('1' , $Acuerdo->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+                    <th>{!!link_to_action('AcuerdosAd@crear_acuerdo_grupo', $title = 'Ver Acuerdo', $parameters = array('1' , $Acuerdo->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
 
-                    <th>{!!link_to_action('Acuerdos@crear_acuerdo_grupo', $title = 'Descargar Acuerdo', $parameters = array('2' , $Acuerdo->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+                    <th>{!!link_to_action('AcuerdosAd@crear_acuerdo_grupo', $title = 'Descargar Acuerdo', $parameters = array('2' , $Acuerdo->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
 
                 </tr>
             @endforeach

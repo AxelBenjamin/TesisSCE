@@ -16,8 +16,8 @@ body,td,th {
 
 <body>
 <div align="center">
-  <img src="/src/imagenes/logo_americana_vertical.jpg" width="71" height="100" align="left" />
-  <img src="/src/imagenes/logo_computacion.png" alt="" width="71" height="100" align="right" />
+  <!--<img src="/src/imagenes/logo_americana_vertical.jpg" width="71" height="100" align="left" />
+  <img src="/src/imagenes/logo_computacion.png" alt="" width="71" height="100" align="right" /> -->
   <table width="545" border="0">
     <tr>
       <td><strong align="center">FACULTAD DE ARQUITECTURA E INGENIERÍA</strong></td>

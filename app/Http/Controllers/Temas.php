@@ -18,6 +18,12 @@ class Temas extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('adminAuth');
+    }
+    
     public function index()
     {
         $Temas = Tema::all()->sortBy("unidads_id");

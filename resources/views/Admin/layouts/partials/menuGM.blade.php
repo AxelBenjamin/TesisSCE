@@ -19,10 +19,7 @@
       </ul>
 
       <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Buscar">
-        </div>
-        <button type="submit" class="btn btn-default">Buscar</button>
+        <a href="http://132.248.38.20/contenido_wp/wp-content/uploads/2016/04/Licenciatura_2016-2017.pdf" class="btn btn-primary btn-sm" role="button" aria-pressed="true" target="blank">Calendario Escolar</a>
       </form>
       
     </div><!-- /.navbar-collapse -->
