@@ -21,8 +21,12 @@ class Materia extends Model
    		return $this->belongsTo('App\Maestro', 'maestros_id');
    		//Linea de abajo s para acceder a los otros datos
    		//->withPivot('ciclo_escolars_id','nombre','fechaInicio','fechaFinal');
-	
 	}
+
+  public function grupos(){
+
+      return $this->belongsTo('App\Grupo', 'grupos_id');
+    }
 
   public function unidads(){
 

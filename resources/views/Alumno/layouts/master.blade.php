@@ -59,10 +59,11 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="fecha">
                         <?php
-                        $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
-                        $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-                        echo $dias[date('w')].", ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
+                        //$dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
+                        //$meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                        //echo $dias[date('w')].", ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
                         ?>
+                        <p>Facultad de Ingeniería en Computación.</p>
                         </div>
                     </div>
 
@@ -70,7 +71,7 @@
                         <div class="cerrarsesion">
 
                         
-                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right">Cerrar sesión</div></a></p>
+                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right"><span class="glyphicon glyphicon-user"></span>Cerrar sesión</div></a></p>
                         
 
                         </div>  

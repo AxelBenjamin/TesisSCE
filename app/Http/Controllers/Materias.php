@@ -25,6 +25,12 @@ class Materias extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('adminAuth');
+    }
+    
     public function index()
     {
         $Materias = Materia::all()->sortBy("semestres_id");
@@ -39,9 +45,10 @@ class Materias extends Controller
      */
     public function create()
     {
+        $Grupos = Grupo::pluck('nombre', 'id');
         $Semestres = Semestre::pluck('nombre', 'id');
         $Maestros = Maestro::all()->pluck("nombreCompleto","id");
-        $Grupos = Grupo::pluck('nombre', 'id');
+
         return View::make('Admin.Materias.create')->with('Semestres',$Semestres)->with('Maestros',$Maestros)->with('Grupos',$Grupos);
     }
 
@@ -83,6 +90,7 @@ class Materias extends Controller
         $Grupos = Grupo::pluck('nombre','id');
 
         return View::make('Admin.Materias.edit')->with("Materia", $Materia)->with('Semestres', $Semestres)->with("Maestros",$Maestros)->with('Grupos',$Grupos);
+
     }
 
     /**

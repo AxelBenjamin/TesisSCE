@@ -70,7 +70,7 @@
                         <div class="cerrarsesion">
 
                         
-                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right">Cerrar sesión</div></a></p>
+                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right"><span class="glyphicon glyphicon-user"></span> Cerrar sesión</div></a></p>
                         
 
                         </div>  
@@ -92,6 +92,8 @@
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+
+                    <div class="alert alert-info" role="alert"><center>Maestro, bienvenido al SCE</center></div>
 
                     {!! link_to('Calificaciones2', $title='Asignar Calificaciones y Faltas', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
                   

@@ -29,11 +29,11 @@
                     <td>
                     {{$CartaAsignacion->maestros->apa}}
                     {{$CartaAsignacion->maestros->ama}}
-                    {{$CartaAsignacion->maestros->nombre}}
-                    </td>
-                    <th>{!!link_to_action('CartaAsignaciones@crear_carta_asignacion', $title = 'Ver Carta', $parameters = array('1' , $CartaAsignacion->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+                    {{$CartaAsignacion->maestros->nombre}}</td>
 
-                    <th>{!!link_to_action('CartaAsignaciones@crear_carta_asignacion', $title = 'Descargar Carta', $parameters = array('2' , $CartaAsignacion->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+                    <th>{!!link_to_action('CartaAsignacionesM@crear_carta_asignacion', $title = 'Ver Carta', $parameters = array('1' , $CartaAsignacion->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+
+                    <th>{!!link_to_action('CartaAsignacionesM@crear_carta_asignacion', $title = 'Descargar Carta', $parameters = array('2' , $CartaAsignacion->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
 
                 </tr>
             @endforeach

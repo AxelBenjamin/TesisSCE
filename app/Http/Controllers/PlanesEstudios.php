@@ -17,6 +17,12 @@ class PlanesEstudios extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('adminAuth');
+    }
+    
     public function index()
     {
         $PlanesEstudios = PlanEstudios::all();

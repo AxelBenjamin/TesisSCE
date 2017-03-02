@@ -70,7 +70,7 @@
                         <div class="cerrarsesion">
 
                         
-                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right">Cerrar sesión</div></a></p>
+                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right"><span class="glyphicon glyphicon-user"></span> Cerrar sesión</div></a></p>
                         
 
                         </div>  
@@ -94,13 +94,17 @@
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div style="border-left:1px solid #000; height:550px; border-right:1px solid #000; height:550px; padding:1em">
 
-                    {!! link_to_route('ce.index', 'Boleta de Calificaciones', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
+                    <div class="alert alert-info" role="alert"><center>Alumno, bienvenido al SCE</center></div>
+
+                    {!! link_to_route('Boleta.index', 'Boleta de Calificaciones', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
                   
                     {!!link_to('/AgregarDocumentosM', $title = 'Horario de Clases', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
                     {!! link_to('/CalendarioExamenesAlumno', 'Calendario de Examenes', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
                     {!!link_to('/AcuerdoGrupoAlumno', $title = 'Acuerdo de Grupo', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
+
+                    <a href="http://132.248.38.20/contenido_wp/wp-content/uploads/2016/04/Licenciatura_2016-2017.pdf" class="btn btn-default btn-lg btn-block" role="button" aria-pressed="true" target="blank">Calendario Escolar</a>
             </div>
             </div>
             </div><!--Termina Row del contenido de en medio, del panel-->

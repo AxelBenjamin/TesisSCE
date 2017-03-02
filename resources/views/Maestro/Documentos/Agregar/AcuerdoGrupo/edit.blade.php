@@ -15,9 +15,7 @@
   <div class="col-lg-3">
     {!! Form::select('ciclo_escolars_id', $CiclosEscolares, null, array('class' => 'form-control')) !!}
   </div>
-</div>
 
-<div class="form-group">
   <div class="col-lg-3">
     {!! Form::label('materias_id','Seleccionar Materia:',['class' => 'control-label'])!!}
   </div>
@@ -33,6 +31,13 @@
   <div class="col-lg-3">
     {!! Form::select('grupos_id', $Grupos, null, array('class' => 'form-control')) !!}
   </div>
+
+  <div class="col-lg-3">
+    {!! Form::label('fechaelaboracion','Fecha de Elaboración:',['class' => 'control-label'])!!}
+  </div>
+  <div class="col-lg-3">
+    {!! Form::date('fechaelaboracion', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
+  </div>
 </div>
 
 
@@ -41,7 +46,7 @@
     {!! form::label('agtrabajopracfin', 'Trabajo y/o Practica Final:',['class' => 'control-label'])!!}
   </div>
   
-  <div class="col-lg-4">
+  <div class="col-lg-5">
     {!! form::textarea('agtrabajopracfin', null, ['class' => 'form-control'])!!}
   </div>
 </div>
@@ -123,7 +128,7 @@
   <div>
     <p></p>
     {!! Form::submit('Enviar',['class' => 'btn btn-default']) !!}
-    {!! link_to_route('CalendarioExamenes.index', 'Cancelar', null, array('class' => 'btn btn-default')); !!}
+    {!! link_to_action('Acuerdos@index', 'Cancelar', null, array('class' => 'btn btn-default')); !!}
   </div>
  
 {!! Form::close() !!}

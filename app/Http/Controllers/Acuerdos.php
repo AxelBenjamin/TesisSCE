@@ -24,59 +24,24 @@ class Acuerdos extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //Con esta función, solo se podrá acceder al controlador si se está autenticado
+    public function __construct()
+        {
+            $this->middleware('maestroAuth');
+        }
+
     public function index()
-    {
+    {   
         $Acuerdos = Reporte::all()->where('tipo', 'Acuerdo')->sortBy("materias_id");
         //$Grupos = Grupo::all();
         return View::make('Maestro.Documentos.Agregar.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);//->with("Grupos", $Grupos);
-    }
-
-//INDEX PARA QUE EL ADMIN VEA PDF
-    public function indexAdmin()
-    {
-        $Acuerdos = Reporte::all()->where('tipo', 'Acuerdo')->sortBy("materias_id");
-        //$Grupos = Grupo::all();
-        return View::make('Admin.Documentos.VerDoc.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);//->with("Grupos", $Grupos);
-    }
-
-    public function indexAlumno()
-    {
-        $Acuerdos = Reporte::all()->where('tipo', 'Acuerdo')->sortBy("materias_id");
-        //$Grupos = Grupo::all();
-        return View::make('Alumno.Documentos.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);//->with("Grupos", $Grupos);
     }
 /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    
-//INICIA Función para crear PDF 
-    public function crearPDF($datos,$vistaurl,$tipo, $id)
-    {
-        $data = $datos;
-        //$date = date('Y-m-d');
-        $view =  \View::make($vistaurl, compact('data'))->render();
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
-
-        // (Optional) Setup the paper size and orientation
-        //$pdf->setPaper('A4', 'landscape');
-        //return $pdf->stream('Lista_Alumnos');
-        if($tipo==1){return $pdf->stream('Acuerdo_Grupo');}
-        if($tipo==2){return $pdf->download('Acuerdo_Grupo.pdf'); }        
-    }
-
-    
-    public function crear_acuerdo_grupo($tipo, $id)
-    {
-        $Acuerdo = Reporte::find($id);
-        $vistaurl="Admin.Documentos.VerDoc.AcuerdoGrupo.show";
-     
-        return $this->crearPDF($Acuerdo, $vistaurl, $tipo, $id);
-    }
-
-//TERMINA Función para crear PDF 
 
     
     public function create()

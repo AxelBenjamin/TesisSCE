@@ -93,7 +93,7 @@
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-            <div style="border-left:1px solid #000; height:550px; border-right:1px solid #000; height:550px; padding:1em">
+            <div style="border-left:1px solid #000; height:450px; border-right:1px solid #000; height:450px; padding:1em">
             @include('Maestro.layouts.partials.menuGD') 
 
             

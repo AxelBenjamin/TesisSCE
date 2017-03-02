@@ -29,9 +29,9 @@
                     
                     <td>{{$CalendarioExamen->semestres->nombre}}</td>
 
-                    <th>{!!link_to_action('CalendarioExamenes@crear_calendario_examenes', $title = 'Ver Calendario', $parameters = array('1' , $CalendarioExamen->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+                    <th>{!!link_to_action('CalendarioExamenesM@crear_calendario_examenes', $title = 'Ver Calendario', $parameters = array('1' , $CalendarioExamen->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
 
-                    <th>{!!link_to_action('CalendarioExamenes@crear_calendario_examenes', $title = 'Descargar Calendario', $parameters = array('2' , $CalendarioExamen->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+                    <th>{!!link_to_action('CalendarioExamenesM@crear_calendario_examenes', $title = 'Descargar Calendario', $parameters = array('2' , $CalendarioExamen->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
 
                 </tr>
             @endforeach
