@@ -12,7 +12,7 @@ use App\Alumno;
 use App\Grupo;
 use App\Reporte;
 
-class Alumnos extends Controller
+class Boletas extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,22 +21,15 @@ class Alumnos extends Controller
      */
     
     //Solo se puede acceder a este controlador si se esta logeado y si es admin
-    public function __construct()
+    /*public function __construct()
     {
-        $this->middleware('adminAuth');
-    }
+        $this->middleware('alumnoAuth');
+    }*/
 
     public function index()
     {
-        /*$Alumnos = Alumno::all()->sortBy("grupos_id")->sortBy("reportes_id");
-        return View::make('Admin.Alumnos.index')->with('Alumnos', $Alumnos);*/
-
-        $Alumnos = Alumno::orderBy('apa')->get()->sortBy("grupos_id")->sortBy("reportes_id");
-        return View::make('Admin.Alumnos.index')->with('Alumnos', $Alumnos);
-
-        /*$HomeBanners = HomeBanner::all()->orderBy('ordering', 'asc'); 
-        return view('home', compact('HomeBanners'));*/
-
+        $Alumnos = Alumno::orderBy('apa')->get()->sortBy("grupos_id");
+        return View::make('Alumno.Documentos.BoletaCalificaciones.index')->with('Alumnos', $Alumnos);
     }
 
     /**
@@ -46,8 +39,7 @@ class Alumnos extends Controller
      */
     public function create()
     {
-        $Grupos = Grupo::pluck('nombre', 'id');
-        return view::make('Admin.Alumnos.create')->with('Grupos',$Grupos);
+        //
     }
 
     /**
@@ -58,8 +50,7 @@ class Alumnos extends Controller
      */
     public function store(Request $request)
     {
-        Alumno::create( $request->all() );
-        return redirect('/alu')->with('message','store');
+        //
     }
 
     /**
@@ -71,7 +62,7 @@ class Alumnos extends Controller
     public function show($id)
     {
         $Alumno = Alumno::find($id);
-        return View::make('Admin.Alumnos.show')->with('Alumno', $Alumno);
+        return View::make('Alumno.Documentos.BoletaCalificaciones.show')->with('Alumno', $Alumno);
     }
 
     /**
@@ -82,10 +73,7 @@ class Alumnos extends Controller
      */
     public function edit($id)
     {
-        $Alumno = Alumno::find($id);
-        $Grupos = Grupo::pluck('nombre','id');
-
-        return View::make('Admin.Alumnos.edit')->with("Alumno", $Alumno)->with('Grupos', $Grupos);
+        //
     }
 
     /**
@@ -95,12 +83,9 @@ class Alumnos extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
-        $Alumno = Alumno::find($id);
-        $input = Input::all();
-        $Alumno->update($input);
-        return  redirect('/alu')->with('message','store');
+        //
     }
 
     /**
@@ -111,7 +96,6 @@ class Alumnos extends Controller
      */
     public function destroy($id)
     {
-        Alumno::destroy($id);
-        return  redirect('/alu')->with('message','store');
+        //
     }
 }

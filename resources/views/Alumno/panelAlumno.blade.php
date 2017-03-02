@@ -94,7 +94,9 @@
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
             <div style="border-left:1px solid #000; height:550px; border-right:1px solid #000; height:550px; padding:1em">
 
-                    {!! link_to_route('ce.index', 'Boleta de Calificaciones', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
+                    <div class="alert alert-info" role="alert"><center>Alumno, bienvenido al SCE</center></div>
+
+                    {!! link_to_route('Boleta.index', 'Boleta de Calificaciones', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
                   
                     {!!link_to('/AgregarDocumentosM', $title = 'Horario de Clases', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 

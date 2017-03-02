@@ -70,7 +70,7 @@
                         <div class="cerrarsesion">
 
                         
-                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right">Cerrar sesión</div></a></p>
+                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right"><span class="glyphicon glyphicon-user"></span>Cerrar sesión</div></a></p>
                         
 
                         </div>  

@@ -93,6 +93,8 @@
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 
+                    <div class="alert alert-info" role="alert"><center>Administrador, bienvenido al SCE</center></div>
+
                     {!! link_to_route('alu.index', 'Gestión de Usuarios', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
                
                     {!! link_to_route('mat.index', 'Gestión de Materias', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}

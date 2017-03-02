@@ -17,6 +17,8 @@
 
     <div class="table-responsive">
 
+    <h4>Programas Extendidos</h4>
+
     <table class="table table-stripped table-hover">
         <thead>
             <th>Materia</th>
