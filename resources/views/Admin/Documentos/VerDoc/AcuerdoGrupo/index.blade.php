@@ -16,6 +16,8 @@
     @endif
 
     <div class="table-responsive">
+
+    <h4>Acuerdos de Grupo</h4>
     
     <table class="table table-stripped table-hover">
         <thead>

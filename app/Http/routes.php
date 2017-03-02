@@ -123,7 +123,8 @@ Route::resource('ListaAlumnosMaestro', 'ListaAlumnosM');
 ////RUTAS DE Programa Sintetizado
 Route::resource('PrograSintetizado','ProgramaSintetizados');
 
-
+//Rutas de Boleta
+Route::resource('Boleta','Boletas');
 
 //Route::get('PrograUnidad/{id}', 'ProgramaExtendidos@editUnidad');
 //Route::put('PrograUnidad/', 'ProgramaExtendidos@updateUnidad');
