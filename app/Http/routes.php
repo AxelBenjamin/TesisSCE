@@ -143,7 +143,7 @@ Route::resource('HorarioAlumno','HorarioClasesAlu');
 //
 
 //Rutas de Ver Horario clases, maestro
-Route::resource('Horario','HorarioClasesM');
+//Route::resource('Horario','HorarioClasesM');
 
 //Rutas de Calendario de Visitantes
 Route::resource('CalendarioVisi','CalendarioVisitantes');

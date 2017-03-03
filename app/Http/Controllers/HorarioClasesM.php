@@ -27,6 +27,12 @@ class HorarioClasesM extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('maestroAuth');
+    }
+
     public function index()
     {
 

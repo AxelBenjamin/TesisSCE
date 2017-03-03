@@ -20,11 +20,11 @@ class Boletas extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    //Solo se puede acceder a este controlador si se esta logeado y si es admin
-    /*public function __construct()
+    //Solo se puede acceder a este controlador si se esta logeado y si es alu
+    public function __construct()
     {
         $this->middleware('alumnoAuth');
-    }*/
+    }
 
     public function index()
     {

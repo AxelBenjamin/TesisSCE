@@ -25,6 +25,12 @@ class CalendarioVisitantes extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('adminAuth');
+    }
+    
     public function index()
     {
         $Visitas = Visita::all()->sortBy("maestros_id");
