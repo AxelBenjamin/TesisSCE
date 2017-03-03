@@ -24,7 +24,7 @@
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="logotitulo"><center>
-                            <img src="/src/imagenes/logo2.png" class="img-responsive" alt="Responsive image"/> </center>
+                            <img src="/src/imagenes/logo3.png" class="img-responsive" alt="Responsive image"/> </center>
                         </div>  
                     </div>
 
@@ -53,18 +53,22 @@
                 <div class="row2">
                     
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="fecha">
-                        Facultad de Ingeniería.
+                        Hola. Hoy es 
                         <?php
                         $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
                         $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-                        echo $dias[date('w')].", ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
+                        echo $dias[date('w')].", ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y'). "." ;
                         ?>
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <center>Facultad de Ingeniería.</center>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="cerrarsesion">
                         
                         </div>  

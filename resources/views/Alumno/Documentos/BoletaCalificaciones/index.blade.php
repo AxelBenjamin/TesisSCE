@@ -45,12 +45,7 @@
                     <td>{!!link_to_route('Boleta.show', $title = 'Mostrar', $parameters = $Alumno->id, $attributes = ['class'=>'btn btn-primary'])!!}
                     </td>
 
-                    <td>{!!link_to_route('alu.edit', $title = 'Editar', $parameters = $Alumno->id, $attributes = ['class'=>'btn btn-primary'])!!}
-                    </td>
-                    
-                    <td>{!! Form::open(['route' => ['alu.destroy', $Alumno->id], 'method'=>'DELETE'])!!}
-                        {!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!} 
-                    {!! Form::close() !!} </td>
+                    <th>{!!link_to_action('Boletas@crear_boletas', $title = 'Ver Calendario', $parameters = array('2' , $Alumno->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
                 </tr>
             @endforeach
         </tbody>
