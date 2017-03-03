@@ -19,7 +19,6 @@
     
     <table class="table table-stripped table-hover">
         <thead>
-            <th>Semestre</th>
             <th>Maestro</th>
             <th colspan="3">Opciones</th>
         </thead>
@@ -27,9 +26,8 @@
         <tbody>
             @foreach($CartaAsignaciones as $CartaAsignacion)
                 <tr>
-                    
-                    <td>{{$CartaAsignacion->semestres->nombre}}</td>
-                    <td>{{$CartaAsignacion->maestros->apa}}
+                    <td>
+                    {{$CartaAsignacion->maestros->apa}}
                     {{$CartaAsignacion->maestros->ama}}
                     {{$CartaAsignacion->maestros->nombre}}</td>
 

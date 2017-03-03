@@ -23,9 +23,18 @@ class ProgramaSintetizados extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('maestroAuth');
+    }
+
     public function index()
     {
-        //
+        $PrograExtendidos = Reporte::all()->where('tipo', 'ProgramaExtendido')->sortBy("materias_id");
+        $Unidades = Unidad::all();
+        //$Grupos = Grupo::all();
+        return View::make('Maestro.Documentos.Agregar.PrograExtendido.index')->with("PrograExtendidos", $PrograExtendidos)->with("Unidades",$Unidades);
     }
 
     /**

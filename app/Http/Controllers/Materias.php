@@ -17,6 +17,7 @@ use App\Maestro;
 use App\Materia;
 use App\Grupo;
 
+
 class Materias extends Controller
 {
     /**
@@ -47,6 +48,7 @@ class Materias extends Controller
         $Grupos = Grupo::pluck('nombre', 'id');
         $Semestres = Semestre::pluck('nombre', 'id');
         $Maestros = Maestro::all()->pluck("nombreCompleto","id");
+
         return View::make('Admin.Materias.create')->with('Semestres',$Semestres)->with('Maestros',$Maestros)->with('Grupos',$Grupos);
     }
 
@@ -84,10 +86,11 @@ class Materias extends Controller
     {
         $Materia = Materia::find($id);
         $Semestres = Semestre::pluck('nombre', 'id');
-        $Maestros = Maestro::all()->pluck("nombreCompleto","id");
+        $Maestros = Maestro::pluck('apa','id');
         $Grupos = Grupo::pluck('nombre','id');
 
-        return View::make('Admin.Materias.edit')->with("Materia", $Materia)->with('Semestres', $Semestres)->with("Maestros",$Maestros)->with("Grupos",$Grupos);
+        return View::make('Admin.Materias.edit')->with("Materia", $Materia)->with('Semestres', $Semestres)->with("Maestros",$Maestros)->with('Grupos',$Grupos);
+
     }
 
     /**

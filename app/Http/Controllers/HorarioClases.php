@@ -3,8 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
+//use App\Http\Requests;
+//use App\Http\Requests;
+use App\Grupo;
+use App\Alumno;
+use App\CicloEscolar;
+use App\Materia;
+use App\Reporte;
+use App\Tema;
+use App\PlanEstudios;
+use App\Semestre;
 
 class HorarioClases extends Controller
 {
@@ -15,7 +27,9 @@ class HorarioClases extends Controller
      */
     public function index()
     {
-        //
+        $Horarios = Reporte::all()->where('tipo', 'Horario');
+        
+        return View::make('Admin.Documentos.AgregarDoc.HorarioClases.index')->with("Horarios", $Horarios);
     }
 
     /**
@@ -25,7 +39,8 @@ class HorarioClases extends Controller
      */
     public function create()
     {
-        //
+        $Semestres = Semestre::pluck('nombre','id');
+        return view::make('Admin.Documentos.AgregarDoc.HorarioClases.create')->with('Semestres',$Semestres);
     }
 
     /**
@@ -36,7 +51,8 @@ class HorarioClases extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Reporte::create($request->all());
+        return redirect ('/Horario')->with('message','store');
     }
 
     /**
@@ -81,6 +97,7 @@ class HorarioClases extends Controller
      */
     public function destroy($id)
     {
-        //
+        Reporte::destroy($id);
+        return redirect('/Horario')->with('message','store');
     }
 }

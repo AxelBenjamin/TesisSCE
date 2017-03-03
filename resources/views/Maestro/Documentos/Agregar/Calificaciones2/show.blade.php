@@ -36,7 +36,7 @@ body,td,th {
       <td width="145"><strong>CLAVE:</strong></td>
       <td width="90">16</td>
       <td width="175"><strong>GRUPO:</strong></td>
-      <td width="92"></td>
+      <td width="92">{{$Materia->grupos->nombre}} IC</td>
     </tr>
 
     <tr>
@@ -110,10 +110,10 @@ body,td,th {
       <td><div align="center">{{$calificacion->calificacionfaltaP}}</div></td>
       <td><div align="center">{{$calificacion->calificacionP}}</div></td>
       <td><div align="center">{{$calificacion->calificacionfaltaD1 + $calificacion->calificacionFaltaD2 + $calificacion->calificacionfaltaP}}</div></td>
-      <td><div align="center"></div></td>
+      <td><div align="center">{{$calificacion->calificacionsemestre}}</div></td>
       <td><div align="center">{{$calificacion->calificacionFA}}</div></td>
       <td><div align="center">{{$calificacion->calificacionFB}}</div></td>
-      <td><div align="center"></div></td>
+      <td><div align="center">{{$calificacion->calificaciontotal}}</div></td>
     </tr>
     @endforeach
 

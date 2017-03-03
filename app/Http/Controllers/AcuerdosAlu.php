@@ -25,10 +25,10 @@ class AcuerdosAlu extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public function __construct()
+    /*public function __construct()
         {
             $this->middleware('alumnoAuth');
-        }
+        }*/
 
     public function index()
     {
@@ -63,7 +63,7 @@ class AcuerdosAlu extends Controller
     public function crear_acuerdo_grupo($tipo, $id)
     {
         $Acuerdo = Reporte::find($id);
-        $vistaurl="Admin.Documentos.VerDoc.AcuerdoGrupo.show";
+        $vistaurl="Alumno.Documentos.AcuerdoGrupo.show";
      
         return $this->crearPDF($Acuerdo, $vistaurl, $tipo, $id);
     }

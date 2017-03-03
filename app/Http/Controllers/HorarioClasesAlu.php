@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 
+//use App\Http\Requests;
 
-use App\Http\Requests;
 use App\Grupo;
 use App\Alumno;
 use App\CicloEscolar;
@@ -20,7 +19,7 @@ use App\Tema;
 use App\PlanEstudios;
 use App\Semestre;
 
-class HorarioClasesM extends Controller
+class HorarioClasesAlu extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,9 +28,9 @@ class HorarioClasesM extends Controller
      */
     public function index()
     {
-
-        $Horarios = Reporte::all()->where('tipo', 'Horario')->sortBy("semestres_id");
-        return View::make('Maestro.Documentos.Ver.HorarioClases.index')->with("Horarios", $Horarios);
+        $Horarios = Reporte::all()->where('tipo', 'Horario');
+        
+        return View::make('Alumno.Documentos.HorarioClases.index')->with("Horarios", $Horarios);
     }
 
     /**

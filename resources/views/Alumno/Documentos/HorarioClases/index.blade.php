@@ -2,11 +2,9 @@
     $mensaje = Session::get('message')
 ?>
 
-@extends('Maestro.layouts.master')
+@extends('Alumno.layouts.master')
     
-@section('contentMaestro')
-
-@include('Maestro.layouts.partials.menuGD') 
+@section('contentAlumno')
 
     @if($mensaje == 'store')
         <div class="alert alert-warning alert-dismissible" role="alert">
@@ -20,7 +18,6 @@
     <table class="table table-stripped table-hover">
         <thead>
             <th>Semestre</th>
-
             <th colspan="2">Opciones</th>
         </thead>
 
@@ -33,7 +30,6 @@
             
         </tbody>
         @endforeach
-
     </table>
 
 

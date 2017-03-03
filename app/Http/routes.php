@@ -127,6 +127,13 @@ Route::resource('PrograSintetizado','ProgramaSintetizados');
 Route::resource('Boleta','Boletas');
 Route::get('crear_boletas/{tipo}/{id}', 'Boletas@crear_boletas');
 
+//HORARIO DE CLASES
+Route::resource('Horario','HorarioClases');
+
+Route::resource('HorarioMaestro','HorarioClasesM');
+
+Route::resource('HorarioAlumno','HorarioClasesAlu');
+
 //Route::get('PrograUnidad/{id}', 'ProgramaExtendidos@editUnidad');
 //Route::put('PrograUnidad/', 'ProgramaExtendidos@updateUnidad');
 //Route::post('PrograExtendido/', 'ProgramaExtendidos@storeUnidad');
