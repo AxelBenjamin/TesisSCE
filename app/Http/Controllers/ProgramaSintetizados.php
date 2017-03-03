@@ -13,7 +13,8 @@ use App\Materia;
 use App\CicloEscolar;
 use App\Maestro;
 use App\Grupo;
-use App\Unidad; 
+use App\Unidad;
+use App\Tema;
 use App\Reporte;
 
 class ProgramaSintetizados extends Controller
@@ -31,10 +32,10 @@ class ProgramaSintetizados extends Controller
 
     public function index()
     {
-        $PrograExtendidos = Reporte::all()->where('tipo', 'ProgramaExtendido')->sortBy("materias_id");
+        $PrograSintetizados = Reporte::all()->where('tipo', 'ProgramaSintetizado')->sortBy("materias_id");
         $Unidades = Unidad::all();
         //$Grupos = Grupo::all();
-        return View::make('Maestro.Documentos.Agregar.PrograExtendido.index')->with("PrograExtendidos", $PrograExtendidos)->with("Unidades",$Unidades);
+        return View::make('Maestro.Documentos.Agregar.PrograSintetizado.index')->with("PrograSintetizados", $PrograSintetizados)->with("Unidades",$Unidades);
     }
 
     /**
@@ -44,7 +45,12 @@ class ProgramaSintetizados extends Controller
      */
     public function create()
     {
-        //
+        $Materias = Materia::pluck('nombre', 'id');
+        $Maestros = Maestro::all()->pluck("nombreCompleto","id");
+        $CicloEscolares = CicloEscolar::pluck('nombre', 'id');
+        $Grupos = Grupo::pluck('nombre', 'id');
+        //$Alumnos = Alumno::all();
+        return view::make('Maestro.Documentos.Agregar.PrograSintetizado.create')->with('Materias',$Materias)->with('Maestros',$Maestros)->with('CicloEscolares',$CicloEscolares)->with('Grupos',$Grupos);
     }
 
     /**
@@ -55,7 +61,8 @@ class ProgramaSintetizados extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Reporte::create($request->all());
+        return redirect ('/PrograSintetizado')->with('message','store');
     }
 
     /**
@@ -66,7 +73,9 @@ class ProgramaSintetizados extends Controller
      */
     public function show($id)
     {
-        //
+        $PrograSintetizado = Reporte::find($id);
+        //$Unidades = Unidad::all();
+        return View::make('Maestro.Documentos.Agregar.PrograSintetizado.show')->with('PrograSintetizado',$PrograSintetizado);
     }
 
     /**
@@ -77,7 +86,13 @@ class ProgramaSintetizados extends Controller
      */
     public function edit($id)
     {
-        //
+        $PrograSintetizado = Reporte::find($id);
+        $Materias = Materia::pluck('nombre', 'id');
+        $Maestros = Maestro::all()->pluck("nombreCompleto","id");
+        $CicloEscolares = CicloEscolar::pluck('nombre', 'id');
+        $Grupos = Grupo::pluck('nombre', 'id');
+        //$Alumnos = Alumno::all();
+        return view::make('Maestro.Documentos.Agregar.PrograSintetizado.edit')->with('PrograSintetizado',$PrograSintetizado)->with('Materias',$Materias)->with('Maestros',$Maestros)->with('CicloEscolares',$CicloEscolares)->with('Grupos',$Grupos);
     }
 
     /**
@@ -89,7 +104,10 @@ class ProgramaSintetizados extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $PrograSintetizado = Reporte::find($id);
+        $input = Input::all();
+        $PrograSintetizado->update($input);
+        return  redirect('/PrograSintetizado')->with('message','store');
     }
 
     /**
@@ -100,6 +118,7 @@ class ProgramaSintetizados extends Controller
      */
     public function destroy($id)
     {
-        //
+        Reporte::destroy($id);
+        return redirect('/PrograSintetizado')->with('message','store');
     }
 }

@@ -7,18 +7,17 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
-//use App\Http\Requests;
-//use App\Http\Requests;
-use App\Grupo;
-use App\Alumno;
-use App\CicloEscolar;
-use App\Materia;
-use App\Reporte;
-use App\Tema;
-use App\PlanEstudios;
-use App\Semestre;
 
-class HorarioClases extends Controller
+use App\Maestro;
+
+use App\Grupo;
+use App\Materia;
+use App\CicloEscolar;
+use App\Visita;
+
+use App\Http\Requests;
+
+class CalendarioVisitantesM extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,14 +27,13 @@ class HorarioClases extends Controller
     
     public function __construct()
     {
-        $this->middleware('adminAuth');
+        $this->middleware('maestroAuth');
     }
-    
+
     public function index()
     {
-        $Horarios = Reporte::all()->where('tipo', 'Horario');
-        
-        return View::make('Admin.Documentos.AgregarDoc.HorarioClases.index')->with("Horarios", $Horarios);
+        $Visitas = Visita::all()->sortBy("maestros_id");
+        return View::make('Maestro.Documentos.Ver.CalendarioVisitantes.index')->with("Visitas", $Visitas);
     }
 
     /**
@@ -43,10 +41,36 @@ class HorarioClases extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function crearPDF($datos,$vistaurl,$tipo, $id)
+    {
+        $data = $datos;
+        //$date = date('Y-m-d');
+        $view =  \View::make($vistaurl, compact('data'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+
+        // (Optional) Setup the paper size and orientation
+        $pdf->setPaper('A4', 'landscape');
+        //return $pdf->stream('Lista_Alumnos');
+        if($tipo==1){return $pdf->stream('Calendario_Visitantes');}
+        if($tipo==2){return $pdf->download('Calendario_Visitantes.pdf'); }        
+    }
+
+    
+    public function crear_calendario_visitantes($tipo, $id)
+    {
+        $Visita = Visita::find($id);
+        $vistaurl="Maestro.Documentos.Ver.CalendarioVisitantes.show";
+     
+        return $this->crearPDF($Visita, $vistaurl, $tipo, $id);
+    }
+
+//TERMINA Función para crear PDF
+
     public function create()
     {
-        $Semestres = Semestre::pluck('nombre','id');
-        return view::make('Admin.Documentos.AgregarDoc.HorarioClases.create')->with('Semestres',$Semestres);
+        //
     }
 
     /**
@@ -57,8 +81,7 @@ class HorarioClases extends Controller
      */
     public function store(Request $request)
     {
-        Reporte::create($request->all());
-        return redirect ('/Horario')->with('message','store');
+        //
     }
 
     /**
@@ -69,7 +92,9 @@ class HorarioClases extends Controller
      */
     public function show($id)
     {
-        //
+        $Maestro = Maestro::find($id);
+        $Reporte = Reporte::all();
+        return View::make('Maestro.Documentos.Ver.CalendarioVisitantes.show')->with('Maestro',$Maestro);
     }
 
     /**
@@ -103,7 +128,6 @@ class HorarioClases extends Controller
      */
     public function destroy($id)
     {
-        Reporte::destroy($id);
-        return redirect('/Horario')->with('message','store');
+        //
     }
 }

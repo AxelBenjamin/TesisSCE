@@ -26,6 +26,12 @@ class HorarioClasesAlu extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function __construct()
+    {
+        $this->middleware('alumnoAuth');
+    }
+
     public function index()
     {
         $Horarios = Reporte::all()->where('tipo', 'Horario');

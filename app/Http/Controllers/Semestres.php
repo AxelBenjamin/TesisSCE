@@ -24,6 +24,11 @@ class Semestres extends Controller
     {
         $this->middleware('adminAuth');
     }*/
+
+    public function __construct()
+    {
+        $this->middleware('adminAuth');
+    }
     
     public function index()
     {

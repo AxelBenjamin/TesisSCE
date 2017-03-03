@@ -123,6 +123,9 @@ Route::resource('ListaAlumnosMaestro', 'ListaAlumnosM');
 ////RUTAS DE Programa Sintetizado
 Route::resource('PrograSintetizado','ProgramaSintetizados');
 
+Route::get('crear_programa_sintetizado/{tipo}/{id}', 'ProgramaSintetizadosAd@crear_programa_sintetizado');
+Route::resource('ProgramaSintetizadoAdmin', 'ProgramaSintetizadosAd');
+
 //Rutas de Boleta
 Route::resource('Boleta','Boletas');
 Route::get('crear_boletas/{tipo}/{id}', 'Boletas@crear_boletas');
@@ -140,7 +143,14 @@ Route::resource('HorarioAlumno','HorarioClasesAlu');
 //
 
 //Rutas de Ver Horario clases, maestro
-Route::resource('Horario','HorarioClasesM');
+//Route::resource('Horario','HorarioClasesM');
+
+//Rutas de Calendario de Visitantes
+Route::resource('CalendarioVisi','CalendarioVisitantes');
+
+//Rutas de Cale dario visitantes de MAestro
+Route::resource('CalendarioVisiM','CalendarioVisitantesM');
+Route::get('crear_calendario_visitantes/{tipo}/{id}', 'CalendarioVisitantesM@crear_calendario_visitantes');
 
 Route::auth();
 
