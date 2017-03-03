@@ -20,21 +20,21 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="logoamericana"> <center>
                             <a href="http://www.uaa.edu.mx/" target="_new">
-                            <img src="/src/imagenes/logo_americana2.png" class="img-responsive" alt="Responsive image"/> </center>
+                            <img src="/src/imagenes/logo_americana_vertical2.png" class="img-responsive" alt="Responsive image"/> </center>
                             </a>
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="logotitulo"><center>
-                            <img src="/src/imagenes/logo_titulo2.png" class="img-responsive" alt="Responsive image"/> </center>
+                            <img src="/src/imagenes/logo3.png" class="img-responsive" alt="Responsive image"/> </center>
                         </div>  
                     </div>
 
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="logounam"> <center>
                             <a href="http://www.dgire.unam.mx/" target="_new">
-                            <img src="/src/imagenes/logo-si-somos-unam2.png" class="img-responsive" alt="Responsive image"/> </center>
+                            <img src="/src/imagenes/logo-si-somos-unam3.png" class="img-responsive" alt="Responsive image"/> </center>
                             </a>
                         </div>  
                     </div>     
@@ -56,22 +56,25 @@
                 <div class="row2">
                     
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="fecha">
+                        Hola Alumno. Hoy es 
                         <?php
                         $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
                         $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-                        echo $dias[date('w')].", ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y') ;
+                        echo $dias[date('w')].", ".date('d')." de ".$meses[date('n')-1]. " del ".date('Y'). "." ;
                         ?>
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <center>Facultad de Ingeniería.</center>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="cerrarsesion">
 
-                        
-                                <p><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right"><span class="glyphicon glyphicon-user"></span> Cerrar sesión</div></a></p>
-                        
+                        <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i><div align="right"><span class="glyphicon glyphicon-user"></span> Cerrar sesión</div></a>
 
                         </div>  
                     </div>    
@@ -98,13 +101,13 @@
 
                     {!! link_to_route('Boleta.index', 'Boleta de Calificaciones', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
                   
-                    {!!link_to('/AgregarDocumentosM', $title = 'Horario de Clases', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
+                    {!!link_to('/HorarioAlumno', $title = 'Horario de Clases', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
                     {!! link_to('/CalendarioExamenesAlumno', 'Calendario de Examenes', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
                     {!!link_to('/AcuerdoGrupoAlumno', $title = 'Acuerdo de Grupo', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
-                    <a href="http://132.248.38.20/contenido_wp/wp-content/uploads/2016/04/Licenciatura_2016-2017.pdf" class="btn btn-default btn-lg btn-block" role="button" aria-pressed="true" target="blank">Calendario Escolar</a>
+                    <a href="/CalendariosEscolares/Licenciatura_2016-2017.pdf" class="btn btn-default btn-lg btn-block" role="button" aria-pressed="true" target="blank">Calendario Escolar</a>
             </div>
             </div>
             </div><!--Termina Row del contenido de en medio, del panel-->

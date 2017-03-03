@@ -39,7 +39,7 @@
             <td>{{ $Calificaciones2->calificacionfaltaD1 + $Calificaciones2->calificacionfaltaD2 + $Calificaciones2->calificacionfaltaP}}</td>
         </tr>
         <tr>
-            <th>Calificacion Promedio Semestre</th>
+            <th>Promedio Semestre</th>
             <td>{{ $Calificaciones2->calificacionsemestre }}</td>
         </tr>
 
@@ -50,6 +50,10 @@
         <tr>
             <th>Calificacion Final B</th>
             <td>{{ $Calificaciones2->calificacionFB }}</td>
+        </tr>
+        <tr>
+            <th>Promedio Final</th>
+            <td>{{ $Calificaciones2->calificaciontotal }}</td>
         </tr>
 
     </table>

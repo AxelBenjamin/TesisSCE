@@ -3,38 +3,35 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
-//use App\Http\Requests;
-//use App\Http\Requests;
-use App\Materia;
-use App\CicloEscolar;
-use App\Maestro;
-use App\Grupo;
-use App\Unidad; 
-use App\Reporte;
+use Illuminate\Support\Facades\View;
 
-class ProgramaSintetizados extends Controller
+
+use App\Http\Requests;
+use App\Grupo;
+use App\Alumno;
+use App\CicloEscolar;
+use App\Materia;
+use App\Reporte;
+use App\Tema;
+use App\PlanEstudios;
+use App\Semestre;
+
+class HorarioClasesM extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    
-    public function __construct()
-    {
-        $this->middleware('maestroAuth');
-    }
-
     public function index()
     {
-        $PrograExtendidos = Reporte::all()->where('tipo', 'ProgramaExtendido')->sortBy("materias_id");
-        $Unidades = Unidad::all();
-        //$Grupos = Grupo::all();
-        return View::make('Maestro.Documentos.Agregar.PrograExtendido.index')->with("PrograExtendidos", $PrograExtendidos)->with("Unidades",$Unidades);
+
+        $Horarios = Reporte::all()->where('tipo', 'Horario')->sortBy("semestres_id");
+        return View::make('Maestro.Documentos.Ver.HorarioClases.index')->with("Horarios", $Horarios);
     }
 
     /**

@@ -137,9 +137,16 @@
   </div>
 </div>
 
+  <div class="col-lg-3">
+    {!! Form::label('calificaciontotal','Calificacion Semestral:',['class' => 'control-label'])!!}
+  </div>
+  <div class="col-lg-3">
+    {!! Form::text('calificaciontotal', null, array('class' => 'form-control')) !!}
+  </div>
+</div>
+
 
   <div>
-    <p></p>
   
   {!! Form::submit('Enviar',['class' => 'btn btn-default']) !!}
     {!! link_to_route('Calificaciones2.index', 'Cancelar', null, array('class' => 'btn btn-default')); !!}

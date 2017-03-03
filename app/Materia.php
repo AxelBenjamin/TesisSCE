@@ -43,4 +43,6 @@ class Materia extends Model
 
       return $this->hasMany('App\Calificacion','materias_id');
   }
+
+
 }

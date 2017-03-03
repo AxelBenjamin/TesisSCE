@@ -24,6 +24,7 @@ class CreateCalificacionsTable extends Migration
             $table->float("calificacionsemestre");
             $table->float("calificacionFA");
             $table->float("calificacionFB");
+            $table->float("calificaciontotal");
 
             $table->integer('grupos_id')->unsigned();;
             $table->foreign('grupos_id')->references('id')->on('grupos');
