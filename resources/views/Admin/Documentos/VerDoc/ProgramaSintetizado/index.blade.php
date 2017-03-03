@@ -2,11 +2,11 @@
     $mensaje = Session::get('message')
 ?>
 
-@extends('Maestro.layouts.master')
+@extends('Admin.layouts.master')
     
-@section('contentMaestro')
+@section('content2')
 
-@include('Maestro.layouts.partials.menuGD')  
+@include('Admin.layouts.partials.menuGD')  
 
     @if($mensaje == 'store')
         <div class="alert alert-warning alert-dismissible" role="alert">
@@ -16,8 +16,6 @@
     @endif
 
     <div class="table-responsive">
-
-    {!! link_to_route('PrograSintetizado.create', 'Agregar Programa Sintetizado', null, array('class' => 'btn btn-default')); !!}
     
     <table class="table table-stripped table-hover">
         <thead>
@@ -32,15 +30,9 @@
                     <td>{{$PrograSintetizado->materias->nombre}}</td>
                     <td>{{$PrograSintetizado->grupos->nombre}}</td>
 
-                    <td>{!! link_to_route('PrograSintetizado.show', $title='Mostrar', $parameters=$PrograSintetizado->id, $attributes = ['class' => 'btn btn-primary']) !!}
-                    </td>
+                    <th>{!!link_to_action('ProgramaSintetizadosAd@crear_programa_sintetizado', $title = 'Ver Programa Sintetizado', $parameters = array('1' , $PrograSintetizado->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
 
-                    <td>{!! link_to_route('PrograSintetizado.edit', $title='Editar', $parameters=$PrograSintetizado->id, $attributes = ['class' => 'btn btn-primary']) !!}
-                    </td>
-
-                    <td>{!! Form::open(['route' => ['PrograSintetizado.destroy', $PrograSintetizado->id], 'method'=>'DELETE'])!!}
-                        {!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!} 
-                    {!! Form::close() !!} </td>
+                    <th>{!!link_to_action('ProgramaSintetizadosAd@crear_programa_sintetizado', $title = 'Descargar Programa Sintetizado', $parameters = array('2' , $PrograSintetizado->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
 
                 </tr>
             @endforeach

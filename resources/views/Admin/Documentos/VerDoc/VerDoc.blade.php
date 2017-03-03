@@ -103,7 +103,7 @@
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-            {!! link_to_route('alu.index', 'Programa Sintetizado', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
+            {!! link_to('/ProgramaSintetizadoAdmin', $title = 'Programa Sintetizado', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
             {!! link_to('/ProgramaExtendidoAdmin', $title = 'Programa Extendido', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 

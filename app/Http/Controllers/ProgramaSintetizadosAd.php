@@ -9,15 +9,15 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
 //use App\Http\Requests;
 //use App\Http\Requests;
-use App\Grupo;
-use App\Alumno;
-use App\CicloEscolar;
 use App\Materia;
-use App\Reporte;
+use App\CicloEscolar;
+use App\Maestro;
+use App\Grupo;
+use App\Unidad;
 use App\Tema;
-use App\PlanEstudios;
+use App\Reporte;
 
-class AcuerdosAlu extends Controller
+class ProgramaSintetizadosAd extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,15 +26,14 @@ class AcuerdosAlu extends Controller
      */
     
     public function __construct()
-        {
-            $this->middleware('alumnoAuth');
-        }
+    {
+        $this->middleware('adminAuth');
+    }
 
     public function index()
     {
-         $Acuerdos = Reporte::all()->where('tipo', 'Acuerdo')->sortBy("materias_id");
-        //$Grupos = Grupo::all();
-        return View::make('Alumno.Documentos.AcuerdoGrupo.index')->with("Acuerdos", $Acuerdos);//->with("Grupos", $Grupos);
+        $PrograSintetizados = Reporte::all()->where('tipo', 'ProgramaSintetizado')->sortBy("materias_id");
+        return View::make('Admin.Documentos.VerDoc.ProgramaSintetizado.index')->with("PrograSintetizados", $PrograSintetizados);
     }
 
     /**
@@ -43,7 +42,6 @@ class AcuerdosAlu extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    //INICIA Función para crear PDF 
     public function crearPDF($datos,$vistaurl,$tipo, $id)
     {
         $data = $datos;
@@ -53,23 +51,20 @@ class AcuerdosAlu extends Controller
         $pdf->loadHTML($view);
 
         // (Optional) Setup the paper size and orientation
-        //$pdf->setPaper('A4', 'landscape');
+        $pdf->setPaper('A4', 'landscape');
         //return $pdf->stream('Lista_Alumnos');
-        if($tipo==1){return $pdf->stream('Acuerdo_Grupo');}
-        if($tipo==2){return $pdf->download('Acuerdo_Grupo.pdf'); }        
+        if($tipo==1){return $pdf->stream('Programa_Sintetizado');}
+        if($tipo==2){return $pdf->download('Programa_Sintetizado.pdf'); }        
     }
 
     
-    public function crear_acuerdo_grupo($tipo, $id)
+    public function crear_programa_sintetizado($tipo, $id)
     {
-        $Acuerdo = Reporte::find($id);
-        $vistaurl="Alumno.Documentos.AcuerdoGrupo.show";
+        $PrograSintetizado = Reporte::find($id);
+        $vistaurl="Admin.Documentos.VerDoc.ProgramaSintetizado.show";
      
-        return $this->crearPDF($Acuerdo, $vistaurl, $tipo, $id);
+        return $this->crearPDF($PrograSintetizado, $vistaurl, $tipo, $id);
     }
-
-//TERMINA Función para crear PDF 
-
 
     public function create()
     {

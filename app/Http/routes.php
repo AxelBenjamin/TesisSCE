@@ -123,6 +123,9 @@ Route::resource('ListaAlumnosMaestro', 'ListaAlumnosM');
 ////RUTAS DE Programa Sintetizado
 Route::resource('PrograSintetizado','ProgramaSintetizados');
 
+Route::get('crear_programa_sintetizado/{tipo}/{id}', 'ProgramaSintetizadosAd@crear_programa_sintetizado');
+Route::resource('ProgramaSintetizadoAdmin', 'ProgramaSintetizadosAd');
+
 //Rutas de Boleta
 Route::resource('Boleta','Boletas');
 Route::get('crear_boletas/{tipo}/{id}', 'Boletas@crear_boletas');
