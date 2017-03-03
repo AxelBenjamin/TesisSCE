@@ -125,6 +125,7 @@ Route::resource('PrograSintetizado','ProgramaSintetizados');
 
 //Rutas de Boleta
 Route::resource('Boleta','Boletas');
+Route::get('crear_boletas/{tipo}/{id}', 'Boletas@crear_boletas');
 
 //HORARIO DE CLASES
 Route::resource('Horario','HorarioClases');
@@ -137,6 +138,9 @@ Route::resource('HorarioAlumno','HorarioClasesAlu');
 //Route::put('PrograUnidad/', 'ProgramaExtendidos@updateUnidad');
 //Route::post('PrograExtendido/', 'ProgramaExtendidos@storeUnidad');
 //
+
+//Rutas de Ver Horario clases, maestro
+Route::resource('Horario','HorarioClasesM');
 
 Route::auth();
 

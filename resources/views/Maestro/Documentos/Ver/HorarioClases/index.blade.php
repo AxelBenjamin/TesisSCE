@@ -20,6 +20,7 @@
     <table class="table table-stripped table-hover">
         <thead>
             <th>Semestre</th>
+
             <th colspan="2">Opciones</th>
         </thead>
 
@@ -32,6 +33,7 @@
             
         </tbody>
         @endforeach
+
     </table>
 
 

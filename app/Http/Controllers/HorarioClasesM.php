@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 
-//use App\Http\Requests;
 
+use App\Http\Requests;
 use App\Grupo;
 use App\Alumno;
 use App\CicloEscolar;
@@ -28,8 +29,8 @@ class HorarioClasesM extends Controller
      */
     public function index()
     {
-        $Horarios = Reporte::all()->where('tipo', 'Horario');
-        
+
+        $Horarios = Reporte::all()->where('tipo', 'Horario')->sortBy("semestres_id");
         return View::make('Maestro.Documentos.Ver.HorarioClases.index')->with("Horarios", $Horarios);
     }
 
@@ -38,32 +39,6 @@ class HorarioClasesM extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
-    public function crearPDF($datos,$vistaurl,$tipo, $id)
-    {
-        $data = $datos;
-        //$date = date('Y-m-d');
-        $view =  \View::make($vistaurl, compact('data'))->render();
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
-
-        //return $pdf->stream('Lista_Alumnos');
-        if($tipo==1){return $pdf->stream('Horario');}
-        if($tipo==2){return $pdf->download('Horario.pdf'); }
-
-        
-    }
-
-    
-    /*public function crear_horario_clases($tipo, $id){
-
-     $Horario = Reporte::find($id);
-     $vistaurl="Maestro.Documentos.Ver.HorarioClases.show";
-     
-     return $this->crearPDF($Horario, $vistaurl, $tipo, $id);
-
-    }
-
     public function create()
     {
         //

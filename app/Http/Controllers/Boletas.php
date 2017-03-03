@@ -37,6 +37,34 @@ class Boletas extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    //INICIA Función para crear PDF 
+    public function crearPDF($datos,$vistaurl,$tipo, $id)
+    {
+        $data = $datos;
+        //$date = date('Y-m-d');
+        $view =  \View::make($vistaurl, compact('data'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+
+        // (Optional) Setup the paper size and orientation
+        $pdf->setPaper('A4', 'landscape');
+        //return $pdf->stream('Lista_Alumnos');
+        if($tipo==1){return $pdf->stream('Boleta');}
+        if($tipo==2){return $pdf->download('Boleta.pdf'); }        
+    }
+
+    
+    public function crear_boletas($tipo, $id)
+    {
+        $Alumno = Alumno::find($id);
+        $vistaurl="Alumno.Documentos.BoletaCalificaciones.show2";
+     
+        return $this->crearPDF($Alumno, $vistaurl, $tipo, $id);
+    }
+
+//TERMINA Función para crear PDF 
+
     public function create()
     {
         //
@@ -63,6 +91,12 @@ class Boletas extends Controller
     {
         $Alumno = Alumno::find($id);
         return View::make('Alumno.Documentos.BoletaCalificaciones.show')->with('Alumno', $Alumno);
+    }
+
+    public function show2($id)
+    {
+        $Alumno = Alumno::find($id);
+        return View::make('Alumno.Documentos.BoletaCalificaciones.show2')->with('Alumno', $Alumno);
     }
 
     /**
