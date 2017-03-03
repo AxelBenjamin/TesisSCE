@@ -44,9 +44,5 @@ class Materia extends Model
       return $this->hasMany('App\Calificacion','materias_id');
   }
 
-  public function grupos(){
-
-      return $this->belongsTo('App\Grupo', 'grupos_id');
-    }
 
 }

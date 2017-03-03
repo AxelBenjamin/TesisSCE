@@ -98,13 +98,13 @@
 
                     {!! link_to_route('Boleta.index', 'Boleta de Calificaciones', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
                   
-                    {!!link_to('/AgregarDocumentosM', $title = 'Horario de Clases', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
+                    {!!link_to('/HorarioAlumno', $title = 'Horario de Clases', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
                     {!! link_to('/CalendarioExamenesAlumno', 'Calendario de Examenes', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
                     {!!link_to('/AcuerdoGrupoAlumno', $title = 'Acuerdo de Grupo', $attributes = ['class' => 'btn btn-default btn-lg btn-block']) !!}
 
-                    <a href="http://132.248.38.20/contenido_wp/wp-content/uploads/2016/04/Licenciatura_2016-2017.pdf" class="btn btn-default btn-lg btn-block" role="button" aria-pressed="true" target="blank">Calendario Escolar</a>
+                    <a href="/CalendariosEscolares/Licenciatura_2016-2017.pdf" class="btn btn-default btn-lg btn-block" role="button" aria-pressed="true" target="blank">Calendario Escolar</a>
             </div>
             </div>
             </div><!--Termina Row del contenido de en medio, del panel-->

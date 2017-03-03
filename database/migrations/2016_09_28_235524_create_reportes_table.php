@@ -49,6 +49,8 @@ class CreateReportesTable extends Migration
 
             $table->longtext("agtrabajopracfin");
 
+            $table->binary("archivoHorario");
+
             //Llaves extras para guardar y jalar datos de otras tablas
             $table->integer('ciclo_escolars_id')->unsigned();
             $table->foreign('ciclo_escolars_id')->references('id')->on('ciclo_escolars');

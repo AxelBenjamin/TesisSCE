@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reporte extends Model
 {
-    protected $fillable = ['tipo', 'calificacionfaltaD1','calificacionD1','calificacionFaltaD2','calificacionD2','calificacionfaltaP','calificacionP','calificacionsemestre','calificacionFA','calificacionFB','calificaciontotal','cvtotalhrssemana','cvhrsgrupo','cvmes','cvdia1','cvdia2', 'fechaelaboracion','psetotalhrssemana','psenumclasessemana','pseagdepartamentales','pseagpracticas','pseagtareaspart','pseagreqexentarA','pseagreqexentarB','pseagreqexentarC','psehrsteoricas','psehrspracticas','psepropositocurso','agtrabajopracfin','temas_id','plan_estudios_id','alumnos_id', 'ciclo_escolars_id', 'materias_id', 'grupos_id', 'maestros_id', 'semestres_id', 'unidads_id'];
+    protected $fillable = ['tipo', 'calificacionfaltaD1','calificacionD1','calificacionFaltaD2','calificacionD2','calificacionfaltaP','calificacionP','calificacionsemestre','calificacionFA','calificacionFB','calificaciontotal','cvtotalhrssemana','cvhrsgrupo','cvmes','cvdia1','cvdia2', 'fechaelaboracion','psetotalhrssemana','psenumclasessemana','pseagdepartamentales','pseagpracticas','pseagtareaspart','pseagreqexentarA','pseagreqexentarB','pseagreqexentarC','psehrsteoricas','psehrspracticas','psepropositocurso','agtrabajopracfin', 'archivoHorario','temas_id','plan_estudios_id','alumnos_id', 'ciclo_escolars_id', 'materias_id', 'grupos_id', 'maestros_id', 'semestres_id', 'unidads_id'];
 
     //Horario . - Ciclo escolar, grupo, materia, maestro, psehrspracticas y psehrsteoricas
     //Calen Exam .- 
@@ -49,4 +49,12 @@ class Reporte extends Model
       return $this->belongsTo('App\Unidad', 'unidads_id');
   }
 
+
+  public function setFotoAttribute($foto){
+    if(!empty($foto)){
+      $this->attributes['archivoHorario'] = Carbon::now()->second.$foto->getClientOriginalName();
+    $nombre = Carbon::now()->second.$foto->getClientOriginalName();
+    \Storage::disk('local')->put($nombre,\File::get($foto));
+    }
+}
 }
