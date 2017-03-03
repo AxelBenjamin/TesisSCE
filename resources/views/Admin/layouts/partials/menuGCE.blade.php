@@ -19,7 +19,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{{ route('ce.index') }}">Ciclo Escolar <span class="sr-only">(current)</span></a></li>
+        <li><a href="{{ route('ce.index') }}">Ciclo Escolar <span class="sr-only">(current)</span></a></li>
         <li><a href="{{ route('plan.index') }}">Plan Estudios</a></li>
         <li><a href="{{ route('sem.index') }}">Semestres</a></li>
         <li><a href="{{ route('gru.index') }}">Grupos</a></li>

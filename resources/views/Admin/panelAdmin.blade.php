@@ -97,6 +97,7 @@
             </div>
 
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div style="border-left:1px solid #000; height:550px; border-right:1px solid #000; height:550px; padding:1em">
 
                     <div class="alert alert-info" role="alert"><center>Administrador, bienvenido al SCE</center></div>
 

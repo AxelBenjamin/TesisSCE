@@ -33,4 +33,9 @@ class Maestro extends Model
 		}
 	}
 
+	public function visitas(){
+
+   		return $this->hasMany('App\Visita','maestros_id');
+	}
+
 }

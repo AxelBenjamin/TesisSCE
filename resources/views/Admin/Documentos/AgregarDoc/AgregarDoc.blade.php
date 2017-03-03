@@ -109,7 +109,7 @@
 
             {!! link_to_route('ListaAlumnos.index', 'Lista de Alumnos', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
 
-            {!! link_to_route('AcuerdoGrupo.index', 'Calendario de Visitantes', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
+            {!! link_to_route('CalendarioVisi.index', 'Calendario de Visitantes', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
 
             {!! link_to_route('CartaAsignacion.index', 'Carta de Asignación', null, array('class' => 'btn btn-default btn-lg btn-block')); !!}
             </div>

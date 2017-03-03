@@ -22,4 +22,9 @@ class CicloEscolar extends Model
 
    		return $this->hasMany('App\Calificacion','ciclo_escolars_id');
 	}
+
+  public function visitas(){
+
+      return $this->hasMany('App\Visita','ciclo_escolars_id');
+  }
 }
