@@ -22,36 +22,45 @@
                     
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    {!! link_to_route('CalendarioVisi.create', 'Agregar Fechas de Visita', null, array('class' => 'btn btn-default')); !!}
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <div align="right"> <h4>Programas Extendidos</h4> </div>    
+                    <div align="right"> <h4>Calendarios de Visitantes</h4> </div>    
                 </div>
             </div>        
         </div>
     </div>
-
+    
     <table class="table table-stripped table-hover">
         <thead>
-            <th>Materia</th>
-            <th>Fecha Elaboración</th>
+            <th>Maestro</th>
+            <th>Mes</th>
             <th colspan="4">Opciones</th>
         </thead>
 
         <tbody>
-            
-            @foreach($PrograExtendidos as $PrograExtendido)
+            @foreach($Visitas as $Visita)
                 <tr>
                     
-                    <td>{{$PrograExtendido->materias->nombre}}</td>
-                    <td>{{$PrograExtendido->fechaelaboracion}}</td>
+                    <td>{{$Visita->maestros->apa}}
+                    {{$Visita->maestros->ama}}
+                    {{$Visita->maestros->nombre}}</td>
+                    <td>{{$Visita->cvmes}}</td>
 
-                    <th>{!!link_to_action('ProgramaExtendidosAd@crear_programa_extendido', $title = 'Ver Programa Extendido', $parameters = array('1' , $PrograExtendido->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+                    <td>{!! link_to_route('CalendarioVisi.show', $title='Mostrar', $parameters=$Visita->id, $attributes = ['class' => 'btn btn-primary']) !!}
+                    </td>
 
-                    <th>{!!link_to_action('ProgramaExtendidosAd@crear_programa_extendido', $title = 'Descargar Programa Extendido', $parameters = array('2' , $PrograExtendido->id), $attributes = ['class'=>'btn btn-primary'])!!}</th>
+                    <td>{!! link_to_route('CalendarioVisi.edit', $title='Editar', $parameters=$Visita->id, $attributes = ['class' => 'btn btn-primary']) !!}
+                    </td>
+
+                    <th>{!! Form::open(['route' => ['CalendarioVisi.destroy', $Visita->id], 'method'=>'DELETE']) !!}
+                    {!! Form::submit('Eliminar',['class' => 'btn btn-danger']) !!}
+                    {!! Form::close() !!} </th>
 
                 </tr>
             @endforeach
+            
         </tbody>
     </table>
 

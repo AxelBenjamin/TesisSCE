@@ -15,9 +15,24 @@
         </div>
     @endif
 
-    <div class="table-responsive">
+    <!--<div class="table-responsive">-->
 
-    {!! link_to_route('AcuerdoGrupo.create', 'Agregar Acuerdo de Grupo', null, array('class' => 'btn btn-default')); !!}
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    {!! link_to_route('AcuerdoGrupo.create', 'Agregar Acuerdo de Grupo', null, array('class' => 'btn btn-default')); !!}
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div align="right"> <h4>Acuerdos de Grupo</h4> </div>    
+                </div>
+            </div>        
+        </div>
+    </div>
+
+    
     
     <table class="table table-stripped table-hover">
         <thead>

@@ -142,6 +142,13 @@ Route::resource('HorarioAlumno','HorarioClasesAlu');
 //Rutas de Ver Horario clases, maestro
 Route::resource('Horario','HorarioClasesM');
 
+//Rutas de Calendario de Visitantes
+Route::resource('CalendarioVisi','CalendarioVisitantes');
+
+//Rutas de Cale dario visitantes de MAestro
+Route::resource('CalendarioVisiM','CalendarioVisitantesM');
+Route::get('crear_calendario_visitantes/{tipo}/{id}', 'CalendarioVisitantesM@crear_calendario_visitantes');
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');

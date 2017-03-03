@@ -15,10 +15,9 @@ use App\Materia;
 use App\CicloEscolar;
 use App\Visita;
 
-
 use App\Http\Requests;
 
-class CalendarioVisitantes extends Controller
+class CalendarioVisitantesM extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,7 +27,7 @@ class CalendarioVisitantes extends Controller
     public function index()
     {
         $Visitas = Visita::all()->sortBy("maestros_id");
-        return View::make('Admin.Documentos.AgregarDoc.CalenVisi.index')->with("Visitas", $Visitas);
+        return View::make('Maestro.Documentos.Ver.CalendarioVisitantes.index')->with("Visitas", $Visitas);
     }
 
     /**
@@ -36,14 +35,36 @@ class CalendarioVisitantes extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function crearPDF($datos,$vistaurl,$tipo, $id)
+    {
+        $data = $datos;
+        //$date = date('Y-m-d');
+        $view =  \View::make($vistaurl, compact('data'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+
+        // (Optional) Setup the paper size and orientation
+        $pdf->setPaper('A4', 'landscape');
+        //return $pdf->stream('Lista_Alumnos');
+        if($tipo==1){return $pdf->stream('Calendario_Visitantes');}
+        if($tipo==2){return $pdf->download('Calendario_Visitantes.pdf'); }        
+    }
+
+    
+    public function crear_calendario_visitantes($tipo, $id)
+    {
+        $Visita = Visita::find($id);
+        $vistaurl="Maestro.Documentos.Ver.CalendarioVisitantes.show";
+     
+        return $this->crearPDF($Visita, $vistaurl, $tipo, $id);
+    }
+
+//TERMINA Función para crear PDF
+
     public function create()
     {
-        $CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
-        $Maestros = Maestro::all()->pluck("nombreCompleto","id");
-        //$Temas = Tema::pluck('nombre','id');
-        //$PlanesEstudios = PlanEstudios::pluck('nombre','id');
-        return view::make('Admin.Documentos.AgregarDoc.CalenVisi.create')
-        ->with('CiclosEscolares',$CiclosEscolares)->with('Maestros',$Maestros);
+        //
     }
 
     /**
@@ -54,8 +75,7 @@ class CalendarioVisitantes extends Controller
      */
     public function store(Request $request)
     {
-        Visita::create($request->all());
-        return redirect ('/CalendarioVisi')->with('message','store');
+        //
     }
 
     /**
@@ -66,8 +86,9 @@ class CalendarioVisitantes extends Controller
      */
     public function show($id)
     {
-        $Visita = Visita::find($id);
-        return View::make('Admin.Documentos.AgregarDoc.CalenVisi.show')->with('Visita',$Visita);
+        $Maestro = Maestro::find($id);
+        $Reporte = Reporte::all();
+        return View::make('Maestro.Documentos.Ver.CalendarioVisitantes.show')->with('Maestro',$Maestro);
     }
 
     /**
@@ -78,12 +99,7 @@ class CalendarioVisitantes extends Controller
      */
     public function edit($id)
     {
-        $Visita = Visita::find($id);
-        $CiclosEscolares = CicloEscolar::pluck('nombre', 'id');
-        $Maestros = Maestro::all()->pluck("nombreCompleto","id");
-        //$Temas = Tema::pluck('nombre','id');
-        //$PlanesEstudios = PlanEstudios::pluck('nombre','id');
-        return view::make('Admin.Documentos.AgregarDoc.CalenVisi.edit')->with('Visita',$Visita)->with('CiclosEscolares',$CiclosEscolares)->with('Maestros',$Maestros);
+        //
     }
 
     /**
@@ -95,10 +111,7 @@ class CalendarioVisitantes extends Controller
      */
     public function update(Request $request, $id)
     {
-        $Visita = Visita::find($id);
-        $input = Input::all();
-        $Visita->update($input);
-        return  redirect('/CalendarioVisi')->with('message','store');
+        //
     }
 
     /**
@@ -109,7 +122,6 @@ class CalendarioVisitantes extends Controller
      */
     public function destroy($id)
     {
-        Visita::destroy($id);
-        return redirect('/CalendarioVisi')->with('message','store');
+        //
     }
 }
