@@ -34,7 +34,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div class="logounam"> <center>
                             <a href="http://www.dgire.unam.mx/" target="_new">
-                            <img src="/src/imagenes/logo-si-somos-unam34.png" class="img-responsive" alt="Responsive image"/> </center>
+                            <img src="/src/imagenes/logo-si-somos-unam3.png" class="img-responsive" alt="Responsive image"/> </center>
                             </a>
                         </div>  
                     </div>     
